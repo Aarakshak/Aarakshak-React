@@ -1,5 +1,7 @@
 import NavbarMain from "./navbar-main";
 import Banner from "./banner";
+import About from "./about";
+import News from "./news";
 
 const MainHomepage = () => {
   let URL = 'http://localhost:3000';
@@ -7,7 +9,8 @@ const MainHomepage = () => {
     <>
         <NavbarMain />
         <Banner />
-        
+        <About />
+        <News />
     </>
   );
 };

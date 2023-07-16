@@ -38,10 +38,6 @@ const NavbarMain = () => {
             LOGIN
           </a>
           {/* <Login /> */}
-          <a href={`${URL}/#signup`} className='signupbtn'>
-            SIGNUP
-          </a>
-          {/* <Register /> */}
         </div>
       </nav>
     </>
