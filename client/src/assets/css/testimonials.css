@@ -2,17 +2,19 @@
 
 .testimonial-section {
   position: relative;
-  height: 75vh;
+  height: auto;
 }
 
 .testimonial-img {
   width: 80%;
   border-radius: 20px;
+  margin: 40px 0 !important;
 }
 
 .paraa {
   padding: 0 20px 20px 20px;
-  margin: 0;
+  margin: auto 0;
+  margin-top: 40px;
 }
 
 
@@ -35,33 +37,34 @@
   top: 42%;
   left: 83%;
   transform: translate(-50%, -50%) rotate(90deg);
-  font-size: 3.2em;
+  font-size: 3em;
 }
 
 .test-heading2-testi {
   color: #9d73c2;
   position: absolute;
   top: 38%;
-  left: 86%;
+  left: 87%;
   transform: translate(-50%, -50%) rotate(90deg);
-  font-size: 3.6em;
+  font-size: 3.4em;
   width: 120%;
 }
 
 
 .hal {
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .testi-img {
   background-color: #ffff;
   width:22vw;
-  height: 30vh;
+  height: 40vh;
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   color: black;
-  min-height: 450px;
+  min-height: 500px;
   border: 2px solid #9d73c2;
   font-family: 'Open Sans', sans-serif;
 }
@@ -86,8 +89,7 @@
   font-size: 18px;
   font-weight: 400;
   border-bottom: 3px solid #9d73c2;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin: auto 0;
   text-transform: uppercase;
   padding: 5px 0;
   position: relative;
@@ -95,9 +97,8 @@
 }
 
 .women-below {
-  width: 60px;
-  height: auto;
-  margin-top: -40px;
+  width: 60%;
+  margin: 0px 0 20px 0;
 }
 
 .paraa {
@@ -113,3 +114,4 @@
 h2{
     font-family: 'Poppins', sans-serif;
 }
+
