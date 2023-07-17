@@ -1,5 +1,5 @@
 import '../../assets/css/navbar.css';
-import BannerPhoto from '../../assets/images/Police.png';
+import BannerPhoto from '../../assets/images/banner-main-img.png';
 
 const Banner = () => {
   let URL = 'http://localhost:3001';

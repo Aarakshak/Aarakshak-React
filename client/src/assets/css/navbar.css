@@ -97,7 +97,7 @@ html body {
 .banner-right{
   position: absolute;
   top: 55%;
-  left: 35%;
+  left: 38%;
   transform: translate(10%, -50%);
   text-align: center;
 }
@@ -131,8 +131,7 @@ html body {
 }
 
 .banner-photo{
-    width: 60%;
-    border: 3px solid #9a69c2;
+    width: 55%;
 }
 
 .signupbtn, .loginbtn {
