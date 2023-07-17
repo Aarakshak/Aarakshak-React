@@ -4,7 +4,6 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import image1 from "../../assets/images/uncle1.jfif";
 import image2 from "../../assets/images/uncle2.jfif";
 import image3 from "../../assets/images/uncle3.jfif";
-import testimonial from '../../assets/images/testimoniall2.png';
 import '../../assets/css/testimonials.css';
 
 const Testimonials = () => {
@@ -69,10 +68,10 @@ const Testimonials = () => {
         </div>
         <div className='col-sm-2'>
           <div className='test-heading2-testi'>
-            <h1> प्रशंसापत्र / </h1>
+            <h1 style={{fontSize: '3.5em'}}> प्रशंसापत्र / </h1>
           </div>
           <div className='test-heading-testi'>
-            <h1> TESTIMONIALS. </h1>
+            <h1 style={{fontSize: '3.5em'}}> TESTIMONIALS. </h1>
           </div>
         </div>
       </div>
