@@ -198,12 +198,20 @@ html body {
 
   .nav-title {
     position: relative;
-    left: 100px;
+    left: 125px;
     line-height: 1.2;
   }
 
   .nav-inside .nav-title span{
     letter-spacing: 1px;
+    position: relative;
+    text-align: left;
+  }
+
+  .welcomerr{
+    text-align: left;
+    position: relative;
+    left: -235px;
   }
 
   .nav-inside .nav-title p{

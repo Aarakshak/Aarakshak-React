@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import '../../assets/css/modal.css';
 import '../../assets/css/form.css';
 import Loader from '../../assets/images/Loader123.gif';
@@ -19,7 +20,6 @@ const Login = () => {
             <input
               type='text'
               name='username'
-              value="username"
               autoComplete='off'
               required
             />
@@ -29,13 +29,12 @@ const Login = () => {
             <input
               type='password'
               name='password'
-              value="password"
               autoComplete='off'
               required
             />
           </div>
-          <div className='btn-sbmt-cont'>
-            <button type='submit' value='Login' className='btn-sbmt'>Login <img src={Loader} className='loginbtn-loader'></img></button>
+          <div className='btn-sbmt-cont'><Link to="/dashboard/home">
+            <button type='submit' value='Login' className='btn-sbmt'>Login <img src={Loader} className='loginbtn-loader'></img></button></Link>
           </div>
           </form>
       </div>
