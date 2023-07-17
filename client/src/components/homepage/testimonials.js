@@ -68,10 +68,10 @@ const Testimonials = () => {
         </div>
         <div className='col-sm-2'>
           <div className='test-heading2-testi'>
-            <h1> प्रशंसापत्र / </h1>
+            <h1 style={{fontSize: '3.5em'}}> प्रशंसापत्र / </h1>
           </div>
           <div className='test-heading-testi'>
-            <h1> TESTIMONIALS. </h1>
+            <h1 style={{fontSize: '3.5em'}}> TESTIMONIALS. </h1>
           </div>
         </div>
       </div>
