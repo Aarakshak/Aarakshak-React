@@ -34,19 +34,17 @@
 .test-heading-testi {
   color: #9d73c2;
   position: absolute;
-  top: 42%;
+  top: 50%;
   left: 83%;
   transform: translate(-50%, -50%) rotate(90deg);
-  font-size: 3em;
 }
 
 .test-heading2-testi {
   color: #9d73c2;
   position: absolute;
-  top: 38%;
+  top: 48%;
   left: 87%;
   transform: translate(-50%, -50%) rotate(90deg);
-  font-size: 3.4em;
   width: 120%;
 }
 
@@ -115,3 +113,8 @@ h2{
     font-family: 'Poppins', sans-serif;
 }
 
+
+
+.carousel .control-dots .dot, .dot-selected{
+  background: #9d73c2;
+}
