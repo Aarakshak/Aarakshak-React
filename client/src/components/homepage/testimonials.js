@@ -11,7 +11,7 @@ const Testimonials = () => {
   return (
     <div className="testimonial-section">
       <div className='hal row'>
-        <div className='col-sm-10 l-sec'>
+        <div className='col-sm-9 l-sec'>
           <Carousel
             showStatus={false}
             infiniteLoop={true}
