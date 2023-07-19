@@ -57,7 +57,7 @@ const Home = () => {
                 <center>
                   <Link to='/settings'>
                   <div className='home-box-heading'>
-                  <i class="fa-solid fa-address-card"></i> Manage Profile
+                  <i class="fa-solid fa-address-card"></i> Assign Duty
                   </div>
                   <div className='row'>
                     <div className='box-inner-left col-sm-4'>
