@@ -38,16 +38,16 @@ const Home = () => {
               </div>
               <div className='home-box col-sm-4'>
                 <center>
-                <Link to='/'>
+                <Link to='/dashboard/sos'>
                 <div className='home-box-heading'>
-                <i class="fa-solid fa-headset"></i> Customer Support
+                <i class="fa-solid fa-headset"></i> SOS
                 </div>
                 <div className='row'>
                     <div className='box-inner-left col-sm-4'>
                       <img src={customerimg} className='box-inner-img'></img>
                     </div>
                     <div className='box-inner-right bxr5 col-sm-8'>
-                    This tab is available for administrators to post any issues they may have. These issues will be resolved promptly, within 24 hours
+                    This tab is available for administrators to see the emergency SOS raised by Police officers within past 24 hours
                     </div>  
                   </div>
                   </Link>
@@ -64,7 +64,7 @@ const Home = () => {
                       <img src={profilephoto} className='box-inner-img'></img>
                     </div>
                     <div className='box-inner-right bxr6 col-sm-8'>
-                    The Manage Profile page allows the admin to change their name, address & department. Admins can also change their login credentials.
+                    The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
                     </div>  
                   </div>
                   </Link>

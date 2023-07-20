@@ -1,9 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './App.css';
+
 import MainHomepage from "./components/homepage/main-homepage.js";
 import Home from './components/dashboard/home.js';
 import Settings from "./components/dashboard/settings";
+import SOS from "./components/dashboard/SOS.js";
+
+import './App.css';
+
 function App() {
   return (
     <div className="App">
@@ -14,6 +18,7 @@ function App() {
           <Route path="dashboard">
               <Route path="home" element={<Home />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="sos" element={<SOS />} />
             </Route>
 
         </Routes>
