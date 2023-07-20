@@ -41,7 +41,7 @@ const Settings = () => {
                     type='text'
                     name='employeeId'
                     placeholder={
-                      employeeId === '' ? 'Enter your Police Id' : employeeId
+                      employeeId === '' ? 'Enter police id' : employeeId
                     }
                     value={employeeId}
                     onChange={(e) => setEmployeeId(e.target.value)}
