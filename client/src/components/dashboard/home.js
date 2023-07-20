@@ -55,7 +55,7 @@ const Home = () => {
               </div>
               <div className='home-box col-sm-4'>
                 <center>
-                  <Link to='/settings'>
+                  <Link to='/dashboard/settings'>
                   <div className='home-box-heading'>
                   <i class="fa-solid fa-address-card"></i> Assign Duty
                   </div>
