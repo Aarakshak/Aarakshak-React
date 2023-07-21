@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+.home-outer-sos {
+  background: url('../images/dash-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sos-heading {
+  margin-top: 200px;
+  color: white;
+}
+
+.sos-card-head{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 0.5vw;
+  margin-top: 1vh;
+}
+.cards {
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+.card {
+  width: 20vw;
+  height: 40vh;
+}
+
+.police-name{
+  text-align: left;
+}
+
+.ul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5vh;
+}
+
+.info-box {
+  margin: 0.2vh;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  width: 20vw;
+  padding-top: 4px;
+  padding-left: 10px;
+  padding-bottom: 4px;
+  padding-right: 2px;
+  background: #EDE4FF;
+}
+
+.info-box span {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  padding-top: 4px;
+}
+
+.card,
+.card__back {
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  border: none;
+  margin-bottom: 30px;
+  height: 52vh;
+  width: 20vw;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+  z-index: 999;
+}
+
+.card-text{
+  text-align: justify;
+}
+
+.btn{
+  bottom: 0;
+  background: #9a69c2;
+  color: #fff;
+  width: 100%;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+
+.card-header img{
+  height: 12vh;
+  width: 7vw;
+  border-radius: 50%;
+}
+
+.card-header{
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -2vh;
+}
