@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import time from '../../assets/logos/time.png';
 import skilllogo from '../../assets/logos/skill.svg';
 import shglogo from '../../assets/logos/shg.svg';
@@ -8,17 +9,34 @@ import NavbarInside from './navbar-inside';
 import '../../assets/css/home.css';
 
 const Settings = () => {
-  const [employeeId, setEmployeeId] = useState('');
+  const [employeeId, setEmployeeId] = useState(0);
   const [location, setLocation] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
-  const [longitude, setLongitude] = useState('');
-  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState(0.0);
+  const [latitude, setLatitude] = useState(0.0);
 
 
   const onSubmit = (e) => {
+    e.preventDefault();
 
-  }
+    const data = {
+      employeeId: employeeId,
+      location: location,
+      startTime: startTime,
+      endTime: endTime,
+      longitude: longitude,
+      latitude: latitude,
+    };
+
+    axios.post('', data)
+      .then((response) => {
+        console.log('Data sent successfully:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error sending data:', error);
+      });
+  };
 
   return (
     <div className='home-outer'>
@@ -38,7 +56,7 @@ const Settings = () => {
                     <img className='updater' src={shglogo}></img>
                   </span>
                   <input
-                    type='text'
+                    type='number'
                     name='employeeId'
                     placeholder={
                       employeeId === '' ? 'Enter police id' : employeeId
@@ -100,7 +118,7 @@ const Settings = () => {
                     <img className='updater' src={earth}></img>
                   </span>
                   <input
-                    type='text'
+                    type='number'
                     name='longitude'
                     placeholder={
                       longitude === '' ? 'Enter longitude' : longitude
@@ -115,7 +133,7 @@ const Settings = () => {
                     <img className='updater' src={earth}></img>
                   </span>
                   <input
-                    type='text'
+                    type='number'
                     name='latitude'
                     placeholder={latitude === '' ? 'Enter latitude' : latitude}
                     value={latitude}
