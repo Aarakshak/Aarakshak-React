@@ -17,7 +17,7 @@ function App() {
           <Route index element={<MainHomepage />} />
           <Route path="dashboard">
               <Route path="home" element={<Home />} />
-              <Route path="settings" element={<Settings />} />
+              <Route path="assign-duty" element={<Settings />} />
               <Route path="sos" element={<SOS />} />
             </Route>
 
