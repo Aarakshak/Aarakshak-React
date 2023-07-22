@@ -29,9 +29,10 @@ const SOS = () => {
             key={index}
             policeName={sosItem.policeName}
             badgeId={sosItem.badgeId}
-            duration={sosItem.duration}
+            time={sosItem.time}
             location={sosItem.location}
             description={sosItem.description}
+            respond={sosItem.respond}
           />
         ))}
       </div>
