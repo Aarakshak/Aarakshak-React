@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import time from '../../assets/logos/time.png';
 import skilllogo from '../../assets/logos/skill.svg';
 import shglogo from '../../assets/logos/shg.svg';
@@ -8,17 +9,34 @@ import NavbarInside from './navbar-inside';
 import '../../assets/css/home.css';
 
 const Settings = () => {
-  const [employeeId, setEmployeeId] = useState('');
+  const [employeeId, setEmployeeId] = useState();
   const [location, setLocation] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
-  const [longitude, setLongitude] = useState('');
-  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState();
+  const [latitude, setLatitude] = useState();
 
 
   const onSubmit = (e) => {
+    e.preventDefault();
 
-  }
+    const data = {
+      employeeId: employeeId,
+      location: location,
+      startTime: startTime,
+      endTime: endTime,
+      longitude: longitude,
+      latitude: latitude,
+    };
+
+    axios.post('', data)
+      .then((response) => {
+        console.log('Data sent successfully:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error sending data:', error);
+      });
+  };
 
   return (
     <div className='home-outer'>
@@ -38,11 +56,9 @@ const Settings = () => {
                     <img className='updater' src={shglogo}></img>
                   </span>
                   <input
-                    type='text'
+                    type='number'
                     name='employeeId'
-                    placeholder={
-                      employeeId === '' ? 'Enter police id' : employeeId
-                    }
+                    placeholder= 'Enter police id'
                     value={employeeId}
                     onChange={(e) => setEmployeeId(e.target.value)}
                   />
@@ -55,9 +71,7 @@ const Settings = () => {
                   <input
                     type='text'
                     name='location'
-                    placeholder={
-                      location === '' ? 'Enter duty Location' : location
-                    }
+                    placeholder= 'Enter duty Location'
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   />
@@ -72,9 +86,7 @@ const Settings = () => {
                   <input
                     type='text'
                     name='startTime'
-                    placeholder={
-                      startTime === '' ? 'Enter duty start time' : startTime
-                    }
+                    placeholder='Enter duty start time'
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
                   />
@@ -87,7 +99,7 @@ const Settings = () => {
                   <input
                     type='text'
                     name='endTime'
-                    placeholder={endTime === '' ? 'Enter duty end time' : endTime}
+                    placeholder='Enter duty end time'
                     value={endTime}
                     onChange={(e) => setEndTime(e.target.value)}
                   />
@@ -100,11 +112,9 @@ const Settings = () => {
                     <img className='updater' src={earth}></img>
                   </span>
                   <input
-                    type='text'
+                    type='number'
                     name='longitude'
-                    placeholder={
-                      longitude === '' ? 'Enter longitude' : longitude
-                    }
+                    placeholder= 'Enter longitude' 
                     value={longitude}
                     onChange={(e) => setLongitude(e.target.value)}
                   />
@@ -115,9 +125,9 @@ const Settings = () => {
                     <img className='updater' src={earth}></img>
                   </span>
                   <input
-                    type='text'
+                    type='number'
                     name='latitude'
-                    placeholder={latitude === '' ? 'Enter latitude' : latitude}
+                    placeholder='Enter latitude'
                     value={latitude}
                     onChange={(e) => setLatitude(e.target.value)}
                   />

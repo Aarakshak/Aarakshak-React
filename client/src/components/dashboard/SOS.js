@@ -1,7 +1,22 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import "../../assets/css/sos.css";
 import NavbarInside from './navbar-inside';
 import SOSCard from "./SOS-card";
+
 const SOS = () => {
+  const [sosData, setSOSData] = useState([]);
+
+  useEffect(() => {
+    axios.get('')
+      .then(response => {
+        setSOSData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching SOS data:', error);
+      });
+  }, []);
+
   return (
     <div className='home-outer-sos'>
       <div>
@@ -9,16 +24,19 @@ const SOS = () => {
       </div>
       <center><h1 className="sos-heading">SOS Received</h1></center>
       <div className="cards">
-        <SOSCard
-          policeName="Ram Mishra"
-          badgeId="12345XXX"
-          duration="3 hours"
-          location="Delhi"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        />
+        {sosData.map((sosItem, index) => (
+          <SOSCard
+            key={index}
+            policeName={sosItem.policeName}
+            badgeId={sosItem.badgeId}
+            duration={sosItem.duration}
+            location={sosItem.location}
+            description={sosItem.description}
+          />
+        ))}
       </div>
     </div>
   )
 }
 
-export default SOS
+export default SOS;
