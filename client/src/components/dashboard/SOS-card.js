@@ -1,30 +1,34 @@
+import {useState} from 'react'
 import "../../assets/css/sos.css";
-import police from "../../assets/logos/user-avatar.png";
+import police from "../../assets/images/profile-photo.jpg";
 
 const SOSCard = (props) => {
   const { policeName, badgeId, duration, location, description } = props;
-
+  const [isResponded, setIsResponded] = useState(false);
   return (
     <div className="card">
-      <div class="card-body">
-        <div style={{display:'flex', flexDirection:'column', textAlign:'left', marginLeft:'0.5vw', marginTop:'1vh'}}>
-        <h2 style={{textAlign:'left'}}>{policeName}</h2>
+      <div className="card-body">
+        <div className="card-header">
+        <div className="sos-card-head">
+        <h2 className="police-name">{policeName}</h2>
         <h6>{badgeId}</h6>
         </div>
-        <div className="ul" style={{ marginTop: '5vh'}}>
-            <div class="info-box">
+        <img src={police} />
+        </div>
+        <div className="ul">
+            <div className="info-box">
               Location <span>{location}</span>
             </div>
       
-          <div class="info-box">
+          <div className="info-box">
               Duration <span>{duration}</span>
             </div>
          
         </div>
-        <p class="card-text" style={{ textAlign: "justify" }}>
+        <p class="card-text">
           {description}
         </p>
-        <a href="#" class="btn btn-default text-uppercase">
+        <a href="#" className="btn">
           Mark as responded
         </a>
       </div>
