@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import time from '../../assets/logos/time.png';
-import skilllogo from '../../assets/logos/skill.svg';
 import shglogo from '../../assets/logos/shg.svg';
 import locationping from '../../assets/logos/locationping.png';
 import earth from '../../assets/logos/earth-globe.png';
@@ -10,7 +9,9 @@ import '../../assets/css/home.css';
 
 const Settings = () => {
   const [employeeId, setEmployeeId] = useState();
+  const [commandingOfficerId, setCommandingOfficerId] = useState();
   const [location, setLocation] = useState('');
+  const [date, setDate] = useState();
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [longitude, setLongitude] = useState();
@@ -22,7 +23,9 @@ const Settings = () => {
 
     const data = {
       employeeId: employeeId,
+      commandingOfficerId: commandingOfficerId,
       location: location,
+      date: date,
       startTime: startTime,
       endTime: endTime,
       longitude: longitude,
@@ -58,12 +61,29 @@ const Settings = () => {
                   <input
                     type='number'
                     name='employeeId'
-                    placeholder= 'Enter police id'
+                    placeholder= 'Enter Police Id'
                     value={employeeId}
                     onChange={(e) => setEmployeeId(e.target.value)}
                   />
-                </div>                
+                </div> 
                 <div className='form-group col-sm-6'>
+                  <label htmlFor='commandingOfficerId'>
+                    Commanding Officer ID :{' '}
+                  </label>
+                  <span>
+                    <img className='updater' src={shglogo}></img>
+                  </span>
+                  <input
+                    type='number'
+                    name='commandingOfficerId'
+                    placeholder= 'Enter Commanding Officer Id'
+                    value={commandingOfficerId}
+                    onChange={(e) => setCommandingOfficerId(e.target.value)}
+                  />
+                </div>                
+              </div>
+              <div className='row'>
+              <div className='form-group col-sm-6'>
                   <label htmlFor='location'>Location : </label>
                   <span>
                   <img className='updater' src={locationping}></img>
@@ -76,35 +96,17 @@ const Settings = () => {
                     onChange={(e) => setLocation(e.target.value)}
                   />
                 </div>
-              </div>
-              <div className='row'>
                 <div className='form-group col-sm-6'>
-                  <label htmlFor='startTime'>Duty Start Time : </label>
-                  <span>
-                    <img className='updater' src={time}></img>
-                  </span>
+                  <label htmlFor='date'>Date : </label>
                   <input
-                    type='text'
-                    name='startTime'
-                    placeholder='Enter duty start time'
-                    value={startTime}
-                    onChange={(e) => setStartTime(e.target.value)}
+                    type='date'
+                    name='date'
+                    placeholder= 'Enter duty Date'
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
                   />
                 </div>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='endTime'>Duty End Time : </label>
-                  <span>
-                    <img className='updater' src={time}></img>
-                  </span>
-                  <input
-                    type='text'
-                    name='endTime'
-                    placeholder='Enter duty end time'
-                    value={endTime}
-                    onChange={(e) => setEndTime(e.target.value)}
-                  />
                 </div>
-              </div>    
               <div className='row'>
                 <div className='form-group col-sm-6'>
                   <label htmlFor='longitude'>Longitude : </label>
@@ -133,7 +135,34 @@ const Settings = () => {
                   />
                 </div>
               </div>
-        
+              <div className='row'>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='startTime'>Duty Start Time : </label>
+                  <span>
+                    <img className='updater' src={time}></img>
+                  </span>
+                  <input
+                    type='time'
+                    name='startTime'
+                    placeholder='Enter duty start time'
+                    value={startTime}
+                    onChange={(e) => setStartTime(e.target.value)}
+                  />
+                </div>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='endTime'>Duty End Time : </label>
+                  <span>
+                    <img className='updater' src={time}></img>
+                  </span>
+                  <input
+                    type='time'
+                    name='endTime'
+                    placeholder='Enter duty end time'
+                    value={endTime}
+                    onChange={(e) => setEndTime(e.target.value)}
+                  />
+                </div>
+              </div>    
               <br></br>
               <div className='row'>
                 <center>

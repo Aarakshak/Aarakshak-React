@@ -44,9 +44,9 @@ min-height: 100vh;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
-    padding: 30px 50px;
+    padding: 30px 30px;
     overflow-y: scroll;
-    height: 500px;
+    height: 475px;
   }
   .wrapper22::-webkit-scrollbar {
     width: 0px;
@@ -358,7 +358,7 @@ min-height: 100vh;
   }
 
   .li-card{
-      font-size: 1.2rem;
+      font-size: 0.6rem;
       font-family: 'Poppins', sans-serif;
   }
 
@@ -452,4 +452,18 @@ min-height: 100vh;
 .right-right{
   position: relative;
   padding: 50px 0;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+}
+
+.wrapper img{
+  height: 3.5vh;
+  width: 1.5vw;
+}
+
+.heading-settings{
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
 }
