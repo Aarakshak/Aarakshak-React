@@ -9,12 +9,12 @@ import NavbarInside from './navbar-inside';
 import '../../assets/css/home.css';
 
 const Settings = () => {
-  const [employeeId, setEmployeeId] = useState(0);
+  const [employeeId, setEmployeeId] = useState();
   const [location, setLocation] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
-  const [longitude, setLongitude] = useState(0.0);
-  const [latitude, setLatitude] = useState(0.0);
+  const [longitude, setLongitude] = useState();
+  const [latitude, setLatitude] = useState();
 
 
   const onSubmit = (e) => {
@@ -58,9 +58,7 @@ const Settings = () => {
                   <input
                     type='number'
                     name='employeeId'
-                    placeholder={
-                      employeeId === '' ? 'Enter police id' : employeeId
-                    }
+                    placeholder= 'Enter police id'
                     value={employeeId}
                     onChange={(e) => setEmployeeId(e.target.value)}
                   />
@@ -73,9 +71,7 @@ const Settings = () => {
                   <input
                     type='text'
                     name='location'
-                    placeholder={
-                      location === '' ? 'Enter duty Location' : location
-                    }
+                    placeholder= 'Enter duty Location'
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   />
@@ -90,9 +86,7 @@ const Settings = () => {
                   <input
                     type='text'
                     name='startTime'
-                    placeholder={
-                      startTime === '' ? 'Enter duty start time' : startTime
-                    }
+                    placeholder='Enter duty start time'
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
                   />
@@ -105,7 +99,7 @@ const Settings = () => {
                   <input
                     type='text'
                     name='endTime'
-                    placeholder={endTime === '' ? 'Enter duty end time' : endTime}
+                    placeholder='Enter duty end time'
                     value={endTime}
                     onChange={(e) => setEndTime(e.target.value)}
                   />
@@ -120,9 +114,7 @@ const Settings = () => {
                   <input
                     type='number'
                     name='longitude'
-                    placeholder={
-                      longitude === '' ? 'Enter longitude' : longitude
-                    }
+                    placeholder= 'Enter longitude' 
                     value={longitude}
                     onChange={(e) => setLongitude(e.target.value)}
                   />
@@ -135,7 +127,7 @@ const Settings = () => {
                   <input
                     type='number'
                     name='latitude'
-                    placeholder={latitude === '' ? 'Enter latitude' : latitude}
+                    placeholder='Enter latitude'
                     value={latitude}
                     onChange={(e) => setLatitude(e.target.value)}
                   />
