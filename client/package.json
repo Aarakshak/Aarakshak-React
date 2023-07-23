@@ -16,7 +16,9 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
+    "string": "^3.3.3",
     "sweetalert": "^2.1.2",
+    "typescript": "^5.1.6",
     "web-vitals": "^2.1.4",
     "zlib": "^1.0.5"
   },

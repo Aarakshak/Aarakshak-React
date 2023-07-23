@@ -7,6 +7,7 @@ import Settings from "./components/dashboard/settings";
 import SOS from "./components/dashboard/SOS.js";
 import Onboarding from './components/dashboard/onboarding.js';
 import WorkNotifs from "./components/dashboard/work-notif.js";
+import Supervision from './components/dashboard/supervision.js';
 
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
               <Route path="sos" element={<SOS />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="post-work-notifications" element={<WorkNotifs />} />
+              <Route path="supervision" element={<Supervision />} />
             </Route>
 
         </Routes>

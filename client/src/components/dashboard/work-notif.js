@@ -1,32 +1,35 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import time from '../../assets/logos/time.png';
-import skilllogo from '../../assets/logos/skill.svg';
-import shglogo from '../../assets/logos/shg.svg';
-import locationping from '../../assets/logos/locationping.png';
-import earth from '../../assets/logos/earth-globe.png';
+import avatar from '../../assets/logos/shg.svg';
 import NavbarInside from './navbar-inside';
 import '../../assets/css/home.css';
+import { Description } from '@material-ui/icons';
 
 const WorkNotifs = () => {
-  const [employeeId, setEmployeeId] = useState();
-  const [location, setLocation] = useState('');
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
-  const [longitude, setLongitude] = useState();
-  const [latitude, setLatitude] = useState();
+  const [title, setTitle] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [description, setDescription] = useState('');
+  const [choiceValue, setChoiceValue] = useState('');
 
+  const choice = [
+    {value: "0", text: "Select"}, 
+    {value: "1", text: "USA"}, 
+    {value: "2", text: "Canada"}, 
+    {value: "3", text: "Japan"}, 
+    {value: "4", text: "Mexico"}
+  ]
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     const data = {
-      employeeId: employeeId,
-      location: location,
-      startTime: startTime,
-      endTime: endTime,
-      longitude: longitude,
-      latitude: latitude,
+      title: title,
+      date: date,
+      time: time,
+      description: description,
+      choiceValue: choiceValue,
     };
 
     axios.post('', data)
@@ -43,94 +46,62 @@ const WorkNotifs = () => {
       <div>
         <NavbarInside />
       </div>
-      <div className='wrapper wrapper22' style={{ marginTop: '200px' }}>
+      <div className='wrapper wrapper22 wrapper76' style={{ marginTop: '200px' }}>
         <h1 className='heading-settings'>Post Work Notifications</h1>
           <div className='settings-box'>
             <form>
               <div className='row'>
               <div className='form-group col-sm-6'>
-                  <label htmlFor='employeeId'>
-                    Employee ID :{' '}
+                  <label htmlFor='title'>
+                    Notification Title :{' '}
                   </label>
                   <span>
-                    <img className='updater' src={shglogo}></img>
+                    <img className='updater updater-notif' src={avatar}></img>
                   </span>
                   <input
                     type='number'
-                    name='employeeId'
-                    placeholder= 'Enter police id'
-                    value={employeeId}
-                    onChange={(e) => setEmployeeId(e.target.value)}
+                    name='title'
+                    placeholder= 'Enter Title for Notification'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                   />
                 </div>                
                 <div className='form-group col-sm-6'>
-                  <label htmlFor='location'>Location : </label>
-                  <span>
-                  <img className='updater' src={locationping}></img>
-                  </span>
-                  <input
-                    type='text'
-                    name='location'
-                    placeholder= 'Enter duty Location'
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                  />
+                  <label htmlFor='location'>Type : </label>
+                    <select value={choiceValue} onChange={(e) => setChoiceValue(e.target.value)}>
+                        <option onClick={() => setChoiceValue("1")}> Meeting </option>
+                        <option onClick={() => setChoiceValue("2")}> Duty </option>
+                        <option onClick={() => setChoiceValue("3")}> Local Events </option>
+                        <option onClick={() => setChoiceValue("4")}> Others </option>
+                    </select>
                 </div>
               </div>
               <div className='row'>
                 <div className='form-group col-sm-6'>
-                  <label htmlFor='startTime'>Duty Start Time : </label>
-                  <span>
-                    <img className='updater' src={time}></img>
-                  </span>
+                  <label htmlFor='date'> Date of Event : </label>
                   <input
-                    type='text'
-                    name='startTime'
-                    placeholder='Enter duty start time'
-                    value={startTime}
-                    onChange={(e) => setStartTime(e.target.value)}
+                    type='date'
+                    name='date'
+                    placeholder='Enter Date of Event'
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
                   />
                 </div>
                 <div className='form-group col-sm-6'>
-                  <label htmlFor='endTime'>Duty End Time : </label>
-                  <span>
-                    <img className='updater' src={time}></img>
-                  </span>
+                  <label htmlFor='time'> Time of Event : </label>
                   <input
-                    type='text'
-                    name='endTime'
-                    placeholder='Enter duty end time'
-                    value={endTime}
-                    onChange={(e) => setEndTime(e.target.value)}
+                    type='time'
+                    name='time'
+                    placeholder='Enter Time of Event'
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
                   />
                 </div>
               </div>    
               <div className='row'>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='longitude'>Longitude : </label>
-                  <span>
-                    <img className='updater' src={earth}></img>
-                  </span>
-                  <input
-                    type='number'
-                    name='longitude'
-                    placeholder= 'Enter longitude' 
-                    value={longitude}
-                    onChange={(e) => setLongitude(e.target.value)}
-                  />
-                </div>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='latitude'>Latitude : </label>
-                  <span>
-                    <img className='updater' src={earth}></img>
-                  </span>
-                  <input
-                    type='number'
-                    name='latitude'
-                    placeholder='Enter latitude'
-                    value={latitude}
-                    onChange={(e) => setLatitude(e.target.value)}
-                  />
+                <div className='form-group col-sm-12'>
+                <label htmlFor='time'> Description : </label>
+                <textarea value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                 </div>
               </div>
         
@@ -139,10 +110,11 @@ const WorkNotifs = () => {
                 <center>
                 <input
                   type='submit'
-                  value='Set Duty'
+                  value='Post'
                   className='btn-sbmt col-sm-6'
                   onClick={onSubmit}
                 /> </center>
+               
               </div>
               <ul class='bg-bubbles'>
                 <li></li>

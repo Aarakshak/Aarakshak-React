@@ -4,6 +4,7 @@ import NavbarInside from './navbar-inside.js';
 import photo1 from '../../assets/images/police-writing.jpg';
 import photo2 from '../../assets/images/police-duty.jpg';
 import photo3 from '../../assets/images/police-duty2.jpg';
+import photo4 from '../../assets/images/police-duty3.jpg';
 import customerimg from '../../assets/images/customer-support.jpg';
 import { Link } from 'react-router-dom';
 
@@ -42,7 +43,7 @@ const Home = () => {
 
                 <div className='home-box col-sm-4'>
                 <center>
-                  <Link to='/dashboard/settings'>
+                  <Link to='/dashboard/assign-duty'>
                   <div className='home-box-heading'>
                   <i class="fa-solid fa-address-card"></i> Assign Duty
                   </div>
@@ -60,6 +61,29 @@ const Home = () => {
 
               <div className='home-box col-sm-4'>
                   <center>
+                    <Link to='/dashboard/supervision'>
+                    <div className='home-box-heading'>
+                    <i class="fa-solid fa-eye"></i> Police Officer Supervision
+                    </div>
+                    <div className='row'>
+                      <div className='box-inner-left col-sm-4'>
+                        <img src={photo4} className='box-inner-img'></img>
+                      </div>
+                      <div className='box-inner-right bxr6 col-sm-8'>
+                      The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
+                      </div>  
+                    </div>
+                    </Link>
+                  </center>
+                </div>
+
+            </div>
+            </div>
+
+            <div className='row'>
+
+            <div className='home-box col-sm-4'>
+                  <center>
                     <Link to='/dashboard/post-work-notifications'>
                     <div className='home-box-heading'>
                     <i class="fa-solid fa-briefcase"></i> Posting Work Notifications
@@ -76,10 +100,6 @@ const Home = () => {
                   </center>
                 </div>
 
-            </div>
-            </div>
-
-            <div className='row'>
 
             <div className='home-box col-sm-4'>
                 <center>
