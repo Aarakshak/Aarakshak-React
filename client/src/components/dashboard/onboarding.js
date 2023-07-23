@@ -8,7 +8,7 @@ import photo from '../../assets/logos/photo1.png';
 import NavbarInside from './navbar-inside';
 import '../../assets/css/home.css';
 
-const Settings = () => {
+const Onboarding = () => {
   const [badgeID, setBadgeID] = useState();
   const [rank, setRank] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -179,4 +179,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default Onboarding;
