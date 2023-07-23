@@ -16,7 +16,7 @@ const Login = () => {
           <form>
           <div className='form-group'>
             
-            <label htmlFor='phone'>Phone Number</label>
+            <label htmlFor='phone'>Username</label>
             <input
               type='text'
               name='username'

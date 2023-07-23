@@ -61,6 +61,12 @@ min-height: 100vh;
   .wrapper22 label{
     color: black;
   }
+
+  .wrapper76{
+    overflow-y: hidden !important;
+    height: auto !important;
+    padding: 30px 50px 10px 50px;
+  }
   
   form {
     position: relative;
@@ -448,8 +454,22 @@ min-height: 100vh;
   left: -10px;
   cursor: pointer;
 }
+.updater1{
+  width: 10%;
+  float: right;
+  position: relative;
+  top: 45px;
+  left: -10px;
+  cursor: pointer;
+}
 
 .right-right{
   position: relative;
   padding: 50px 0;
+}
+
+.img-preview{
+  position: absolute;
+  top: -60px;
+  right: 40px;
 }

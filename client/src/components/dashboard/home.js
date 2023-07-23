@@ -17,8 +17,8 @@ const Home = () => {
 
         <div className='main'>
           <div className='main-in'>
-            <div className='home-box-outer row'>
-              
+            <div className='home-box-outer'>
+              <div className='row'>
               <div className='home-box col-sm-4'>
                 <center>
                 <Link to='/categories'>
@@ -70,6 +70,26 @@ const Home = () => {
                   </Link>
                 </center>
               </div>
+            </div>
+            </div>
+            <div className='row'>
+              <div className='home-box col-sm-4'>
+                  <center>
+                    <Link to='/dashboard/onboarding'>
+                    <div className='home-box-heading'>
+                    <i class="fa-solid fa-address-card"></i> Police Officer Onboarding
+                    </div>
+                    <div className='row'>
+                      <div className='box-inner-left col-sm-4'>
+                        <img src={profilephoto} className='box-inner-img'></img>
+                      </div>
+                      <div className='box-inner-right bxr6 col-sm-8'>
+                      The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
+                      </div>  
+                    </div>
+                    </Link>
+                  </center>
+                </div>
             </div>
           </div>
         </div>

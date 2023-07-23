@@ -5,6 +5,7 @@ import MainHomepage from "./components/homepage/main-homepage.js";
 import Home from './components/dashboard/home.js';
 import Settings from "./components/dashboard/settings";
 import SOS from "./components/dashboard/SOS.js";
+import Onboarding from './components/dashboard/onboarding.js';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
               <Route path="home" element={<Home />} />
               <Route path="assign-duty" element={<Settings />} />
               <Route path="sos" element={<SOS />} />
+              <Route path="onboarding" element={<Onboarding />} />
             </Route>
 
         </Routes>
