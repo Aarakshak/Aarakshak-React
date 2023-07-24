@@ -6,9 +6,8 @@ import locationping from '../../assets/logos/locationping.png';
 import earth from '../../assets/logos/earth-globe.png';
 import NavbarInside from './navbar-inside';
 import GoogleMapReact from 'google-map-react';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import '../../assets/css/home.css';
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const Settings = () => {
   const [employeeId, setEmployeeId] = useState();
@@ -21,6 +20,10 @@ const Settings = () => {
   const [latitude, setLatitude] = useState(76.9674);
 
   const defaultProps = {
+    center: {
+      lat: 11.0176,
+      lng: 76.9674
+    },
     zoom: 11
   };
 
@@ -52,32 +55,23 @@ const Settings = () => {
       <div>
         <NavbarInside />
       </div>
-      
-      <div className='wrapper wrapper22' style={{ marginTop: '700px', zIndex:'0' }}>
+      <div className='wrapper wrapper22' style={{ marginTop: '450px', zIndex:'0' }}>
         <h1 className='heading-settings'>Assign Duty</h1>
           <div className='settings-box'>
-          <div style={{ height: '50vh', width: '100%', zIndex:'1' }}>
+          <div style={{ height: '50vh', width: '100%' }}>
           <GoogleMapReact
               bootstrapURLKeys={{ key: '' }}
-              defaultCenter={{
-                latitude: latitude,
-                longitude: longitude
-              }}
-              onClick={(e) => {
-                setLatitude(e.latLng.lat())
-                setLongitude(e.latLng.lng())
-                console.log("latitude = ", e.latLng.lat());
-                console.log("longitude = ", e.latLng.lng());
-              }}
+              defaultCenter={defaultProps.center}
+              initialCenter={{ lat: 11.0176, lng: 76.9674 }} 
               defaultZoom={defaultProps.zoom}
             >
-              <AnyReactComponent
-                latitude={latitude}
-                longitude={longitude}
-                text="My Marker"
+              <LocationOnIcon
+                lat={11.0176}
+                lng={76.9674}
+                style={{color:'red'}}
               />
             </GoogleMapReact>
-    </div>
+            </div>
             <form>
               <div className='row'>
               <div className='form-group col-sm-6'>

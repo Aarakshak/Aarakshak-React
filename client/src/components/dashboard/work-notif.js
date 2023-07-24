@@ -4,7 +4,6 @@ import time from '../../assets/logos/time.png';
 import avatar from '../../assets/logos/shg.svg';
 import NavbarInside from './navbar-inside';
 import '../../assets/css/home.css';
-import { Description } from '@material-ui/icons';
 
 const WorkNotifs = () => {
   const [title, setTitle] = useState('');
