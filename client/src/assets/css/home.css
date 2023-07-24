@@ -17,10 +17,17 @@ background: url('../images/dash-bg.png');
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
-min-height: 100vh;
+min-height: 120vh;
 }
 
-
+.home-outer-duty{
+  background: url('../images/dash-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 200vh;
+  }
+  
 .form-finance h1{
     text-align: center;
 }
@@ -30,25 +37,21 @@ min-height: 100vh;
     background: linear-gradient(to right, #b783e1, #9a69c2);
     position: absolute;
     color: white !important;
-    top: 58%;
     left: 50%;
     padding: 30px 60px;
     overflow: hidden;
     transform: translate(-50%, -50%);
     border-radius: 50px;
-    width: 80%;
+    width: 100%;
   }
 
   .wrapper22 {
-    top: 32%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
-    padding: 30px 50px 10px 50px;
+    width: 90%;
+    padding: 30px 30px;
     overflow-y: scroll;
-    height: auto;
-    max-height: 560px;
   }
+  
   .wrapper22::-webkit-scrollbar {
     width: 0px;
   }
@@ -384,7 +387,7 @@ min-height: 100vh;
   }
 
   .li-card{
-      font-size: 1.2rem;
+      font-size: 0.6rem;
       font-family: 'Poppins', sans-serif;
   }
 
@@ -492,6 +495,19 @@ min-height: 100vh;
   padding: 50px 0;
 }
 
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+}
+
+.wrapper img{
+  height: 3.5vh;
+  width: 1.5vw;
+}
+
+.heading-settings{
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+}
 .img-preview{
   position: absolute;
   top: -60px;

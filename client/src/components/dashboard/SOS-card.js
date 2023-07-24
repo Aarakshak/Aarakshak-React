@@ -3,8 +3,8 @@ import "../../assets/css/sos.css";
 import police from "../../assets/images/profile-photo.jpg";
 
 const SOSCard = (props) => {
-  const { policeName, badgeId, duration, location, description } = props;
-  const [isResponded, setIsResponded] = useState(false);
+  const { policeName, badgeId, time, location, description, respond } = props;
+  const [isResponded, setIsResponded] = useState(respond);
 
   const handleMarkResponded = () => {
     setIsResponded(!isResponded);
@@ -26,7 +26,7 @@ const SOSCard = (props) => {
           </div>
 
           <div className="info-box">
-            Duration <span>{duration}</span>
+            Time <span>{time}</span>
           </div>
         </div>
         <p className="card-text">

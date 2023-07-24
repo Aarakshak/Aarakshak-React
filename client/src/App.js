@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 import MainHomepage from "./components/homepage/main-homepage.js";
 import Home from './components/dashboard/home.js';
 import Settings from "./components/dashboard/settings";
