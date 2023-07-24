@@ -22,8 +22,8 @@ const Settings = () => {
 
   const defaultProps = {
     center: {
-      lat: 10.99835602,
-      lng: 77.01502627
+      lat: 11.0176,
+      lng: 76.9674
     },
     zoom: 11
   };
@@ -61,17 +61,22 @@ const Settings = () => {
         <h1 className='heading-settings'>Assign Duty</h1>
           <div className='settings-box'>
           <div style={{ height: '50vh', width: '100%', zIndex:'1' }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
-        />
-      </GoogleMapReact>
+          <GoogleMapReact
+              bootstrapURLKeys={{ key: '' }}
+              defaultCenter={defaultProps.center}
+              initialCenter={{ lat: 11.0176, lng: 76.9674 }} 
+              onClick={(e) => {
+                console.log("latitude = ", e.latLng.lat());
+                console.log("longitude = ", e.latLng.lng());
+              }}
+              defaultZoom={defaultProps.zoom}
+            >
+              <AnyReactComponent
+                lat={11.0176}
+                lng={76.9674}
+                text="My Marker"
+              />
+            </GoogleMapReact>
     </div>
             <form>
               <div className='row'>
