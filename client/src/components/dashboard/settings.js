@@ -17,14 +17,10 @@ const Settings = () => {
   const [date, setDate] = useState();
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
-  const [longitude, setLongitude] = useState();
-  const [latitude, setLatitude] = useState();
+  const [longitude, setLongitude] = useState(11.0176);
+  const [latitude, setLatitude] = useState(76.9674);
 
   const defaultProps = {
-    center: {
-      lat: 11.0176,
-      lng: 76.9674
-    },
     zoom: 11
   };
 
@@ -63,17 +59,21 @@ const Settings = () => {
           <div style={{ height: '50vh', width: '100%', zIndex:'1' }}>
           <GoogleMapReact
               bootstrapURLKeys={{ key: '' }}
-              defaultCenter={defaultProps.center}
-              initialCenter={{ lat: 11.0176, lng: 76.9674 }} 
+              defaultCenter={{
+                latitude: latitude,
+                longitude: longitude
+              }}
               onClick={(e) => {
+                setLatitude(e.latLng.lat())
+                setLongitude(e.latLng.lng())
                 console.log("latitude = ", e.latLng.lat());
                 console.log("longitude = ", e.latLng.lng());
               }}
               defaultZoom={defaultProps.zoom}
             >
               <AnyReactComponent
-                lat={11.0176}
-                lng={76.9674}
+                latitude={latitude}
+                longitude={longitude}
                 text="My Marker"
               />
             </GoogleMapReact>
