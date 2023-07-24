@@ -17,10 +17,17 @@ background: url('../images/dash-bg.png');
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
-min-height: 100vh;
+min-height: 120vh;
 }
 
-
+.home-outer-duty{
+  background: url('../images/dash-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 200vh;
+  }
+  
 .form-finance h1{
     text-align: center;
 }
@@ -30,24 +37,21 @@ min-height: 100vh;
     background: linear-gradient(to right, #b783e1, #9a69c2);
     position: absolute;
     color: white !important;
-    top: 58%;
     left: 50%;
     padding: 30px 60px;
     overflow: hidden;
     transform: translate(-50%, -50%);
     border-radius: 50px;
-    width: 80%;
+    width: 100%;
   }
 
   .wrapper22 {
-    top: 32%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
+    width: 90%;
     padding: 30px 30px;
     overflow-y: scroll;
-    height: 475px;
   }
+  
   .wrapper22::-webkit-scrollbar {
     width: 0px;
   }
