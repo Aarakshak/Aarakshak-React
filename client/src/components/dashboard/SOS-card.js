@@ -2,7 +2,7 @@ import { useState } from 'react';
 import "../../assets/css/sos.css";
 import police from "../../assets/images/profile-photo.jpg";
 
-const SOSCard = (props) => {
+const SupervisionCard = (props) => {
   const { policeName, badgeId, time, location, description, respond } = props;
   const [isResponded, setIsResponded] = useState(respond);
 
@@ -48,4 +48,4 @@ const SOSCard = (props) => {
   );
 };
 
-export default SOSCard;
+export default SupervisionCard;
