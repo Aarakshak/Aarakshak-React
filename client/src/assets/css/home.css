@@ -17,7 +17,7 @@ background: url('../images/dash-bg.png');
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
-min-height: 120vh;
+min-height: 100vh;
 }
 
 .home-outer-duty{
@@ -37,7 +37,7 @@ min-height: 120vh;
     background: linear-gradient(to right, #b783e1, #9a69c2);
     position: absolute;
     color: white !important;
-    top:40%;
+    top:33%;
     left: 50%;
     padding: 30px 60px;
     overflow: hidden;
@@ -48,7 +48,7 @@ min-height: 120vh;
 
   .wrapper22 {
     transform: translate(-50%, -50%);
-    width: 90%;
+    width: 70%;
     padding: 30px 30px;
     overflow-y: scroll;
   }
@@ -70,7 +70,7 @@ min-height: 120vh;
   .wrapper76{
     overflow-y: hidden !important;
     height: auto !important;
-    padding: 30px 50px 10px 50px;
+    padding: 20px 50px 10px 50px;
   }
   
   form {
