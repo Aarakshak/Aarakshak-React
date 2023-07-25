@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../../assets/css/sos.css";
-import NavbarInside from './navbar-inside';
+import NavbarInside from './navbar-inside2';
 import SOSCard from "./SOS-card";
 
 const SOS = () => {

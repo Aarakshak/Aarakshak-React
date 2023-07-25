@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import time from '../../assets/logos/time.png';
 import avatar from '../../assets/logos/shg.svg';
-import NavbarInside from './navbar-inside';
+import NavbarInside from './navbar-inside2';
 import '../../assets/css/home.css';
 
 const WorkNotifs = () => {

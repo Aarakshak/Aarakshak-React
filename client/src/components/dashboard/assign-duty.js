@@ -4,7 +4,7 @@ import time from '../../assets/logos/time.png';
 import shglogo from '../../assets/logos/shg.svg';
 import locationping from '../../assets/logos/locationping.png';
 import earth from '../../assets/logos/earth-globe.png';
-import NavbarInside from './navbar-inside';
+import NavbarInside from './navbar-inside2';
 import GoogleMapReact from 'google-map-react';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import '../../assets/css/home.css';

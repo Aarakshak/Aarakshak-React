@@ -5,7 +5,7 @@ import time from '../../assets/logos/time.png';
 import avatar from '../../assets/logos/shg.svg';
 import ranker from '../../assets/logos/rank.png';
 import photo from '../../assets/logos/photo1.png';
-import NavbarInside from './navbar-inside';
+import NavbarInside from './navbar-inside2';
 import '../../assets/css/home.css';
 
 const Onboarding = () => {

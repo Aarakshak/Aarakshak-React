@@ -86,7 +86,7 @@ const Home = () => {
                   <center>
                     <Link to='/dashboard/post-work-notifications'>
                     <div className='home-box-heading'>
-                    <i class="fa-solid fa-briefcase"></i> Posting Work Notifications
+                    <i class="fa-solid fa-briefcase"></i> Post Work Notifications
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>

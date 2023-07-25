@@ -142,6 +142,7 @@ html body {
 
 .nav > #nav-check {
   display: none;
+  z-index: 99999;
 }
 
 .brand-name-logo {
