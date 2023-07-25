@@ -3,14 +3,14 @@ import axios from 'axios';
 import "../../assets/css/sos.css";
 
 const SOSCard = (props) => {
-  const { policeName, badgeId, sessionID, sessionDate, startTime, endTime, sessionLocation} = props;
+  const { policeName, badgeId, sessionID, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended} = props;
 
   const [profilePic, setProfilePic] = useState('');
 
   useEffect(() => {
     axios.get('')
       .then(response => {
-        setProfilePic(response.data);
+        setProfilePic(response.data.profilePic);
       })
       .catch(error => {
         console.error('Error fetching Supervision data:', error);
@@ -44,7 +44,17 @@ const SOSCard = (props) => {
           </div>
 
           <div className="info-box">
-          Duty End Time : <span>{endTime}</span>
+            Duty End Time : <span>{endTime}</span>
+          </div>
+        </div>
+
+        <div className="ul">
+          <div className="info-box">
+            Check-in Time : <span>{checkIn}</span>
+          </div>
+
+          <div className="info-box">
+            Checkpoint{'('}s{')'} Attendance : <span>{checkPointAttended ? 'Marked' : 'Not Marked'}</span>
           </div>
         </div>
 
