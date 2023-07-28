@@ -72,7 +72,7 @@ min-height: 100vh;
     height: auto !important;
     padding: 20px 50px 10px 50px;
   }
-  
+
   form {
     position: relative;
     z-index: 99999;
@@ -488,7 +488,8 @@ min-height: 100vh;
 }
 
 .updater-notif{
-  width: 7% !important;
+  width: 5% !important;
+  height: auto !important;
 }
 
 .right-right{

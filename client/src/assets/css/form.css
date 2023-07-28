@@ -122,3 +122,12 @@ form{
   .btn-sbmt:hover{
     background-color: rgba(255, 255, 255, 0.4);
   }
+
+  .form-notifs .row{
+   margin: 5px 0;
+  }
+
+  .form-notifs label{
+    float: left;
+    margin-bottom: 5px;
+  }
