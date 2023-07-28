@@ -16,16 +16,17 @@ const Settings = () => {
   const [date, setDate] = useState();
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
-  const [longitude, setLongitude] = useState(11.0176);
-  const [latitude, setLatitude] = useState(76.9674);
+  const [longitude, setLongitude] = useState('');
+  const [latitude, setLatitude] = useState('');
+  const [description, setDescription] = useState('');
 
-  const defaultProps = {
-    center: {
-      lat: 11.0176,
-      lng: 76.9674
-    },
-    zoom: 11
-  };
+  // const defaultProps = {
+  //   center: {
+  //     lat: 11.0176,
+  //     lng: 76.9674
+  //   },
+  //   zoom: 11
+  // };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -51,14 +52,14 @@ const Settings = () => {
   };
 
   return (
-    <div className='home-outer-duty'>
+    <div className='home-outer'>
       <div>
         <NavbarInside />
       </div>
-      <div className='wrapper wrapper22' style={{ marginTop: '450px', zIndex:'0' }}>
+      <div className='wrapper wrapper22 wrapper76 wrapper77' style={{ marginTop: '200px', zIndex:'0' }}>
         <h1 className='heading-settings'>Assign Duty</h1>
           <div className='settings-box'>
-          <div style={{ height: '50vh', width: '100%' }}>
+          {/* <div style={{ height: '50vh', width: '100%' }}>
           <GoogleMapReact
               bootstrapURLKeys={{ key: '' }}
               defaultCenter={defaultProps.center}
@@ -71,12 +72,12 @@ const Settings = () => {
                 style={{color:'red'}}
               />
             </GoogleMapReact>
-            </div>
-            <form>
+            </div> */}
+            <form className='form-duty'>
               <div className='row'>
-              <div className='form-group col-sm-6'>
+              <div className=' col-sm-6'>
                   <label htmlFor='employeeId'>
-                    Employee ID :{' '}
+                    Police Officer ID :{' '}
                   </label>
                   <span>
                     <img className='updater' src={shglogo}></img>
@@ -84,12 +85,12 @@ const Settings = () => {
                   <input
                     type='number'
                     name='employeeId'
-                    placeholder= 'Enter Police Id'
+                    placeholder= 'Enter Police ID'
                     value={employeeId}
                     onChange={(e) => setEmployeeId(e.target.value)}
                   />
                 </div> 
-                <div className='form-group col-sm-6'>
+                <div className=' col-sm-6'>
                   <label htmlFor='commandingOfficerId'>
                     Commanding Officer ID :{' '}
                   </label>
@@ -99,14 +100,14 @@ const Settings = () => {
                   <input
                     type='number'
                     name='commandingOfficerId'
-                    placeholder= 'Enter Commanding Officer Id'
+                    placeholder= 'Enter Commanding Officer ID'
                     value={commandingOfficerId}
                     onChange={(e) => setCommandingOfficerId(e.target.value)}
                   />
                 </div>                
               </div>
               <div className='row'>
-              <div className='form-group col-sm-6'>
+              <div className=' col-sm-6'>
                   <label htmlFor='location'>Location : </label>
                   <span>
                   <img className='updater' src={locationping}></img>
@@ -119,7 +120,7 @@ const Settings = () => {
                     onChange={(e) => setLocation(e.target.value)}
                   />
                 </div>
-                <div className='form-group col-sm-6'>
+                <div className=' col-sm-6'>
                   <label htmlFor='date'>Date : </label>
                   <input
                     type='date'
@@ -131,7 +132,7 @@ const Settings = () => {
                 </div>
                 </div>
               <div className='row'>
-                <div className='form-group col-sm-6'>
+                <div className=' col-sm-6'>
                   <label htmlFor='longitude'>Longitude : </label>
                   <span>
                     <img className='updater' src={earth}></img>
@@ -144,7 +145,7 @@ const Settings = () => {
                     onChange={(e) => setLongitude(e.target.value)}
                   />
                 </div>
-                <div className='form-group col-sm-6'>
+                <div className=' col-sm-6'>
                   <label htmlFor='latitude'>Latitude : </label>
                   <span>
                     <img className='updater' src={earth}></img>
@@ -159,10 +160,10 @@ const Settings = () => {
                 </div>
               </div>
               <div className='row'>
-                <div className='form-group col-sm-6'>
+                <div className=' col-sm-6'>
                   <label htmlFor='startTime'>Duty Start Time : </label>
                   <span>
-                    <img className='updater' src={time}></img>
+                    <img className='updater updater-notif' src={time}></img>
                   </span>
                   <input
                     type='time'
@@ -172,10 +173,10 @@ const Settings = () => {
                     onChange={(e) => setStartTime(e.target.value)}
                   />
                 </div>
-                <div className='form-group col-sm-6'>
+                <div className=' col-sm-6'>
                   <label htmlFor='endTime'>Duty End Time : </label>
                   <span>
-                    <img className='updater' src={time}></img>
+                    <img className='updater updater-notif' src={time}></img>
                   </span>
                   <input
                     type='time'
@@ -185,13 +186,19 @@ const Settings = () => {
                     onChange={(e) => setEndTime(e.target.value)}
                   />
                 </div>
-              </div>    
+              </div>  
+              <div className='row'>
+                <div className='col-sm-12'>
+                <label htmlFor='time'> Description : </label>
+                <textarea value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                </div>
+              </div>  
               <br></br>
               <div className='row'>
                 <center>
                 <input
                   type='submit'
-                  value='Set Duty'
+                  value='Assign Duty'
                   className='btn-sbmt col-sm-6'
                   onClick={onSubmit}
                 /> </center>

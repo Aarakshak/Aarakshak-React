@@ -131,3 +131,12 @@ form{
     float: left;
     margin-bottom: 5px;
   }
+
+  .form-duty .row{
+    margin: 5px 0;
+   }
+ 
+  .form-duty label{
+    float: left;
+    margin-bottom: 5px;
+  }
