@@ -21,14 +21,14 @@ app.use('/v1/admin', adminRoutes);
 
 app.use(notFoundMiddleware)
 
-const port = 3000;
+const port = 5000;
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
   .then(() => {
     console.log('Connected to MongoDB');
-    app.listen(3000, () => {
+    app.listen(5000, () => {
       console.log(`Server started on port: ${port}`);
     });
   })
