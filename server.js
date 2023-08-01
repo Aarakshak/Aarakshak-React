@@ -1,6 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+
+const cors = require('cors');
+
+
 dotenv.config()
 
 const bodyParser = require('body-parser');
@@ -12,6 +16,7 @@ const adminRoutes = require('./routes/adminRoutes')
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
