@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../assets/css/modal.css';
 import '../../assets/css/form.css';
 import Loader from '../../assets/images/Loader123.gif';
@@ -11,6 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const history = useNavigate(); 
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -40,13 +41,15 @@ const Login = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        setError(errorData.message || 'Login failed. Please check your credentials.');
+        setError(errorData.error || 'Login failed. Please check your credentials.');
         return;
       }
 
       const data = await response.json();
-      console.log(data.message)
+      console.log(data.message);
+      console.log(data.adminID);
       setAdminId(data.adminID);
+      history('/dashboard/home'); 
     } catch (error) {
       setError('An error occurred during login. Please try again later.');
       setIsLoading(false);
@@ -77,7 +80,7 @@ const Login = () => {
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
-                type="string"
+                type="password" 
                 name="password"
                 autoComplete="off"
                 required
@@ -85,7 +88,7 @@ const Login = () => {
                 onChange={handlePasswordChange}
               />
             </div>
-            <div className="btn-sbmt-cont"><Link to="/dashboard/home">
+            <div className="btn-sbmt-cont">
               <button type="submit" value="Login" className="btn-sbmt" disabled={isLoading}>
                 {isLoading ? (
                   <>
@@ -94,7 +97,7 @@ const Login = () => {
                 ) : (
                   'Login'
                 )}
-              </button></Link>
+              </button>
             </div>
           </form>
           <p>

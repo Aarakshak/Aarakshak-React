@@ -5,13 +5,12 @@ import shglogo from '../../assets/logos/shg.svg';
 import locationping from '../../assets/logos/locationping.png';
 import earth from '../../assets/logos/earth-globe.png';
 import NavbarInside from './navbar-inside2';
+
 // import GoogleMapReact from 'google-map-react';
 // import LocationOnIcon from '@mui/icons-material/LocationOn';
 import '../../assets/css/home.css';
 
 const Settings = () => {
-  const [employeeId, setEmployeeId] = useState();
-  const [commandingOfficerId, setCommandingOfficerId] = useState();
   const [location, setLocation] = useState('');
   const [date, setDate] = useState();
   const [startTime, setStartTime] = useState('');
@@ -32,8 +31,6 @@ const Settings = () => {
     e.preventDefault();
 
     const data = {
-      employeeId: employeeId,
-      commandingOfficerId: commandingOfficerId,
       location: location,
       date: date,
       startTime: startTime,
@@ -74,38 +71,6 @@ const Settings = () => {
             </GoogleMapReact>
             </div> */}
             <form className='form-duty'>
-              <div className='row'>
-              <div className=' col-sm-6'>
-                  <label htmlFor='employeeId'>
-                    Police Officer ID :{' '}
-                  </label>
-                  <span>
-                    <img className='updater' src={shglogo}></img>
-                  </span>
-                  <input
-                    type='number'
-                    name='employeeId'
-                    placeholder= 'Enter Police ID'
-                    value={employeeId}
-                    onChange={(e) => setEmployeeId(e.target.value)}
-                  />
-                </div> 
-                <div className=' col-sm-6'>
-                  <label htmlFor='commandingOfficerId'>
-                    Commanding Officer ID :{' '}
-                  </label>
-                  <span>
-                    <img className='updater' src={shglogo}></img>
-                  </span>
-                  <input
-                    type='number'
-                    name='commandingOfficerId'
-                    placeholder= 'Enter Commanding Officer ID'
-                    value={commandingOfficerId}
-                    onChange={(e) => setCommandingOfficerId(e.target.value)}
-                  />
-                </div>                
-              </div>
               <div className='row'>
               <div className=' col-sm-6'>
                   <label htmlFor='location'>Location : </label>
