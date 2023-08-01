@@ -1,32 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import avatar from '../../assets/logos/shg.svg';
 import avatarid from '../../assets/logos/id.png';
 import timer from '../../assets/logos/time.png';
 import NavbarInside from './navbar-inside2';
 import '../../assets/css/home.css';
+import AdminIdContext from "../context/adminContext";
 
 const WorkNotifs = () => {
+  const { adminId } = useContext(AdminIdContext);
+
   const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
   const [description, setDescription] = useState('');
-  const [choiceValue, setChoiceValue] = useState('');
-  const [uniqueId, setUniqueId] = useState('');
-  const [choiceValue2, setChoiceValue2] = useState('');
+  const [choiceValue, setChoiceValue] = useState('Meeting');
+  const [uniqueId, setUniqueId] = useState();
   
   const onSubmit = (e) => {
     e.preventDefault();
 
     const data = {
+      badgeID: parseInt(uniqueId),
       title: title,
-      date: date,
-      time: time,
-      description: description,
-      choiceValue: choiceValue,
+      message: description,
+      type: choiceValue,
     };
-
-    axios.post('', data)
+    console.log(data)
+    const url = `http://localhost:8000/v1/admin/notif/${adminId}`;
+    
+    axios.post(url, data)
       .then((response) => {
         console.log('Data sent successfully:', response.data);
       })
@@ -53,7 +54,7 @@ const WorkNotifs = () => {
                     <img alt='' className='updater updater-notif' src={avatar}></img>
                   </span>
                   <input
-                    type='number'
+                    type='string'
                     name='title'
                     placeholder= 'Enter Title for Notification'
                     value={title}
@@ -63,24 +64,17 @@ const WorkNotifs = () => {
                 <div className='col-sm-6'>
                   <label htmlFor='location'>Type : </label>
                     <select value={choiceValue} onChange={(e) => setChoiceValue(e.target.value)}>
-                        <option onClick={() => setChoiceValue("1")}> Meeting </option>
-                        <option onClick={() => setChoiceValue("2")}> Duty </option>
-                        <option onClick={() => setChoiceValue("3")}> Local Events </option>
-                        <option onClick={() => setChoiceValue("4")}> Emergency </option>
-                        <option onClick={() => setChoiceValue("5")}> Others </option>
+                        <option onClick={() => setChoiceValue('Meeting')}> Meeting </option>
+                        <option onClick={() => setChoiceValue('Duty')}> Duty </option>
+                        <option onClick={() => setChoiceValue('Local Events')}> Local Events </option>
+                        <option onClick={() => setChoiceValue('Emergency')}> Emergency </option>
+                        <option onClick={() => setChoiceValue('Others')}> Others </option>
                     </select>
                 </div>
               </div>
 
               <div className='row'>
-              <div className='col-sm-6'>
-                  <label htmlFor='location'>Post to : </label>
-                    <select value={choiceValue2} onChange={(e) => setChoiceValue2(e.target.value)}>
-                        <option onClick={() => setChoiceValue2("1")}> Police Officer </option>
-                        <option onClick={() => setChoiceValue2("2")}> Police Station </option>
-                    </select>
-                </div>
-                <div className='col-sm-6'>
+                <div className='col-sm-12'>
                     <label htmlFor='title'>
                       Unique ID :{' '}
                     </label>
@@ -96,32 +90,6 @@ const WorkNotifs = () => {
                     />
                   </div>                
               </div>
-
-              <div className='row'>
-                <div className='col-sm-6'>
-                  <label htmlFor='date'> Date of Event : </label>
-                  <input
-                    type='date'
-                    name='date'
-                    placeholder='Enter Date of Event'
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                  />
-                </div>
-                <div className='col-sm-6'>
-                  <label htmlFor='time'> Time of Event : </label>
-                  <span>
-                      <img alt='' className='updater updater-notif' src={timer}></img>
-                  </span>
-                  <input
-                    type='time'
-                    name='time'
-                    placeholder='Enter Time of Event'
-                    value={time}
-                    onChange={(e) => setTime(e.target.value)}
-                  />
-                </div>
-              </div>    
               <div className='row'>
                 <div className='col-sm-12'>
                 <label htmlFor='time'> Description : </label>
