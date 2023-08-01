@@ -325,10 +325,9 @@ async function generateNewNotificationId(badgeID) {
   }
 }
 
-exports.addUserNotificationByAdmin = async (req, res) => {
+exports.addUserNotification = async (req, res) => {
   try {
-    const { adminId,badgeID } = req.params;
-    const { title, type, message } = req.body;
+    const { badgeID, title, type, message } = req.body;
 
     if (badgeID >= 20000 && badgeID <= 30000) {
       // Send notifications to all users with the given policeStationId (badgeID)
@@ -352,7 +351,6 @@ exports.addUserNotificationByAdmin = async (req, res) => {
         await user.save();
       }
     } else if (badgeID >= 1 && badgeID <= 1000) {
-    
       const user = await User.findOne({ badgeID: badgeID });
 
       if (!user) {
@@ -371,7 +369,7 @@ exports.addUserNotificationByAdmin = async (req, res) => {
       };
       user.notifications.push(notification);
       await user.save();
-    }else {
+    } else {
       return res.status(400).json({ error: 'Invalid badgeID. The badgeID must be between 1 to 1000 or 20000 to 30000' });
     }
 
@@ -381,6 +379,7 @@ exports.addUserNotificationByAdmin = async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 };
+
 
 exports.getUpcomingSessionsForSurviellance = async(req, res) => {
   try {
