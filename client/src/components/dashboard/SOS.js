@@ -3,12 +3,15 @@ import axios from 'axios';
 import "../../assets/css/sos.css";
 import NavbarInside from './navbar-inside2';
 import SOSCard from "./SOS-card";
+import AdminIdContext from "../context/adminContext";
 
 const SOS = () => {
+  const { adminId } = useContext(AdminIdContext);
   const [sosData, setSOSData] = useState([]);
-
+  const url = `http://localhost:8000/v1/admin/add-session/${adminId}`;
+  
   useEffect(() => {
-    axios.get('')
+    axios.get(url)
       .then(response => {
         setSOSData(response.data);
       })
@@ -27,12 +30,12 @@ const SOS = () => {
         {sosData.map((sosItem, index) => (
           <SOSCard
             key={index}
-            policeName={sosItem.policeName}
-            badgeId={sosItem.badgeId}
-            time={sosItem.time}
+            policeName={sosItem.firstName} //
+            badgeId={sosItem.badgeId} //
+            time={sosItem.raised} //
             location={sosItem.location}
-            description={sosItem.description}
-            respond={sosItem.respond}
+            description={sosItem.issueText} //
+            respond={sosItem.resolved} //
           />
         ))}
       </div>
