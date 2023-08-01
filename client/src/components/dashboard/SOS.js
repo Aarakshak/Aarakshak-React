@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import "../../assets/css/sos.css";
 import NavbarInside from './navbar-inside2';
@@ -8,12 +8,12 @@ import AdminIdContext from "../context/adminContext";
 const SOS = () => {
   const { adminId } = useContext(AdminIdContext);
   const [sosData, setSOSData] = useState([]);
-  const url = `http://localhost:8000/v1/admin/add-session/${adminId}`;
+  const url = `http://localhost:8000/v1/admin/sos/${adminId}`;
   
   useEffect(() => {
     axios.get(url)
-      .then(response => {
-        setSOSData(response.data);
+      .then(res => {
+        setSOSData(res.data);
       })
       .catch(error => {
         console.error('Error fetching SOS data:', error);
@@ -30,12 +30,12 @@ const SOS = () => {
         {sosData.map((sosItem, index) => (
           <SOSCard
             key={index}
-            policeName={sosItem.firstName} //
-            badgeId={sosItem.badgeId} //
-            time={sosItem.raised} //
-            location={sosItem.location}
-            description={sosItem.issueText} //
-            respond={sosItem.resolved} //
+            policeName={sosItem.badgeID === 12345 ? "Anonymous" : sosItem.issue.firstName} 
+            badgeId={sosItem.issue.badgeID} 
+            time={new Date(sosItem.issue.raised).toLocaleDateString()} 
+            location={sosItem.issue.location} 
+            description={sosItem.issue.issueText} 
+            respond={sosItem.issue.resolved} 
           />
         ))}
       </div>
