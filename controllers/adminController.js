@@ -55,15 +55,15 @@ exports.loginUser = async (req, res) => {
       if (password !== admin.password) {
         return res.status(401).json({ error: 'Invalid credentials' });
       }
-        const newOTP = generateOTP();
-        admin.otp = newOTP;
-        admin.otpExpiration = Date.now() + 5 * 60 * 1000;
+        // const newOTP = generateOTP();
+        // admin.otp = newOTP;
+        // admin.otpExpiration = Date.now() + 5 * 60 * 1000;
   
-        await sendOTPByEmail(emailId, newOTP);
+        // await sendOTPByEmail(emailId, newOTP);
       
         admin = await admin.save();
   
-      res.json({ message: 'OTP sent successfully', adminID: admin.adminId });
+      res.json({ message: 'Login successfull', adminID: admin.adminId });
     }catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Server error' });
