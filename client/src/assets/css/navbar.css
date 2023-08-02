@@ -212,7 +212,7 @@ html body {
   .welcomerr{
     text-align: left;
     position: relative;
-    left: -235px;
+    left: -100px;
   }
 
   .nav-inside .nav-title p{
@@ -220,6 +220,8 @@ html body {
     text-transform: uppercase;
     font-size: 2em;
     font-family: 'Dela Gothic One', cursive;
+    position: relative;
+    left: 45px;
   }
 
   .nav-inside > .nav-links > a {

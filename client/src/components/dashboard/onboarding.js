@@ -19,16 +19,12 @@ const Onboarding = () => {
   const [badgeID, setBadgeID] = useState(); 
   const [firstName, setFirstName] = useState(''); 
   const [surname, setSurname] = useState(''); 
-  const [password, setPassword] = useState('');
   const [rank, setRank] = useState(''); 
   const [profilePic, setProfilePic] = useState(''); 
-  const [location, setLocation] = useState(''); 
-  const [zone, setZone] = useState(''); 
-  const [subdivision, setSubdivision] = useState(''); 
-  const [psID, setPsID] = useState(); 
+  const [policeStationId, setPoliceStationId] = useState(); 
   const [phoneNo, setPhoneNo] = useState(); 
   const [email, setEmail] = useState(''); 
-  const [gender, setGender] = useState(''); 
+  const [gender, setGender] = useState('Male'); 
 
   function convertToBase64(e) {
     console.log(e);
@@ -50,13 +46,9 @@ const Onboarding = () => {
       badgeID: parseInt(badgeID),
       firstName: firstName,
       surname: surname,
-      password: password,
       rank: rank,
       profilePic: profilePic,
-      location:location,
-      zone: zone,
-      sub_division:subdivision,
-      police_station:parseInt(psID),
+      policeStationId:parseInt(policeStationId),
       phoneNo: phoneNo,
       emailId: email,
       gender: gender
@@ -77,12 +69,12 @@ const Onboarding = () => {
       <div>
         <NavbarInside />
       </div>
-      <div className='wrapper wrapper22 wrapper76' style={{ marginTop: '400px' }}>
+      <div className='wrapper wrapper22 wrapper76' style={{ marginTop: '200px' }}>
         <h1 className='heading-settings'>Police Officer Onboarding</h1>
           <div className='settings-box'>
-            <form>
+            <form className='form-notifs'>
               <div className='row'>
-              <div className='form-group col-sm-6'>
+              <div className='col-sm-6'>
                   <label htmlFor='badgeID'>
                     Badge ID :{' '}
                   </label>
@@ -97,7 +89,7 @@ const Onboarding = () => {
                     onChange={(e) => setBadgeID(e.target.value)}
                   />
                 </div>                
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='rank'> Rank : </label>
                   <span>
                   <img className='updater' src={ranker}></img>
@@ -112,7 +104,7 @@ const Onboarding = () => {
                 </div>
               </div>
               <div className='row'>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='firstName'> First Name : </label>
                   <span>
                     <img className='updater' src={avatar}></img>
@@ -125,7 +117,7 @@ const Onboarding = () => {
                     onChange={(e) => setFirstName(e.target.value)}
                   />
                 </div>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='surname'> Last Name : </label>
                   <span>
                     <img className='updater' src={avatar}></img>
@@ -140,7 +132,15 @@ const Onboarding = () => {
                 </div>
               </div>
               <div className='row'>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-4'>
+                  <label htmlFor='location'> Gender : </label>
+                    <select value={gender} onChange={(e) => setGender(e.target.value)}>
+                        <option onClick={() => setGender('Meeting')}> Male </option>
+                        <option onClick={() => setGender('Duty')}> Female </option>
+                        <option onClick={() => setGender('Local Events')}> Others </option>
+                    </select>
+                  </div>
+                <div className='col-sm-4'>
                   <label htmlFor='email'> Email : </label>
                   <span>
                     <img className='updater' src={emaillogo}></img>
@@ -153,7 +153,7 @@ const Onboarding = () => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-4'>
                   <label htmlFor='phoneNo'> Phone No : </label>
                   <span>
                     <img className='updater' src={phonelogo}></img>
@@ -166,65 +166,9 @@ const Onboarding = () => {
                     onChange={(e) => setPhoneNo(e.target.value)}
                   />
                 </div>
-              </div>
+              </div>       
               <div className='row'>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='zone'> Zone : </label>
-                  <span>
-                    <img className='updater' src={locationping}></img>
-                  </span>
-                  <input
-                    type='string'
-                    name='zone'
-                    placeholder='Enter zone'
-                    value={zone}
-                    onChange={(e) => setZone(e.target.value)}
-                  />
-                </div>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='location'> Location : </label>
-                  <span>
-                    <img className='updater' src={locationping}></img>
-                  </span>
-                  <input
-                    type='string'
-                    name='location'
-                    placeholder='Enter Location'
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                  />
-                </div>
-              </div>  
-              <div className='row'>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='gender'> Gender : </label>
-                  <span>
-                    <img className='updater' src={genderlogo}></img>
-                  </span>
-                  <input
-                    type='string'
-                    name='gender'
-                    placeholder='Enter gender'
-                    value={gender}
-                    onChange={(e) => setGender(e.target.value)}
-                  />
-                </div>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='location'> Sub Division : </label>
-                  <span>
-                    <img className='updater' src={locationping}></img>
-                  </span>
-                  <input
-                    type='string'
-                    name='sub_division'
-                    placeholder='Enter Subdivision'
-                    value={subdivision}
-                    onChange={(e) => setSubdivision(e.target.value)}
-                  />
-                </div>
-              </div>      
-              <div className='row'>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='photo'> Officer Photograph : </label>
                   <span>
                     <img className='updater updater1' src={photo}></img>
@@ -240,32 +184,17 @@ const Onboarding = () => {
                   </div>
                  
                 </div>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='psID'> Police Station Unique ID : </label>
                   <span>
                     <img className='updater' src={id}></img>
                   </span>
                   <input
                     type='number'
-                    name='psID'
+                    name='policeStationId'
                     placeholder='Enter Police Station ID'
-                    value={psID}
-                    onChange={(e) => setPsID(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className='row'>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='password'> Password : </label>
-                  <span>
-                    <img className='updater' src={passwordlogo}></img>
-                  </span>
-                  <input
-                    type='string'
-                    name='psID'
-                    placeholder='Enter Password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={policeStationId}
+                    onChange={(e) => setPoliceStationId(e.target.value)}
                   />
                 </div>
               </div>

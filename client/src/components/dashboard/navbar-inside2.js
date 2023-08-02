@@ -1,10 +1,13 @@
 import '../../assets/css/navbar.css';
-import React, { useContext, useEffect } from 'react';
+import AdminIdContext from "../context/adminContext";
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../../assets/css/modal.css';
 import avatar from '../../assets/logos/girlava.png';
 
 const NavbarInside = () => {
+
+  const { adminId } = useContext(AdminIdContext);
 
   return (
     <>
@@ -19,8 +22,7 @@ const NavbarInside = () => {
               <span className=''>
                   <span className='welcomerr'>WELCOME</span>
                   <p>
-                    Super Admin
-                    {/* {user && user.name} */}
+                    {adminId}
                   </p>
                 </span>
               </div>
