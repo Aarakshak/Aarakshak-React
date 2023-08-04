@@ -47,14 +47,13 @@ const Onboarding = () => {
       firstName: firstName,
       surname: surname,
       rank: rank,
-      profilePic: profilePic,
       policeStationId:parseInt(policeStationId),
       phoneNo: phoneNo,
       emailId: email,
       gender: gender
     };
     console.log(data)
-    const url = `http://localhost:8000/v1/admin/add-user/${adminId}`;
+    const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-user/${adminId}`;
     axios.post(url, data)
       .then((response) => {
         console.log('Data sent successfully:', response.data);

@@ -18,7 +18,7 @@ const SupervisionCard = (props) => {
             <h2 className="police-name">{policeName}</h2>
             <h6>{badgeId}</h6>
           </div>
-          <img src={police} alt="Police Profile" />
+          <img src={police} alt="Police Profile" className='card-img-sos' />
         </div>
         <div className="ul">
           <div className="info-box">
@@ -33,7 +33,7 @@ const SupervisionCard = (props) => {
           {description}
         </p>
         <button
-          className="btn"
+          className="btn-sos"
           style={{
             backgroundColor: isResponded ? 'green' : '#9a69c2',
             color: isResponded ? 'white' : 'black',

@@ -22,7 +22,7 @@ const NavbarInside = () => {
               <span className=''>
                   <span className='welcomerr'>WELCOME</span>
                   <p>
-                    {adminId}
+                    ADMIN {adminId}
                   </p>
                 </span>
               </div>

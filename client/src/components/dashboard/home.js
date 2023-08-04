@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import '../../assets/css/home.css';
 import NavbarInside from './navbar-inside.js';
 import photo1 from '../../assets/images/police-writing.jpg';
@@ -30,7 +30,7 @@ const Home = () => {
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
-                        <img src={photo1} className='box-inner-img'></img>
+                        <img alt='' src={photo1} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
                       The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
@@ -49,7 +49,7 @@ const Home = () => {
                   </div>
                   <div className='row'>
                     <div className='box-inner-left col-sm-4'>
-                      <img src={photo2} className='box-inner-img'></img>
+                      <img alt='' src={photo2} className='box-inner-img'></img>
                     </div>
                     <div className='box-inner-right bxr6 col-sm-8'>
                     The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
@@ -61,13 +61,13 @@ const Home = () => {
 
               <div className='home-box col-sm-4'>
                   <center>
-                    <Link to='/dashboard/supervision'>
+                    <Link to='/dashboard/assign-duty'>
                     <div className='home-box-heading'>
                     <i class="fa-solid fa-circle-check"></i> Assign Duty
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
-                        <img src={photo4} className='box-inner-img'></img>
+                        <img src={photo4} className='box-inner-img' alt=''></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
                       The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
@@ -93,7 +93,7 @@ const Home = () => {
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
-                        <img src={photo4} className='box-inner-img'></img>
+                        <img alt='' src={photo4} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
                       The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
@@ -111,7 +111,7 @@ const Home = () => {
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
-                        <img src={photo3} className='box-inner-img'></img>
+                        <img alt='' src={photo3} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
                       The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
@@ -130,7 +130,7 @@ const Home = () => {
                 </div>
                 <div className='row'>
                     <div className='box-inner-left col-sm-4'>
-                      <img src={customerimg} className='box-inner-img'></img>
+                      <img alt='' src={customerimg} className='box-inner-img'></img>
                     </div>
                     <div className='box-inner-right bxr5 col-sm-8'>
                     This tab is available for administrators to see the emergency SOS raised by Police officers within past 24 hours

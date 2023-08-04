@@ -27,7 +27,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const apiUrl = 'http://localhost:8000/v1/admin/login';
+      const apiUrl = 'https://violet-kitten-toga.cyclic.cloud/v1/admin/login';
 
       const response = await fetch(apiUrl, {
         method: 'POST',

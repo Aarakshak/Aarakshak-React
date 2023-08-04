@@ -26,7 +26,7 @@ const WorkNotifs = () => {
       type: choiceValue,
     };
     console.log(data)
-    const url = `http://localhost:8000/v1/admin/notif/${adminId}`;
+    const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/notif/${adminId}`;
     
     axios.post(url, data)
       .then((response) => {

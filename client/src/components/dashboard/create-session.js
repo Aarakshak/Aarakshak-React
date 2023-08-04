@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import time from "../../assets/logos/time.png";
-import shglogo from "../../assets/logos/shg.svg";
 import locationping from "../../assets/logos/locationping.png";
 import earth from "../../assets/logos/earth-globe.png";
 import NavbarInside from "./navbar-inside2";
@@ -29,7 +28,7 @@ const Settings = () => {
   //   zoom: 11
   // };
 
-  const url = `http://localhost:8000/v1/admin/add-session/${adminId}`;
+  const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-session/${adminId}`;
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -62,7 +61,7 @@ const Settings = () => {
         <NavbarInside />
       </div>
       <div
-        className="wrapper wrapper22 wrapper76 wrapper77"
+        className="wrapper wrapper22 wrapper76"
         style={{ marginTop: "200px", zIndex: "0" }}
       >
         <h1 className="heading-settings">Create Session</h1>
@@ -86,7 +85,7 @@ const Settings = () => {
               <div className=" col-sm-6">
                 <label htmlFor="location">Location : </label>
                 <span>
-                  <img className="updater" src={locationping}></img>
+                  <img alt='' className="updater" src={locationping}></img>
                 </span>
                 <input
                   type="text"
@@ -111,7 +110,7 @@ const Settings = () => {
               <div className=" col-sm-6">
                 <label htmlFor="longitude">Longitude : </label>
                 <span>
-                  <img className="updater" src={earth}></img>
+                  <img alt='' className="updater" src={earth}></img>
                 </span>
                 <input
                   type="number"
@@ -124,7 +123,7 @@ const Settings = () => {
               <div className=" col-sm-6">
                 <label htmlFor="latitude">Latitude : </label>
                 <span>
-                  <img className="updater" src={earth}></img>
+                  <img alt='' className="updater" src={earth}></img>
                 </span>
                 <input
                   type="number"
@@ -139,7 +138,7 @@ const Settings = () => {
               <div className=" col-sm-6">
                 <label htmlFor="startTime">Duty Start Time : </label>
                 <span>
-                  <img className="updater updater-notif" src={time}></img>
+                  <img alt='' className="updater updater-notif" src={time}></img>
                 </span>
                 <input
                   type="time"
@@ -152,7 +151,7 @@ const Settings = () => {
               <div className=" col-sm-6">
                 <label htmlFor="endTime">Duty End Time : </label>
                 <span>
-                  <img className="updater updater-notif" src={time}></img>
+                  <img alt='' className="updater updater-notif" src={time}></img>
                 </span>
                 <input
                   type="time"
@@ -177,7 +176,7 @@ const Settings = () => {
               <center>
                 <input
                   type="submit"
-                  value="Assign Duty"
+                  value="Create Session"
                   className="btn-sbmt col-sm-6"
                   onClick={onSubmit}
                 />{" "}
