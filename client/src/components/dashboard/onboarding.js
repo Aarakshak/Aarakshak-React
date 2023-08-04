@@ -1,20 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import id from '../../assets/logos/id.png';
-import time from '../../assets/logos/time.png';
 import avatar from '../../assets/logos/shg.svg';
 import ranker from '../../assets/logos/rank.png';
 import photo from '../../assets/logos/photo1.png';
+import locationping from "../../assets/logos/locationping.png";
+import genderlogo from "../../assets/logos/genderlogo.png";
+import emaillogo from "../../assets/logos/emailogo.png";
+import passwordlogo from "../../assets/logos/passwordlogo.png";
+import phonelogo from "../../assets/logos/phonelogo.png";
+
 import NavbarInside from './navbar-inside2';
+import AdminIdContext from "../context/adminContext";
 import '../../assets/css/home.css';
 
 const Onboarding = () => {
-  const [badgeID, setBadgeID] = useState();
-  const [rank, setRank] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [profilePic, setProfilePic] = useState("");
-  const [psID, setPsID] = useState();
+  const { adminId } = useContext(AdminIdContext);
+  const [badgeID, setBadgeID] = useState(); 
+  const [firstName, setFirstName] = useState(''); 
+  const [surname, setSurname] = useState(''); 
+  const [rank, setRank] = useState(''); 
+  const [profilePic, setProfilePic] = useState(''); 
+  const [policeStationId, setPoliceStationId] = useState(); 
+  const [phoneNo, setPhoneNo] = useState(); 
+  const [email, setEmail] = useState(''); 
+  const [gender, setGender] = useState('Male'); 
 
   function convertToBase64(e) {
     console.log(e);
@@ -27,22 +37,24 @@ const Onboarding = () => {
     reader.onerror = error =>{
         console.log("Error: ",error);
     };
-
   }
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     const data = {
-      badgeID: badgeID,
-      rank: rank,
+      badgeID: parseInt(badgeID),
       firstName: firstName,
       surname: surname,
-      profilePic: profilePic,
-      psID: psID,
+      rank: rank,
+      policeStationId:parseInt(policeStationId),
+      phoneNo: phoneNo,
+      emailId: email,
+      gender: gender
     };
-
-    axios.post('', data)
+    console.log(data)
+    const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-user/${adminId}`;
+    axios.post(url, data)
       .then((response) => {
         console.log('Data sent successfully:', response.data);
       })
@@ -59,11 +71,11 @@ const Onboarding = () => {
       <div className='wrapper wrapper22 wrapper76' style={{ marginTop: '200px' }}>
         <h1 className='heading-settings'>Police Officer Onboarding</h1>
           <div className='settings-box'>
-            <form>
+            <form className='form-notifs'>
               <div className='row'>
-              <div className='form-group col-sm-6'>
+              <div className='col-sm-6'>
                   <label htmlFor='badgeID'>
-                    Police ID :{' '}
+                    Badge ID :{' '}
                   </label>
                   <span>
                     <img className='updater' src={id}></img>
@@ -71,18 +83,18 @@ const Onboarding = () => {
                   <input
                     type='number'
                     name='badgeID'
-                    placeholder= 'Enter Police ID'
+                    placeholder= 'Enter Badge ID'
                     value={badgeID}
                     onChange={(e) => setBadgeID(e.target.value)}
                   />
                 </div>                
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='rank'> Rank : </label>
                   <span>
                   <img className='updater' src={ranker}></img>
                   </span>
                   <input
-                    type='text'
+                    type='string'
                     name='rank'
                     placeholder= 'Enter Rank of Officer'
                     value={rank}
@@ -91,35 +103,71 @@ const Onboarding = () => {
                 </div>
               </div>
               <div className='row'>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='firstName'> First Name : </label>
                   <span>
                     <img className='updater' src={avatar}></img>
                   </span>
                   <input
-                    type='text'
+                    type='string'
                     name='firstName'
                     placeholder='Enter First Name'
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                   />
                 </div>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='surname'> Last Name : </label>
                   <span>
                     <img className='updater' src={avatar}></img>
                   </span>
                   <input
-                    type='text'
+                    type='string'
                     name='endTime'
                     placeholder='Enter Last Name'
                     value={surname}
                     onChange={(e) => setSurname(e.target.value)}
                   />
                 </div>
-              </div>    
+              </div>
               <div className='row'>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-4'>
+                  <label htmlFor='location'> Gender : </label>
+                    <select value={gender} onChange={(e) => setGender(e.target.value)}>
+                        <option onClick={() => setGender('Meeting')}> Male </option>
+                        <option onClick={() => setGender('Duty')}> Female </option>
+                        <option onClick={() => setGender('Local Events')}> Others </option>
+                    </select>
+                  </div>
+                <div className='col-sm-4'>
+                  <label htmlFor='email'> Email : </label>
+                  <span>
+                    <img className='updater' src={emaillogo}></img>
+                  </span>
+                  <input
+                    type='email'
+                    name='email'
+                    placeholder='Enter email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className='col-sm-4'>
+                  <label htmlFor='phoneNo'> Phone No : </label>
+                  <span>
+                    <img className='updater' src={phonelogo}></img>
+                  </span>
+                  <input
+                    type='string'
+                    name='PhoneNo'
+                    placeholder='Enter Phone No'
+                    value={phoneNo}
+                    onChange={(e) => setPhoneNo(e.target.value)}
+                  />
+                </div>
+              </div>       
+              <div className='row'>
+                <div className='col-sm-6'>
                   <label htmlFor='photo'> Officer Photograph : </label>
                   <span>
                     <img className='updater updater1' src={photo}></img>
@@ -135,21 +183,20 @@ const Onboarding = () => {
                   </div>
                  
                 </div>
-                <div className='form-group col-sm-6'>
+                <div className='col-sm-6'>
                   <label htmlFor='psID'> Police Station Unique ID : </label>
                   <span>
                     <img className='updater' src={id}></img>
                   </span>
                   <input
                     type='number'
-                    name='psID'
+                    name='policeStationId'
                     placeholder='Enter Police Station ID'
-                    value={psID}
-                    onChange={(e) => setPsID(e.target.value)}
+                    value={policeStationId}
+                    onChange={(e) => setPoliceStationId(e.target.value)}
                   />
                 </div>
               </div>
-        
               <br></br>
               <div className='row'>
                 <center>

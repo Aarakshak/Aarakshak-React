@@ -6,7 +6,6 @@ import Testimonials from "./testimonials";
 import ContactUs from "./contactus";
 
 const MainHomepage = () => {
-  let URL = 'http://localhost:3000';
   return (
     <>
         <NavbarMain />

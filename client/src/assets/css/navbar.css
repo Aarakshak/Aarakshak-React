@@ -158,6 +158,7 @@ html body {
     border-radius: 0 0 25% 25%;
     padding: 10px !important;
     padding-top: 15px !important;
+    z-index: 99999;
   }
 
   .nav-inside > .nav-btn {
@@ -210,9 +211,9 @@ html body {
   }
 
   .welcomerr{
-    text-align: left;
+    float: left;
     position: relative;
-    left: -235px;
+    left: 20px;
   }
 
   .nav-inside .nav-title p{
@@ -220,6 +221,10 @@ html body {
     text-transform: uppercase;
     font-size: 2em;
     font-family: 'Dela Gothic One', cursive;
+    float: left;
+    position: relative;
+    left: -100px;
+    top: 20px;
   }
 
   .nav-inside > .nav-links > a {

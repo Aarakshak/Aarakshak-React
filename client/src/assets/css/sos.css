@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 .home-outer-sos {
   background: url('../images/dash-bg.png');
   background-repeat: no-repeat;
@@ -13,6 +15,7 @@
 .sos-heading {
   margin-top: 200px;
   color: white;
+  margin-bottom: 50px;
 }
 
 .sos-card-head{
@@ -30,6 +33,7 @@
 .card {
   width: 20vw;
   height: 40vh;
+  z-index: 10;
 }
 
 .police-name{
@@ -57,9 +61,9 @@
 
 .info-box span {
   display: block;
-  font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   padding-top: 4px;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .card,
@@ -69,6 +73,7 @@
   margin-bottom: 30px;
   height: 52vh;
   width: 20vw;
+  border-radius: 20px;
 }
 
 .card:hover {
@@ -79,6 +84,7 @@
 
 .card-text{
   text-align: justify;
+  padding: 10px 0;
 }
 
 .card-body {
@@ -88,20 +94,23 @@
   height: 100%;
 }
 
-.btn {
+.btn-sos {
   background: #9a69c2;
   color: #fff;
   width: 100%;
-  font-weight: 700;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
   font-size: 14px;
-  align-self: flex-end; /* Align the button to the bottom */
-  margin-bottom: 1rem; /* Add some spacing at the bottom */
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 5px 0;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif !important;
 }
 .card-header img{
   height: 12vh;
-  width: 7vw;
+  width: 6.5vw;
   border-radius: 50%;
+  border: 2px solid #9a69c2;
 }
 
 .card-header{

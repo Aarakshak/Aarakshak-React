@@ -8,7 +8,7 @@ import AdminIdContext from "../context/adminContext";
 const SOS = () => {
   const { adminId } = useContext(AdminIdContext);
   const [sosData, setSOSData] = useState([]);
-  const url = `http://localhost:8000/v1/admin/sos/${adminId}`;
+  const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/sos/${adminId}`;
   
   useEffect(() => {
     axios.get(url)

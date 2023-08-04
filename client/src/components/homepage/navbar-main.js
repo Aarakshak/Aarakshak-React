@@ -1,9 +1,5 @@
 import '../../assets/css/navbar.css';
-import LogoMain from '../../assets/logos/logo-main.png';
-import { Link } from 'react-router-dom';
-// import '../../assets/css/modal.css';
 import Login from '../auth/login.js';
-// import Register from '../auth/Register';
 
 const NavbarMain = () => {
   let URL = 'http://localhost:3000';

@@ -13,6 +13,7 @@ const WorkNotifs = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [choiceValue, setChoiceValue] = useState('Meeting');
+  const [postValue, setPostValue] = useState('Police Officer');
   const [uniqueId, setUniqueId] = useState();
   
   const onSubmit = (e) => {
@@ -25,7 +26,7 @@ const WorkNotifs = () => {
       type: choiceValue,
     };
     console.log(data)
-    const url = `http://localhost:8000/v1/admin/notif/${adminId}`;
+    const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/notif/${adminId}`;
     
     axios.post(url, data)
       .then((response) => {
@@ -41,7 +42,7 @@ const WorkNotifs = () => {
       <div>
         <NavbarInside />
       </div>
-      <div className='wrapper wrapper22 wrapper76 wrapper77' style={{ marginTop: '200px' }}>
+      <div className='wrapper wrapper22 wrapper76' style={{ marginTop: '200px' }}>
         <h1 className='heading-settings'>Post Work Notifications</h1>
           <div className='settings-box'>
             <form className='form-notifs'> 
@@ -74,7 +75,14 @@ const WorkNotifs = () => {
               </div>
 
               <div className='row'>
-                <div className='col-sm-12'>
+              <div className='col-sm-6'>
+                  <label htmlFor='location'>Post To : </label>
+                    <select value={postValue} onChange={(e) => setPostValue(e.target.value)}>
+                        <option onClick={() => setPostValue('Police Officer')}> Police Officer </option>
+                        <option onClick={() => setPostValue('Police Station')}> Police Station </option>
+                    </select>
+                </div>
+                <div className='col-sm-6'>
                     <label htmlFor='title'>
                       Unique ID :{' '}
                     </label>

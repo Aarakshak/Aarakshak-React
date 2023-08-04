@@ -137,6 +137,6 @@ form{
    }
  
   .form-duty label{
-    float: left;
+    float: left !important;
     margin-bottom: 5px;
   }

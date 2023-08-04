@@ -72,13 +72,7 @@ min-height: 100vh;
     height: auto !important;
     padding: 20px 50px 10px 50px;
   }
-
-  .wrapper77{
-    overflow-y: scroll !important;
-    max-height: 580px !important;
-    padding: 20px 50px 10px 50px;
-  }
-
+  
   form {
     position: relative;
     z-index: 99999;
