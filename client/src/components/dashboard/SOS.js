@@ -14,6 +14,7 @@ const SOS = () => {
     axios.get(url)
       .then(res => {
         setSOSData(res.data);
+        console.log(res.data.pertaining)
       })
       .catch(error => {
         console.error('Error fetching SOS data:', error);
@@ -28,11 +29,16 @@ const SOS = () => {
       <center><h1 className="sos-heading">SOS Received</h1></center>
       <div className="cards">
         {sosData.map((sosItem, index) => (
+          sosItem.issue.resolved ? <></> :
           <SOSCard
             key={index}
-            policeName={sosItem.badgeID === 12345 ? "Anonymous" : sosItem.issue.firstName} 
-            badgeId={sosItem.issue.badgeID} 
-            time={new Date(sosItem.issue.raised).toLocaleDateString()} 
+            policeName={sosItem.issue.firstName?sosItem.issue.firstName:'John'}
+            issueID={sosItem.issue.issueID}
+            badgeID={sosItem.issue.badgeID} 
+            time={new Date(sosItem.issue.raised).toLocaleTimeString([], {
+              hour: '2-digit',
+              minute: '2-digit',
+            })} 
             location={sosItem.issue.location} 
             description={sosItem.issue.issueText} 
             respond={sosItem.issue.resolved} 

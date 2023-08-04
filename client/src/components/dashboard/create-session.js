@@ -4,15 +4,12 @@ import time from "../../assets/logos/time.png";
 import locationping from "../../assets/logos/locationping.png";
 import earth from "../../assets/logos/earth-globe.png";
 import NavbarInside from "./navbar-inside2";
-
-// import GoogleMapReact from 'google-map-react';
-// import LocationOnIcon from '@mui/icons-material/LocationOn';
 import "../../assets/css/home.css";
 import AdminIdContext from "../context/adminContext";
 
 const Settings = () => {
   const { adminId } = useContext(AdminIdContext);
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState('');
   const [date, setDate] = useState();
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
@@ -23,23 +20,24 @@ const Settings = () => {
 
   const url_admin = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-session/${adminId}`;
 
-  var queryLocation="Kansal Hospital, Patiala District, Punjab, 147001, India";
-  queryLocation = encodeURIComponent(queryLocation);
-  console.log(queryLocation)
+  const myfunc = (location) => {
 
-  const url = `https://us1.locationiq.com/v1/search?key=pk.0f0d0860846ceff2f478b159721575b2&q=${queryLocation}&format=json`;
-
-  useEffect(() => {
+    var location_encoded = encodeURIComponent(location);
+    console.log(location_encoded)
+  
+    const url = `http://api.positionstack.com/v1/forward?access_key=aacf2732ace5e719a7c79c171077fd98&query=${location_encoded}`;
 
     axios.get(url)
       .then(res => {
         setMapDataCord(res.data);
-        console.log(mapDataCord);
+        console.log(mapDataCord.data);
+        setLatitude(mapDataCord.data[0].latitude)
+        setLongitude(mapDataCord.data[0].longitude)
       })
       .catch(error => {
         console.error('Error fetching SOS data:', error);
       });
-  }, []);
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -90,7 +88,7 @@ const Settings = () => {
                   name="location"
                   placeholder="Enter duty Location"
                   value={location}
-                  onChange={(e) => setLocation(e.target.value)}
+                  onChange={(e) => {myfunc(e.target.value); setLocation(e.target.value)}}
                 />
               </div>
               <div className=" col-sm-6">
@@ -105,6 +103,18 @@ const Settings = () => {
               </div>
             </div>
             <div className="row">
+            <div className=" col-sm-6">
+                <label htmlFor="latitude">Latitude : </label>
+                <span>
+                  <img alt='' className="updater" src={earth}></img>
+                </span>
+                <input
+                  type="number"
+                  name="latitude"
+                  placeholder="Enter latitude"
+                  value={latitude}
+                />
+              </div>
               <div className=" col-sm-6">
                 <label htmlFor="longitude">Longitude : </label>
                 <span>
@@ -115,22 +125,9 @@ const Settings = () => {
                   name="longitude"
                   placeholder="Enter longitude"
                   value={longitude}
-                  onChange={(e) => setLongitude(e.target.value)}
                 />
               </div>
-              <div className=" col-sm-6">
-                <label htmlFor="latitude">Latitude : </label>
-                <span>
-                  <img alt='' className="updater" src={earth}></img>
-                </span>
-                <input
-                  type="number"
-                  name="latitude"
-                  placeholder="Enter latitude"
-                  value={latitude}
-                  onChange={(e) => setLatitude(e.target.value)}
-                />
-              </div>
+
             </div>
             <div className="row">
               <div className=" col-sm-6">
