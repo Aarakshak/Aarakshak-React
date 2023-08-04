@@ -59,6 +59,7 @@ const AssignDuty = () => {
                 <div className='col-sm-6'>
                   <label htmlFor='location'>Session ID : </label>
                   <select value={sessionID} onChange={(e) => setSessionID(e.target.value)}>
+                    <option>Select Session</option>
                     {sessionsList.map((sessionsList) => (
                         <option onClick={() => setSessionID(sessionsList.sessionID)}>{sessionsList.sessionID}</option>
                     ))}

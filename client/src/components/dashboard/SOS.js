@@ -14,7 +14,6 @@ const SOS = () => {
     axios.get(url)
       .then(res => {
         setSOSData(res.data);
-        console.log(res.data.pertaining)
       })
       .catch(error => {
         console.error('Error fetching SOS data:', error);

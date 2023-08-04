@@ -28,7 +28,7 @@ const SupervisionCard = (props) => {
   const handleMarkResponded = () => {
     setIsResponded(!isResponded);
 
-    axios.post(url_post,data)
+    axios.patch(url_post,data)
     .then((response) => {
       console.log('Response sent successfully:', response.data);
     })
@@ -61,7 +61,7 @@ const SupervisionCard = (props) => {
         </div>
         <div className="ul">
           <div className="info-box">
-            Location <span>{mapData.data[0].label}</span>
+            Location <span>{mapData.data?.[0].label}</span>
           </div>
         </div>
         <p className="card-text">
