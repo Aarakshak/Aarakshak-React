@@ -10,14 +10,17 @@ import Onboarding from './components/dashboard/onboarding.js';
 import WorkNotifs from './components/dashboard/work-notif.js';
 import Supervision from './components/dashboard/supervision.js';
 import './App.css';
+import AdminNameContext from './components/context/AdminNameContext';
 
 function App() {
   const [adminId, setAdminId] = useState(null);
+  const [firstName, setAdminName] = useState(null);
 
   return (
     <div className="App">
       <BrowserRouter>
         <AdminIdContext.Provider value={{ adminId, setAdminId }}>
+        <AdminNameContext.Provider value={{ firstName, setAdminName }}>
           <main>
             <Routes path="/">
               <Route index element={<MainHomepage />} />
@@ -32,6 +35,7 @@ function App() {
               </Route>
             </Routes>
           </main>
+          </AdminNameContext.Provider>
         </AdminIdContext.Provider>
       </BrowserRouter>
     </div>

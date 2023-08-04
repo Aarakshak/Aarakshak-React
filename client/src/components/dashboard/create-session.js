@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import time from "../../assets/logos/time.png";
 import locationping from "../../assets/logos/locationping.png";
@@ -19,16 +19,28 @@ const Settings = () => {
   const [longitude, setLongitude] = useState("");
   const [latitude, setLatitude] = useState("");
   const [description, setDescription] = useState("");
+  const [mapDataCord, setMapDataCord] = useState([]);
 
-  // const defaultProps = {
-  //   center: {
-  //     lat: 11.0176,
-  //     lng: 76.9674
-  //   },
-  //   zoom: 11
-  // };
+  const url_admin = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-session/${adminId}`;
 
-  const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-session/${adminId}`;
+  var queryLocation="Kansal Hospital, Patiala District, Punjab, 147001, India";
+  queryLocation = encodeURIComponent(queryLocation);
+  console.log(queryLocation)
+
+  const url = `https://us1.locationiq.com/v1/search?key=pk.0f0d0860846ceff2f478b159721575b2&q=${queryLocation}&format=json`;
+
+  useEffect(() => {
+
+    axios.get(url)
+      .then(res => {
+        setMapDataCord(res.data);
+        console.log(mapDataCord);
+      })
+      .catch(error => {
+        console.error('Error fetching SOS data:', error);
+      });
+  }, []);
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -46,7 +58,7 @@ const Settings = () => {
     };
     console.log(data);
     axios
-      .post(url, data)
+      .post(url_admin, data)
       .then((response) => {
         console.log("Data sent successfully:", response.data);
       })
@@ -66,20 +78,6 @@ const Settings = () => {
       >
         <h1 className="heading-settings">Create Session</h1>
         <div className="settings-box">
-          {/* <div style={{ height: '50vh', width: '100%' }}>
-          <GoogleMapReact
-              bootstrapURLKeys={{ key: '' }}
-              defaultCenter={defaultProps.center}
-              initialCenter={{ lat: 11.0176, lng: 76.9674 }} 
-              defaultZoom={defaultProps.zoom}
-            >
-              <LocationOnIcon
-                lat={11.0176}
-                lng={76.9674}
-                style={{color:'red'}}
-              />
-            </GoogleMapReact>
-            </div> */}
           <form className="form-duty">
             <div className="row">
               <div className=" col-sm-6">

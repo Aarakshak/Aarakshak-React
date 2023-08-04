@@ -4,9 +4,11 @@ import '../../assets/css/modal.css';
 import '../../assets/css/form.css';
 import Loader from '../../assets/images/Loader123.gif';
 import AdminIdContext from '../context/adminContext';
+import AdminNameContext from '../context/AdminNameContext.js';
 
 const Login = () => {
   const { setAdminId } = useContext(AdminIdContext);
+  const { setAdminName } = useContext(AdminNameContext);
   const [emailId, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -49,6 +51,7 @@ const Login = () => {
       console.log(data.message);
       console.log(data.adminID);
       setAdminId(data.adminID);
+      setAdminName(data.firstName);
       history('/dashboard/home'); 
     } catch (error) {
       setError('An error occurred during login. Please try again later.');
@@ -64,7 +67,6 @@ const Login = () => {
             Close
           </a>
           <h1>LOGIN</h1>
-          {error && <div className="error-message">{error}</div>}
           <form onSubmit={handleFormSubmit}>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -101,7 +103,7 @@ const Login = () => {
             </div>
           </form>
           <p>
-            Don't have an account? <Link to="/register">Register</Link>
+            {error && <div className="error-message">{error}</div>}
           </p>
         </div>
       </div>
