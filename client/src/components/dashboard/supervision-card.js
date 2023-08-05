@@ -3,19 +3,19 @@ import axios from 'axios';
 import "../../assets/css/sos.css";
 
 const SOSCard = (props) => {
-  const { policeName, badgeId, sessionID, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended} = props;
+  const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended} = props;
 
-  const [profilePic, setProfilePic] = useState('');
+  // const [profilePic, setProfilePic] = useState('');
 
-  useEffect(() => {
-    axios.get('')
-      .then(response => {
-        setProfilePic(response.data.profilePic);
-      })
-      .catch(error => {
-        console.error('Error fetching Supervision data:', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('')
+  //     .then(response => {
+  //       setProfilePic(response.data.profilePic);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching Supervision data:', error);
+  //     });
+  // }, []);
 
   return (
     <div className="card">
@@ -25,7 +25,7 @@ const SOSCard = (props) => {
             <h2 className="police-name">{policeName}</h2>
             <h6>{badgeId}</h6>
           </div>
-          <img src={profilePic} alt="Police Profile" />
+          {/* <img src={profilePic} alt="Police Profile" /> */}
         </div>
 
         <div className="ul">
