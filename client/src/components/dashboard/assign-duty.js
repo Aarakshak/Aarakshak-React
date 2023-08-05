@@ -10,15 +10,28 @@ const AssignDuty = () => {
 
   const [sessionID, setSessionID] = useState('');
   const [badgeID, setBadgeID] = useState('');
-  const [sessionsList, setSessionsList] = useState([]);
+  const [sessionList, setSessionList] = useState([[]]);
+  const [badgeIDList, setBadgeIDList] = useState([]);
   
   const url_get = `https://violet-kitten-toga.cyclic.cloud/v1/admin/${adminId}/sessions`;
-  
+  const url_get_badgeids = `https://violet-kitten-toga.cyclic.cloud/v1/admin/get-users/${adminId}`;
   useEffect(() => {
     
     axios.get(url_get)
       .then(res => {
-        setSessionsList(res.data);
+        setSessionList(res.data.sessions);
+        console.log(res.data.sessions);
+      })
+      .catch(error => {
+        console.error('Error fetching Session List:', error);
+      });
+  }, []);
+
+  useEffect(() => {
+    
+    axios.get(url_get_badgeids)
+      .then(result => {
+        setBadgeIDList(result.data.users);
       })
       .catch(error => {
         console.error('Error fetching Session List:', error);
@@ -30,10 +43,9 @@ const AssignDuty = () => {
     e.preventDefault();
 
     const data = {
-      sessionId: parseInt(sessionID),
-      userIds: parseInt(badgeID),
+      sessionId: parseInt(sessionID.match(/(\d+)/)[0]),
+      userIds: badgeID.match(/(\d+)/)[0],
     };
-    console.log(data)
     const url_post = `https://violet-kitten-toga.cyclic.cloud/v1/admin/assign-session/${adminId}`;
     
     axios.post(url_post, data)
@@ -56,30 +68,41 @@ const AssignDuty = () => {
             <form className='form-notifs'> 
               <div className='row'>
                
-                <div className='col-sm-6'>
-                  <label htmlFor='location'>Session ID : </label>
+                <div className='col-sm-12'>
+                  <label htmlFor='session'>Session ID : </label>
                   <select value={sessionID} onChange={(e) => setSessionID(e.target.value)}>
                     <option>Select Session</option>
-                    {sessionsList.map((sessionsList) => (
-                        <option onClick={() => setSessionID(sessionsList.sessionID)}>{sessionsList.sessionID}</option>
+                    {sessionList.map((sessionList) => (
+                        <option onClick={() => setSessionID(sessionList.sessionID)}>{sessionList.sessionID} - {sessionList.sessionLocation} </option>
+                    ))}
+                  </select>
+              </div>
+                </div>
+              { sessionList.sessionID == null ? <></> :
+              <div className='row'>
+                <div className='col-sm-4'>
+                  <label htmlFor='session'>Session Date : </label>
+                </div>
+                <div className='col-sm-4'>
+                <label htmlFor='session'>Session Start Time : </label>
+                </div>
+                <div className='col-sm-4'>
+                <label htmlFor='session'>Session End Time : </label>
+                </div>
+              </div>
+}
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <label htmlFor='police-officer'>
+                    Police Officer :{' '}
+                  </label>
+                  <select value={badgeID} onChange={(e) => setBadgeID(e.target.value)}>
+                    <option>Select Police Officer</option>
+                    {badgeIDList.map((badgeIDList) => (
+                        <option onClick={() => setBadgeID(badgeIDList.badgeID)}>{badgeIDList.badgeID} - {badgeIDList.firstName} {badgeIDList.surname}</option>
                     ))}
                   </select>
 
-                </div>
-                <div className='col-sm-6'>
-                  <label htmlFor='title'>
-                    Police Officer ID :{' '}
-                  </label>
-                  <span>
-                    <img alt='' className='updater updater-notif' src={avatar}></img>
-                  </span>
-                  <input
-                    type='number'
-                    name='badgeID'
-                    placeholder= 'Enter Police Officer ID'
-                    value={badgeID}
-                    onChange={(e) => setBadgeID(e.target.value)}
-                  />
                 </div> 
               </div>
               <div className="row">

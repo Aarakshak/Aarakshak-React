@@ -20,7 +20,7 @@ const ContactUs = () => {
 
                     <div className='logotext'>AaarHak</div>
 
-                    <div className='contact-left-text' style={{textAlign:'left'}}>
+                    <div className='contact-left-text'>
                         
                     Aarakshak offers secure and real-time tracking along with authenticating police personnel on ground duty. It greatly strengthens and elevates law enforcement operations, equipping officers with efficient and secure monitoring capabilities, ensuring safety and security.                        <br></br>
 

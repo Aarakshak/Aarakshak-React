@@ -32,7 +32,7 @@ const SOS = () => {
           sosItem.issue.resolved ? <></> :
           <SOSCard
             key={index}
-            policeName={sosItem.issue.firstName?sosItem.issue.firstName:'John'}
+            policeName={sosItem.issue.firstName}
             issueID={sosItem.issue.issueID}
             badgeID={sosItem.issue.badgeID} 
             time={new Date(sosItem.issue.raised).toLocaleTimeString([], {
@@ -43,6 +43,7 @@ const SOS = () => {
             latitude={sosItem.issue.latitude}
             longitude={sosItem.issue.longitude}
             description={sosItem.issue.issueText} 
+            profilePic={sosItem.issue.profilePic}
             respond={sosItem.issue.resolved} 
           />
         ))}

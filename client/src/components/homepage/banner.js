@@ -3,6 +3,7 @@ import '../../assets/css/navbar.css';
 import BannerPhoto from '../../assets/images/banner-main-img.png';
 
 const Banner = () => {
+  let URL = 'http://localhost:3000';
   return (
     <div className='banner-main' id='home'>
       <div className='banner-main-inner'>
@@ -18,12 +19,12 @@ const Banner = () => {
           </div>
 
           <div className='button-banner-cont'>
-            <a>
+            <a href={`${URL}/#about`}>
               <button className='button-banner'>
                 Read More &nbsp;<i class='fa-solid fa-circle-chevron-down'></i>
               </button>
             </a>
-            <a>
+            <a href={`${URL}/#contact`}>
               <button className='button-banner'>
                 Contact Us &nbsp;<i class='fa-solid fa-message'></i>
               </button>

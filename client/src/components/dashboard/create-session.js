@@ -45,8 +45,6 @@ const Settings = () => {
     const sessionDateStr = `${date}T00:00:00.530Z`;
     const startTimeStr = `${date}T${startTime}:00.530Z`;
     const endTimeStr = `${date}T${endTime}:00.530Z`;
-    console.log(startTimeStr);
-    console.log(endTimeStr);
 
     const data = {
       sessionLocation: location,
@@ -56,7 +54,6 @@ const Settings = () => {
       longitude: longitude,
       latitude: latitude,
     };
-    console.log(data);
     axios
       .post(url_admin, data)
       .then((response) => {

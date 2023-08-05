@@ -3,7 +3,7 @@ import axios from 'axios';
 import "../../assets/css/sos.css";
 
 const SOSCard = (props) => {
-  const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended} = props;
+  const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended, profilePic} = props;
 
   // const [profilePic, setProfilePic] = useState('');
 
@@ -25,7 +25,7 @@ const SOSCard = (props) => {
             <h2 className="police-name">{policeName}</h2>
             <h6>{badgeId}</h6>
           </div>
-          {/* <img src={profilePic} alt="Police Profile" /> */}
+          <img src={profilePic} alt="Police Profile" />
         </div>
 
         <div className="ul">

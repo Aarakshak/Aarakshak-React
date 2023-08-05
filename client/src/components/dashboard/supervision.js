@@ -40,6 +40,7 @@ import SupervisionCard from "./supervision-card";
               startTime={supItem.startTime}
               endTime={supItem.endTime}
               sessionLocation={supItem.sessionLocation}
+              profilePic={supItem.photo}
             />
           ))
         ) : (
