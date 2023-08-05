@@ -12,7 +12,7 @@ const AssignDuty = () => {
   const [badgeID, setBadgeID] = useState('');
   const [sessionsList, setSessionsList] = useState([]);
   
-  const url_get = `https://violet-kitten-toga.cyclic.cloud/v1/admin/1/sessions`;
+  const url_get = `https://violet-kitten-toga.cyclic.cloud/v1/admin/${adminId}/sessions`;
   
   useEffect(() => {
     

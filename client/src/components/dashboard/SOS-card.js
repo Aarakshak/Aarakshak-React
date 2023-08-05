@@ -6,12 +6,10 @@ import AdminIdContext from "../context/adminContext";
 
 const SupervisionCard = (props) => {
   const { adminId } = useContext(AdminIdContext);
-  const { policeName, issueID, badgeID, time, description, respond } = props;
+  const { policeName, issueID, badgeID, time, description, latitude, longitude, respond } = props;
   const [isResponded, setIsResponded] = useState(respond);
   const [mapData, setMapData] = useState([]);
   const data='';
-  const latitude=28.642485;
-  const longitude=77.229224;
   const url = `http://api.positionstack.com/v1/reverse?access_key=d190b912df2409194e8d4fad59e1637f&query=${latitude}%2C${longitude}`;
   const url_post = `https://violet-kitten-toga.cyclic.cloud/v1/admin/resolve-sos/${adminId}/${badgeID}/${issueID}`;
   

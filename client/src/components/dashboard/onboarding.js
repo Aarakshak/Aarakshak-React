@@ -26,6 +26,7 @@ const Onboarding = () => {
   const [email, setEmail] = useState(''); 
   const [gender, setGender] = useState('Male'); 
 
+
   function convertToBase64(e) {
     console.log(e);
     var reader = new FileReader();
@@ -39,6 +40,12 @@ const Onboarding = () => {
     };
   }
 
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -48,13 +55,14 @@ const Onboarding = () => {
       surname: surname,
       rank: rank,
       policeStationId:parseInt(policeStationId),
+      profilePic: profilePic,
       phoneNo: phoneNo,
       emailId: email,
       gender: gender
     };
     console.log(data)
     const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-user/${adminId}`;
-    axios.post(url, data)
+    axios.post(url, data, config)
       .then((response) => {
         console.log('Data sent successfully:', response.data);
       })

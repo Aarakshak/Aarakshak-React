@@ -43,8 +43,8 @@ const Settings = () => {
     e.preventDefault();
 
     const sessionDateStr = `${date}T00:00:00.000Z`;
-    const startTimeStr = `1970-01-01T${startTime}:00`;
-    const endTimeStr = `1970-01-01T${endTime}:00`;
+    const startTimeStr = `${date}T${startTime}:00`;
+    const endTimeStr = `${date}T${endTime}:00`;
 
     const data = {
       sessionLocation: location,

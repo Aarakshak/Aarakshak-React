@@ -14,6 +14,7 @@ const SOS = () => {
     axios.get(url)
       .then(res => {
         setSOSData(res.data);
+        console.log(res.data)
       })
       .catch(error => {
         console.error('Error fetching SOS data:', error);
@@ -39,6 +40,8 @@ const SOS = () => {
               minute: '2-digit',
             })} 
             location={sosItem.issue.location} 
+            latitude={sosItem.issue.latitude}
+            longitude={sosItem.issue.longitude}
             description={sosItem.issue.issueText} 
             respond={sosItem.issue.resolved} 
           />

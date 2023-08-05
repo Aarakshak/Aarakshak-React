@@ -6,6 +6,7 @@ import Home from './components/dashboard/home.js';
 import CreateSession from './components/dashboard/create-session.js';
 import AssignDuty from './components/dashboard/assign-duty.js';
 import SOS from './components/dashboard/SOS.js';
+import Geofence from './components/dashboard/geofence.js';
 import Onboarding from './components/dashboard/onboarding.js';
 import WorkNotifs from './components/dashboard/work-notif.js';
 import Supervision from './components/dashboard/supervision.js';
@@ -32,6 +33,7 @@ function App() {
                 <Route path="onboarding" element={<Onboarding />} />
                 <Route path="post-work-notifications" element={<WorkNotifs />} />
                 <Route path="supervision" element={<Supervision />} />
+                <Route path="geofence" element={<Geofence />} />
               </Route>
             </Routes>
           </main>
