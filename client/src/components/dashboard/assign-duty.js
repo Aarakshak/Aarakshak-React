@@ -20,7 +20,6 @@ const AssignDuty = () => {
     axios.get(url_get)
       .then(res => {
         setSessionList(res.data.sessions);
-        console.log(res.data.sessions);
       })
       .catch(error => {
         console.error('Error fetching Session List:', error);
@@ -78,19 +77,6 @@ const AssignDuty = () => {
                   </select>
               </div>
                 </div>
-              { sessionList.sessionID == null ? <></> :
-              <div className='row'>
-                <div className='col-sm-4'>
-                  <label htmlFor='session'>Session Date : </label>
-                </div>
-                <div className='col-sm-4'>
-                <label htmlFor='session'>Session Start Time : </label>
-                </div>
-                <div className='col-sm-4'>
-                <label htmlFor='session'>Session End Time : </label>
-                </div>
-              </div>
-}
               <div className='row'>
                 <div className='col-sm-12'>
                   <label htmlFor='police-officer'>
