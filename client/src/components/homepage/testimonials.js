@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -33,9 +34,7 @@ const Testimonials = () => {
                     <h2 className="paraaa"><>RAMESH KUMAR</></h2>
                   </div>
                   <p className="paraa">
-                    I was initially skeptical about implementing Aarakshak, but after implementing this in my district and seeing results, I am impressed. It helps us securely track and authenticate our officers in real time, ensuring their accountability. This has significantly improved our operations and efficiency while maintaining law & order in our region.
-                  </p>
-                </div>
+                  “Aarakshak has completely changed how we handle our police personnel on ground duty every day. It helps us track and authenticate our officers in real-time, making sure they are safe, and serving the public effectively. It's simple to use and reliable, making our daily operations more efficient and secure. We appreciate the positive impact Aarakshak has had on our service making it even better.”      </p>         </div>
               </div>
             </div>
             <div className='col-sm-4'>
@@ -46,8 +45,7 @@ const Testimonials = () => {
                     <h2 className="paraaa"><>BHARAT MISHRA</></h2>
                   </div>
                   <p className="paraa">
-                    Aarakshak has revolutionized the way we are managing our police personnel on ground duty daily. This Near Field Communication based solution's real-time tracking and authentication capabilities have allowed us to ensure the safety of our officers and the public they serve. The solution is really very easy to use and reliable.
-                  </p>
+                  "Our experience with Aarakshak has been remarkable. This solution is a game-changer, enabling real-time monitoring of our police personnel on ground duty. The invaluable insights gained have significantly improved our emergency response, empowering us to act swiftly and effectively. Aarakshak has positively impacted our operations and the safety of our officers."                  </p>
                 </div>
               </div>
             </div>
@@ -59,9 +57,7 @@ const Testimonials = () => {
                     <h2 className="paraaa"><>HARSH PANDEY</></h2>
                   </div>
                   <p className="paraa">
-                    We have been using Aarakshak for several months now and are extremely impressed with its performance. The solution has allowed us to monitor the location and status of our police personnel on ground duty in real time, providing us with valuable insights and improving our ability to respond to emergencies.
-                  </p>
-                </div>
+                  "We have used Aarakshak for months and are highly impressed with its performance. It enables real-time monitoring of police personnel on ground duty, providing valuable insights for informed decision-making and optimized resource allocation. Our emergency response has improved, making our community safer and operations more efficient."         </p>       </div>
               </div>
             </div>
           </Carousel>
@@ -80,3 +76,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

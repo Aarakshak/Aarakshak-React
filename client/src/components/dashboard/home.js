@@ -33,7 +33,7 @@ const Home = () => {
                         <img alt='' src={photo1} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
+                      It ensures an efficient integration process, aiding in successful onboarding of police officer into Aarakshak App. 
                       </div>  
                     </div>
                     </Link>
@@ -52,7 +52,7 @@ const Home = () => {
                       <img alt='' src={photo2} className='box-inner-img'></img>
                     </div>
                     <div className='box-inner-right bxr6 col-sm-8'>
-                    The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
+                    It allows the admin to create duty sessions where police officers are assigned duties later.
                     </div>  
                   </div>
                   </Link>
@@ -70,15 +70,12 @@ const Home = () => {
                         <img src={photo4} className='box-inner-img' alt=''></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
+                      This feature allows the admin to assign specific sessions to policemen stationed at various locations.
                       </div>  
                     </div>
                     </Link>
                   </center>
                 </div>
-
-
-
             </div>
             </div>
 
@@ -96,7 +93,7 @@ const Home = () => {
                         <img alt='' src={photo4} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
+                      This feature enables admin to closely monitor and oversee police officers, ensuring their presense at duty locations and adherence to protocols.
                       </div>  
                     </div>
                     </Link>
@@ -114,7 +111,7 @@ const Home = () => {
                         <img alt='' src={photo3} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      The Assign Duty page allows the admin to assign duties to policemen giving duty at various locations
+                      It allows admin to post notifications about upcoming meetings, events and other work related notifications.
                       </div>  
                     </div>
                     </Link>
@@ -133,7 +130,7 @@ const Home = () => {
                       <img alt='' src={customerimg} className='box-inner-img'></img>
                     </div>
                     <div className='box-inner-right bxr5 col-sm-8'>
-                    This tab is available for administrators to see the emergency SOS raised by Police officers within past 24 hours
+                    It helps admins see the emergency SOS raised by Police officers from different duty locations.
                     </div>  
                   </div>
                   </Link>
@@ -150,3 +147,4 @@ const Home = () => {
 };
 
 export default Home;
+

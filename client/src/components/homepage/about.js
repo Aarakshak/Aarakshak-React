@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import '../../assets/css/about.css';
 import logoabt1 from '../../assets/images/location.gif';
@@ -26,9 +27,9 @@ const About = () => {
             <div className='about-text'>
               <h2>Real-time location tracking <img src={logoabt1} className='about-img'></img> </h2>
               <p>
-              Aarakshak would track the location of police 
-              officers in real-time, allowing supervisors 
-              to monitor their whereabouts and respond quickly 
+              Aarakshak employs real-time location tracking for police 
+              officers stationed at various locations, enabling admins 
+              to monitor officers on duty and ensuring prompt responses 
               to emergencies.
               </p>
             </div>
@@ -38,10 +39,11 @@ const About = () => {
             <div className='about-text'>
               <h2>Authentication and access control <img src={logoabt2} className='about-img'></img> </h2>
               <p className='p1'>
-              The NFC solution ensures that only 
-              authorized personnel have access to sensitive 
-              areas or data by requiring officers to authenticate 
-              themselves before accessing certain resources.
+              The NFC system mandates the officers to 
+              authenticate themselves before accessing 
+              sensitive areas or data. This ensures that 
+              only authorized personnels have access to 
+              specific resources.
               </p>
             </div>
           </div>
@@ -50,10 +52,11 @@ const About = () => {
             <div className='about-text'>
               <h2>Data <br></br>encryption <img src={logoabt3} className='about-img'></img> </h2>
               <p>
-              All communications between the officer 
-              and the supervisor would be encrypted to protect 
-              against unauthorized access. The sensitive data stored about 
-              every officer is encrypted. 
+              All admin-officer communications are 
+              encrypted to safeguard against unauthorized 
+              access. The system ensures that sensitive 
+              data stored about each officer remains 
+              confidential and secure.
               </p>
             </div>
           </div>
@@ -64,3 +67,4 @@ const About = () => {
 };
 
 export default About;
+
