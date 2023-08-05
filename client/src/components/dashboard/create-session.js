@@ -42,9 +42,11 @@ const Settings = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const sessionDateStr = `${date}T00:00:00.000Z`;
-    const startTimeStr = `${date}T${startTime}:00`;
-    const endTimeStr = `${date}T${endTime}:00`;
+    const sessionDateStr = `${date}T00:00:00.530Z`;
+    const startTimeStr = `${date}T${startTime}:00.530Z`;
+    const endTimeStr = `${date}T${endTime}:00.530Z`;
+    console.log(startTimeStr);
+    console.log(endTimeStr);
 
     const data = {
       sessionLocation: location,
