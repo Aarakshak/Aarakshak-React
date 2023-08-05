@@ -1,3 +1,4 @@
+
 import '../../assets/css/contact.css';
 import '../../assets/css/modal.css'
 import Newsletter from './newsletter';
@@ -19,10 +20,9 @@ const ContactUs = () => {
 
                     <div className='logotext'>AaarHak</div>
 
-                    <div className='contact-left-text'>
+                    <div className='contact-left-text' style={{textAlign:'left'}}>
                         
-                        Aarakshak is a Near Field Communication-based solution, which can be used for securely tracking and authenticating police personnel on ground duty in real time.
-                        <br></br>
+                    Aarakshak offers secure and real-time tracking along with authenticating police personnel on ground duty. It greatly strengthens and elevates law enforcement operations, equipping officers with efficient and secure monitoring capabilities, ensuring safety and security.                        <br></br>
 
                     </div>
                 </div>
