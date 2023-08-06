@@ -32,7 +32,7 @@ const SOS = () => {
           sosItem.issue.resolved ? <></> :
           <SOSCard
             key={index}
-            policeName={sosItem.issue.firstName}
+            name={sosItem.issue.name}
             issueID={sosItem.issue.issueID}
             badgeID={sosItem.issue.badgeID} 
             time={new Date(sosItem.issue.raised).toLocaleTimeString([], {

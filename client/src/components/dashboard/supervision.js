@@ -10,9 +10,9 @@ import SupervisionCard from "./supervision-card";
     const { adminId } = useContext(AdminIdContext);
     const [supData, setSupData] = useState([]);
   
-    const url_post = `https://violet-kitten-toga.cyclic.cloud/v1/admin/surveillance/${adminId}`;
+    const url_get = `https://violet-kitten-toga.cyclic.cloud/v1/admin/surveillance/${adminId}`;
     useEffect(() => {
-      axios.get(url_post)
+      axios.get(url_get)
         .then(response => {
           setSupData(response.data.userInfo);
           console.log(response.data.userInfo);
@@ -41,6 +41,8 @@ import SupervisionCard from "./supervision-card";
               endTime={supItem.endTime}
               sessionLocation={supItem.sessionLocation}
               profilePic={supItem.photo}
+              userlatitude={supItem.userlatitude}
+              userlongitude={supItem.userlongitude}
             />
           ))
         ) : (

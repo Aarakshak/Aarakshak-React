@@ -4,10 +4,7 @@ import id from '../../assets/logos/id.png';
 import avatar from '../../assets/logos/shg.svg';
 import ranker from '../../assets/logos/rank.png';
 import photo from '../../assets/logos/photo1.png';
-import locationping from "../../assets/logos/locationping.png";
-import genderlogo from "../../assets/logos/genderlogo.png";
 import emaillogo from "../../assets/logos/emailogo.png";
-import passwordlogo from "../../assets/logos/passwordlogo.png";
 import phonelogo from "../../assets/logos/phonelogo.png";
 
 import NavbarInside from './navbar-inside2';
@@ -58,7 +55,7 @@ const Onboarding = () => {
       profilePic: profilePic,
       phoneNo: phoneNo,
       emailId: email,
-      gender: gender
+      gender: gender,
     };
     console.log(data)
     const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-user/${adminId}`;
@@ -86,7 +83,7 @@ const Onboarding = () => {
                     Badge ID :{' '}
                   </label>
                   <span>
-                    <img className='updater' src={id}></img>
+                    <img alt='' className='updater' src={id}></img>
                   </span>
                   <input
                     type='number'
@@ -99,7 +96,7 @@ const Onboarding = () => {
                 <div className='col-sm-6'>
                   <label htmlFor='rank'> Rank : </label>
                   <span>
-                  <img className='updater' src={ranker}></img>
+                  <img alt='' className='updater' src={ranker}></img>
                   </span>
                   <input
                     type='string'
@@ -114,7 +111,7 @@ const Onboarding = () => {
                 <div className='col-sm-6'>
                   <label htmlFor='firstName'> First Name : </label>
                   <span>
-                    <img className='updater' src={avatar}></img>
+                    <img alt='' className='updater' src={avatar}></img>
                   </span>
                   <input
                     type='string'
@@ -127,7 +124,7 @@ const Onboarding = () => {
                 <div className='col-sm-6'>
                   <label htmlFor='surname'> Last Name : </label>
                   <span>
-                    <img className='updater' src={avatar}></img>
+                    <img alt='' className='updater' src={avatar}></img>
                   </span>
                   <input
                     type='string'
@@ -150,7 +147,7 @@ const Onboarding = () => {
                 <div className='col-sm-4'>
                   <label htmlFor='email'> Email : </label>
                   <span>
-                    <img className='updater' src={emaillogo}></img>
+                    <img alt='' className='updater' src={emaillogo}></img>
                   </span>
                   <input
                     type='email'
@@ -163,7 +160,7 @@ const Onboarding = () => {
                 <div className='col-sm-4'>
                   <label htmlFor='phoneNo'> Phone No : </label>
                   <span>
-                    <img className='updater' src={phonelogo}></img>
+                    <img alt='' className='updater' src={phonelogo}></img>
                   </span>
                   <input
                     type='string'
@@ -178,7 +175,7 @@ const Onboarding = () => {
                 <div className='col-sm-6'>
                   <label htmlFor='photo'> Officer Photograph : </label>
                   <span>
-                    <img className='updater updater1' src={photo}></img>
+                    <img alt='' className='updater' src={photo}></img>
                   </span>
                   <input
                     accept='image/*'
@@ -187,14 +184,14 @@ const Onboarding = () => {
                     onChange={convertToBase64}
                   />
                   <div className='img-preview'>
-                  {profilePic=="" || profilePic==null?"":<img width={100} height={100} src={profilePic} />}
+                  {profilePic=="" || profilePic==null?"":<img className='profiler' alt='' src={profilePic} />}
                   </div>
                  
                 </div>
                 <div className='col-sm-6'>
                   <label htmlFor='psID'> Police Station Unique ID : </label>
                   <span>
-                    <img className='updater' src={id}></img>
+                    <img alt='' className='updater' src={id}></img>
                   </span>
                   <input
                     type='number'

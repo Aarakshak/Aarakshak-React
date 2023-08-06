@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import time from "../../assets/logos/time.png";
 import locationping from "../../assets/logos/locationping.png";
+import keypad from "../../assets/logos/keypad.png";
 import earth from "../../assets/logos/earth-globe.png";
 import NavbarInside from "./navbar-inside2";
 import "../../assets/css/home.css";
@@ -16,6 +17,7 @@ const Settings = () => {
   const [longitude, setLongitude] = useState("");
   const [latitude, setLatitude] = useState("");
   const [description, setDescription] = useState("");
+  const [noOfCheckpoints, setNoOfCheckpoints] = useState("");
   const [mapDataCord, setMapDataCord] = useState([]);
 
   const url_admin = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-session/${adminId}`;
@@ -53,6 +55,7 @@ const Settings = () => {
       endTime: new Date(endTimeStr).toISOString(),
       longitude: longitude,
       latitude: latitude,
+      noOfCheckpoints: noOfCheckpoints,
     };
     axios
       .post(url_admin, data)
@@ -129,10 +132,23 @@ const Settings = () => {
 
             </div>
             <div className="row">
-              <div className=" col-sm-6">
+            <div className=" col-sm-4">
+                <label htmlFor="checkpoints"> No. of Checkpoints : </label>
+                <span>
+                  <img alt='' className="updater updater-session" src={keypad}></img>
+                </span>
+                <input
+                  type="number"
+                  name="noOfCheckpoints"
+                  placeholder="Enter No. of Checkpoints"
+                  value={noOfCheckpoints}
+                  onChange={(e) => setNoOfCheckpoints(e.target.value)}
+                />
+              </div>
+              <div className=" col-sm-4">
                 <label htmlFor="startTime">Duty Start Time : </label>
                 <span>
-                  <img alt='' className="updater updater-notif" src={time}></img>
+                  <img alt='' className="updater updater-session" src={time}></img>
                 </span>
                 <input
                   type="time"
@@ -142,10 +158,10 @@ const Settings = () => {
                   onChange={(e) => setStartTime(e.target.value)}
                 />
               </div>
-              <div className=" col-sm-6">
+              <div className=" col-sm-4">
                 <label htmlFor="endTime">Duty End Time : </label>
                 <span>
-                  <img alt='' className="updater updater-notif" src={time}></img>
+                  <img alt='' className="updater updater-session" src={time}></img>
                 </span>
                 <input
                   type="time"

@@ -471,24 +471,21 @@ min-height: 100vh;
 }
 
 .updater{
-  width: 10%;
+  width: 7%;
   float: right;
   position: relative;
-  top: 42px;
-  left: -10px;
-  cursor: pointer;
-}
-.updater1{
-  width: 10%;
-  float: right;
-  position: relative;
-  top: 45px;
+  top: 40px;
   left: -10px;
   cursor: pointer;
 }
 
 .updater-notif{
   width: 5% !important;
+  height: auto !important;
+}
+
+.updater-session{
+  width: 8% !important;
   height: auto !important;
 }
 
@@ -501,10 +498,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background: none;
 }
 
-.wrapper img{
-  height: 3.5vh;
-  width: 1.5vw;
-}
+
 
 .heading-settings{
   margin-top: 1.5vh;
@@ -512,6 +506,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 .img-preview{
   position: absolute;
-  top: -60px;
+  top: -70px;
   right: 40px;
+}
+.profiler{
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50%;
 }

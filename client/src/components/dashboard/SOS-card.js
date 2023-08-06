@@ -6,7 +6,7 @@ import AdminIdContext from "../context/adminContext";
 
 const SupervisionCard = (props) => {
   const { adminId } = useContext(AdminIdContext);
-  const { policeName, issueID, badgeID, time, description, latitude, longitude, respond, profilePic } = props;
+  const { name, issueID, badgeID, time, description, latitude, longitude, respond, profilePic } = props;
   const [isResponded, setIsResponded] = useState(respond);
   const [mapData, setMapData] = useState([]);
   const data='';
@@ -41,7 +41,7 @@ const SupervisionCard = (props) => {
       <div className="card-body">
         <div className="card-header">
           <div className="sos-card-head">
-            <h2 className="police-name">{policeName}</h2>
+            <h2 className="police-name">{name}</h2>
             <h6>POLICE ID - {badgeID}</h6>
           </div>
           <img src={profilePic} alt="Police Profile" className='card-img-sos' />

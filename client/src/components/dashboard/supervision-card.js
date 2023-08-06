@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import "../../assets/css/sos.css";
 
 const SOSCard = (props) => {
-  const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended, profilePic} = props;
+  const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended, profilePic, userlatitude, userlongitude} = props;
+  const [mapDataSUP, setMapDataSUP] = useState([]);
 
-  // const [profilePic, setProfilePic] = useState('');
+  const url = `http://api.positionstack.com/v1/reverse?access_key=d190b912df2409194e8d4fad59e1637f&query=${userlatitude}%2C${userlongitude}`;
 
-  // useEffect(() => {
-  //   axios.get('')
-  //     .then(response => {
-  //       setProfilePic(response.data.profilePic);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error fetching Supervision data:', error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios.get(url)
+      .then(res => {
+        setMapDataSUP(res.data);
+        console.log(mapDataSUP);
+      })
+      .catch(error => {
+        console.error('Error fetching SOS data:', error);
+      });
+  }, []);
 
   return (
     <div className="card">
@@ -23,18 +25,14 @@ const SOSCard = (props) => {
         <div className="card-header">
           <div className="sos-card-head">
             <h2 className="police-name">{policeName}</h2>
-            <h6>{badgeId}</h6>
+            <h6>POLICE ID - {badgeId}</h6>
           </div>
-          <img src={profilePic} alt="Police Profile" />
+          <img src={profilePic} alt="Police Profile" className='' />
         </div>
 
         <div className="ul">
           <div className="info-box">
-            Location : <span>{sessionLocation}</span>
-          </div>
-
-          <div className="info-box">
-            Date : <span>{sessionDate}</span>
+            Location : <span>{mapDataSUP.data?.[0].label}</span>
           </div>
         </div>
 
@@ -57,6 +55,15 @@ const SOSCard = (props) => {
             Checkpoint{'('}s{')'} Attendance : <span>{checkPointAttended ? 'Marked' : 'Not Marked'}</span>
           </div>
         </div>
+
+        <button className="btn-sos" onClick=""           
+        style={{
+            backgroundColor:'#9a69c2' ,
+            color: 'white',
+            marginTop: '20px',
+          }}>
+          Get Current Location
+        </button>
 
 
       </div>
