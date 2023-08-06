@@ -22,8 +22,9 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 0.5vw;
   margin-top: 1vh;
+  position: relative;
+  left: -40px;
 }
 .cards {
   margin-left: 3vw;
@@ -55,7 +56,7 @@
   padding-left: 10px;
   padding-bottom: 4px;
   padding-right: 2px;
-  background: #EDE4FF;
+  /* background: #EDE4FF; */
 }
 
 .info-box span {
@@ -83,7 +84,7 @@
 
 .card-text{
   text-align: justify;
-  padding: 10px 0;
+  padding: 10px 0px;
 }
 
 .card-body {
@@ -118,6 +119,8 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 2vh;
+  background-color: white !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.552);
 }
 
 .cards {

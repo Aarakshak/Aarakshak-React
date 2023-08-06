@@ -61,13 +61,14 @@ const AssignDuty = () => {
       <div>
         <NavbarInside />
       </div>
-      <div className='wrapper wrapper22 wrapper76' style={{ marginTop: '200px' }}>
+      <div className='wrapper wrapper22 wrapper76 wrapper77' style={{ marginTop: '200px' }}>
         <h1 className='heading-settings'>Assign Duty</h1>
           <div className='settings-box'>
             <form className='form-notifs'> 
               <div className='row'>
-               
-                <div className='col-sm-12'>
+                <div className='col-sm-2'>
+                </div>
+                <div className='col-sm-8'>
                   <label htmlFor='session'>Session ID : </label>
                   <select value={sessionID} onChange={(e) => setSessionID(e.target.value)}>
                     <option>Select Session</option>
@@ -76,9 +77,13 @@ const AssignDuty = () => {
                     ))}
                   </select>
               </div>
+              <div className='col-sm-2'>
+                </div>
                 </div>
               <div className='row'>
-                <div className='col-sm-12'>
+                <div className='col-sm-2'>
+                </div>
+                <div className='col-sm-8'>
                   <label htmlFor='police-officer'>
                     Police Officer :{' '}
                   </label>
@@ -88,8 +93,9 @@ const AssignDuty = () => {
                         <option onClick={() => setBadgeID(badgeIDList.badgeID)}>{badgeIDList.badgeID} - {badgeIDList.firstName} {badgeIDList.surname}</option>
                     ))}
                   </select>
-
                 </div> 
+                <div className='col-sm-2'>
+                </div>
               </div>
               <div className="row">
               <center>
@@ -97,6 +103,7 @@ const AssignDuty = () => {
                   type="submit"
                   value="Assign Duty"
                   className="btn-sbmt col-sm-6"
+                  style={{marginTop: '20px'}}
                   onClick={onSubmit}
                 />{" "}
               </center>

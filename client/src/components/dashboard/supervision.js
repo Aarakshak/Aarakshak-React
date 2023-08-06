@@ -49,6 +49,7 @@ import SupervisionCard from "./supervision-card";
           <p>No supervision data available.</p>
         )}
       </div>
+      
     </div>
   )
 }

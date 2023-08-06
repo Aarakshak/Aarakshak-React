@@ -26,7 +26,7 @@ const Home = () => {
                   <center>
                     <Link to='/dashboard/onboarding'>
                     <div className='home-box-heading'>
-                    <i class="fa-regular fa-circle-user"></i> Police Officer Onboarding
+                      Police Officer Onboarding
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
@@ -45,7 +45,7 @@ const Home = () => {
                 <center>
                   <Link to='/dashboard/create-session'>
                   <div className='home-box-heading'>
-                  <i class="fa-solid fa-address-card"></i> Create Session
+                   Create Session
                   </div>
                   <div className='row'>
                     <div className='box-inner-left col-sm-4'>
@@ -63,7 +63,7 @@ const Home = () => {
                   <center>
                     <Link to='/dashboard/assign-duty'>
                     <div className='home-box-heading'>
-                    <i class="fa-solid fa-circle-check"></i> Assign Duty
+                     Assign Duty
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
@@ -86,7 +86,7 @@ const Home = () => {
                   <center>
                     <Link to='/dashboard/supervision'>
                     <div className='home-box-heading'>
-                    <i class="fa-solid fa-eye"></i> Police Officer Supervision
+                     Police Officer Supervision
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
@@ -104,7 +104,7 @@ const Home = () => {
                   <center>
                     <Link to='/dashboard/post-work-notifications'>
                     <div className='home-box-heading'>
-                    <i class="fa-solid fa-briefcase"></i> Post Work Notifications
+                     Post Work Notifications
                     </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
@@ -123,7 +123,7 @@ const Home = () => {
                 <center>
                 <Link to='/dashboard/sos'>
                 <div className='home-box-heading'>
-                <i class="fa-solid fa-tower-broadcast"></i> SOS
+                 SOS
                 </div>
                 <div className='row'>
                     <div className='box-inner-left col-sm-4'>

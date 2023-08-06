@@ -136,7 +136,7 @@ const Onboarding = () => {
                 </div>
               </div>
               <div className='row'>
-                <div className='col-sm-4'>
+                <div className='col-sm-2'>
                   <label htmlFor='location'> Gender : </label>
                     <select value={gender} onChange={(e) => setGender(e.target.value)}>
                         <option onClick={() => setGender('Meeting')}> Male </option>
@@ -144,19 +144,7 @@ const Onboarding = () => {
                         <option onClick={() => setGender('Local Events')}> Others </option>
                     </select>
                   </div>
-                <div className='col-sm-4'>
-                  <label htmlFor='email'> Email : </label>
-                  <span>
-                    <img alt='' className='updater' src={emaillogo}></img>
-                  </span>
-                  <input
-                    type='email'
-                    name='email'
-                    placeholder='Enter email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
+
                 <div className='col-sm-4'>
                   <label htmlFor='phoneNo'> Phone No : </label>
                   <span>
@@ -168,6 +156,19 @@ const Onboarding = () => {
                     placeholder='Enter Phone No'
                     value={phoneNo}
                     onChange={(e) => setPhoneNo(e.target.value)}
+                  />
+                </div>
+                <div className='col-sm-6'>
+                  <label htmlFor='email'> Email : </label>
+                  <span>
+                    <img alt='' className='updater' src={emaillogo}></img>
+                  </span>
+                  <input
+                    type='email'
+                    name='email'
+                    placeholder='Enter email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>       

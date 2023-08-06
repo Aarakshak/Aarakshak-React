@@ -132,7 +132,7 @@ const Settings = () => {
 
             </div>
             <div className="row">
-            <div className=" col-sm-4">
+            <div className=" col-sm-6">
                 <label htmlFor="checkpoints"> No. of Checkpoints : </label>
                 <span>
                   <img alt='' className="updater updater-session" src={keypad}></img>
@@ -145,7 +145,7 @@ const Settings = () => {
                   onChange={(e) => setNoOfCheckpoints(e.target.value)}
                 />
               </div>
-              <div className=" col-sm-4">
+              <div className=" col-sm-3">
                 <label htmlFor="startTime">Duty Start Time : </label>
                 <span>
                   <img alt='' className="updater updater-session" src={time}></img>
@@ -158,7 +158,7 @@ const Settings = () => {
                   onChange={(e) => setStartTime(e.target.value)}
                 />
               </div>
-              <div className=" col-sm-4">
+              <div className=" col-sm-3">
                 <label htmlFor="endTime">Duty End Time : </label>
                 <span>
                   <img alt='' className="updater updater-session" src={time}></img>
