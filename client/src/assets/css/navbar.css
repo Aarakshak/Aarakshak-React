@@ -39,11 +39,11 @@ html body {
 
 .nav-title-inner{
   font-family: ananda !important;
-  color: black;
+  color: #242333;
   font-size: 40px;
   position: relative;
   top: 5px;
-  left: 5px;
+  left: -15px;
 }
 
 
@@ -62,22 +62,24 @@ html body {
   padding: 13px 20px 13px 20px;
   text-decoration: none;
   font-size: 13px;
-  color: #9a69c2;
+  color: #242333;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 400;
   border-radius: 50px;
-  margin: 20px 5px;
+  margin: 20px 20px;
   transition: background-color 0.3s;
+  position: relative;
+  left: -40px;
 }
 .nav > .nav-links > a:hover {
   color: white;
-  background-color: #9a69c2;
+  background-color: #01b0d3;
 }
 
 .banner-main{
     height: 100vh;
-    background: linear-gradient(160deg, #FFFFFF 50%, #D8C6E8 90%);
+    background: #242333;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: left;
@@ -90,13 +92,14 @@ html body {
 
 .banner-left{
   position: absolute;
-  top: 55%;
-  left: 37%;
+  top: 56%;
+  left: 38.8%;
   transform: translate(-50%, -50%);
+  color: white;
 }
 .banner-right{
   position: absolute;
-  top: 55%;
+  top: 58%;
   left: 38%;
   transform: translate(10%, -50%);
   text-align: center;
@@ -106,14 +109,15 @@ html body {
   font-family: 'Outfit', sans-serif;
   font-size: 3rem;
   width: 70%;
-  line-height: 70px;
+  line-height: 60px;
+  color: white;
 }
 .sub-heading{
   font-family: 'Poppins', sans-serif !important;
   letter-spacing: 1px;
   font-size: 1rem;
   width: 70%;
-  margin: 20px 0px 20px 0px;
+  margin: 30px 0px 30px 0px;
 }
 
 .button-banner-cont{
@@ -121,9 +125,9 @@ html body {
 }
 
 .button-banner{
-  background-color: #9a69c2;
+  background-color: #01b0d3;
   color: white;
-  border: 2px solid #9a69c2;
+  border: 2px solid #01b0d3;
   padding: 7px 20px;
   border-radius: 30px;
   margin: 20px 10px 20px 0px;
@@ -131,11 +135,11 @@ html body {
 }
 
 .banner-photo{
-    width: 55%;
+    width: 78%;
 }
 
 .signupbtn, .loginbtn {
-  background-color: #9a69c2;
+  background-color: #01b0d3;
   color: white !important;
 }
 
@@ -213,17 +217,6 @@ html body {
     float: left;
     position: relative;
     left: 20px;
-  }
-
-  .nav-inside .nav-title p{
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 2em;
-    font-family: 'Dela Gothic One', cursive;
-    float: left;
-    position: relative;
-    left: -95px;
-    top: 20px;
   }
 
   .nav-inside > .nav-links > a {
@@ -439,7 +432,7 @@ html body {
 }
 
 .hellospanner{
-  color:#9a69c2;
+  color:#01b0d3;
 }
 
 

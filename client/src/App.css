@@ -49,11 +49,11 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #9a69c2;
+  background: #01b0d3;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #9a69c2;
+  background: #01b0d3;
 }

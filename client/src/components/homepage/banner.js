@@ -11,22 +11,20 @@ const Banner = () => {
           <div className='main-heading'>
           <span className="hellospanner">Securely</span> tracking every move with <span className="hellospanner">NFC-based</span> police personnel monitoring
           </div>
+
           <div className='sub-heading'>
-          Aarakshak is an NFC-based solution for securely 
+          <i class="fa-solid fa-quote-left" style={{color: '#01b0d3'}}></i>
+          &nbsp;Aarakshak is an NFC-based solution for securely 
           tracking and authenticating police personnel in 
           real time. It simplifies officer onboarding, duty 
-          assignment, and enables effective responses to emergencies.
+          assignment, and enables effective responses to emergencies.&nbsp; 
+          <i class="fa-solid fa-quote-right" style={{color: '#01b0d3'}}></i>
           </div>
 
           <div className='button-banner-cont'>
             <a href={`${URL}/#about`}>
               <button className='button-banner'>
-                Read More &nbsp;<i class='fa-solid fa-circle-chevron-down'></i>
-              </button>
-            </a>
-            <a href={`${URL}/#contact`}>
-              <button className='button-banner'>
-                Contact Us &nbsp;<i class='fa-solid fa-message'></i>
+                Get Started! &nbsp;<i class='fa-solid fa-circle-chevron-down'></i>
               </button>
             </a>
           </div>

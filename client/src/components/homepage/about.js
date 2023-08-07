@@ -25,7 +25,7 @@ const About = () => {
         <div className='about-inner row'>
           <div className='abouter about-1 col-sm-4' data-aos='zoom-in-right'>
             <div className='about-text'>
-              <h2>Real-time location tracking <img src={logoabt1} className='about-img'></img> </h2>
+              <h2><img src={logoabt1} className='about-img'></img> <span style={{marginLeft: '13px'}}>Real-time</span> <br /> <span style={{marginLeft:'70px'}}>location tracking</span></h2> 
               <p>
               Aarakshak employs real-time location tracking for police 
               officers stationed at various locations, enabling admins 
@@ -37,7 +37,7 @@ const About = () => {
 
           <div className='abouter about-2 col-sm-4' data-aos='zoom-in-down'>
             <div className='about-text'>
-              <h2>Authentication and access control <img src={logoabt2} className='about-img'></img> </h2>
+              <h2><img src={logoabt2} className='about-img'></img> <span style={{marginLeft: '12px'}}>Authentication &</span> <span style={{marginLeft:'69px'}}>access control</span> </h2>
               <p className='p1'>
               The NFC system mandates the officers to 
               authenticate themselves before accessing 
@@ -50,7 +50,7 @@ const About = () => {
 
           <div className='abouter about-3 col-sm-4' data-aos='zoom-in-left'>
             <div className='about-text'>
-              <h2>Data <br></br>encryption <img src={logoabt3} className='about-img'></img> </h2>
+              <h2><img src={logoabt3} className='about-img'></img><span style={{marginLeft: '13px'}}> Data </span> <br></br> <span style={{marginLeft: '70px'}}>encryption</span> </h2>
               <p>
               All admin-officer communications are 
               encrypted to safeguard against unauthorized 

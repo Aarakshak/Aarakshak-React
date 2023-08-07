@@ -23,12 +23,11 @@
 .about-img{
     width: 50px;
     background-color: white;
-    border-radius: 10%;
+    border-radius: 20%;
     padding: 5px;
     border: 1px solid black;
     position: relative;
     top: 15px;
-    float: right;
 }
 
 .hello-about{
@@ -36,10 +35,19 @@
     top: -90px;
 }
 
+.about-spanner{
+    position: relative;
+    margin-left: 13px;
+}
+.about-spanner2{
+    position: relative;
+    margin-left: 70px;
+}
+
 .about-text h2{
     font-family: 'Poppins', sans-serif;
     font-size: 1.4em;
-    background-color: #9A69C2;
+    background:linear-gradient(90deg, #4d4970 10%, #10b0d3 90%);
     color: white;
     border-radius: 20px 20px 5px 5px;
     padding: 20px;
@@ -54,9 +62,9 @@
 .about-text p{
     text-align: justify;
     padding: 30px 10px 20px 10px;
-    border-left: 2px solid #9A69C2;
-    border-right: 2px solid #9A69C2;
-    border-bottom: 2px solid #9A69C2;
+    border-left: 2px solid #242333;
+    border-right: 2px solid #242333;
+    border-bottom: 2px solid #242333;
     border-radius: 0px 0px 20px 20px;
     position: relative;
     font-size: 0.9em;

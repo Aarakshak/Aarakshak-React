@@ -11,9 +11,6 @@ const NavbarMain = () => {
             <span className='nav-title-inner'>
             AaarHak
             </span>
-            {/* <span className=''>
-              <img src={LogoMain} className='brand-name-logo'></img>
-            </span> */}
           </div>
         </div>
         <div className='nav-btn'>
