@@ -1,15 +1,20 @@
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../assets/css/navbar.css';
 import AdminIdContext from "../context/adminContext";
 import AdminNameContext from '../context/AdminNameContext';
-import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import '../../assets/css/modal.css';
 import userAvatar from '../../assets/logos/user-avatar.png';
 
 const NavbarInside = () => {
-
-  const { adminId } = useContext(AdminIdContext);
+  const { setAdminId } = useContext(AdminIdContext);
   const { firstName } = useContext(AdminNameContext);
+  const history = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('adminID');
+    setAdminId(null);
+    history('/');
+  };
 
   return (
     <>
@@ -18,7 +23,7 @@ const NavbarInside = () => {
           <div className='nav-title-inner2'>
             <div className='row'>
               <div className='col-sm-2'>
-                <img src={userAvatar} className='navbar-inside-logo'></img>
+                <img src={userAvatar} className='navbar-inside-logo' alt="User Avatar" />
               </div>
               <div className='col-sm-10'>
                 <span className=''>
@@ -32,14 +37,9 @@ const NavbarInside = () => {
           </div>
         </div>
         <div className='nav-btn-22 navbar-back-arrow'>
-          <Link to='/'>
-              
-          <i class="fa-solid fa-2x fa-circle-chevron-left"></i>
-          </Link>
+          <i className="fa-solid fa-2x fa-circle-chevron-left" onClick={handleLogout}></i>
         </div>
       </nav>
-
-      
     </>
   );
 };
