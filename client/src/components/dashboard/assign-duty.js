@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
 
 const AssignDuty = () => {
   const { adminId } = useContext(AdminIdContext);
-
   const [sessionID, setSessionID] = useState('');
   const [badgeID, setBadgeID] = useState('');
   const [sessionList, setSessionList] = useState([[]]);
@@ -17,10 +16,11 @@ const AssignDuty = () => {
   const url_get = `https://violet-kitten-toga.cyclic.cloud/v1/admin/${adminId}/sessions`;
   const url_get_badgeids = `https://violet-kitten-toga.cyclic.cloud/v1/admin/get-users/${adminId}`;
   useEffect(() => {
-    
     axios.get(url_get)
       .then(res => {
         setSessionList(res.data.sessions);
+        console.log(res.data);
+        console.log('Sessions Fetched');
       })
       .catch(error => {
         console.error('Error fetching Session List:', error);
@@ -32,6 +32,7 @@ const AssignDuty = () => {
     axios.get(url_get_badgeids)
       .then(result => {
         setBadgeIDList(result.data.users);
+        console.log('Users Fetched');
       })
       .catch(error => {
         console.error('Error fetching Session List:', error);
@@ -78,11 +79,13 @@ const AssignDuty = () => {
                 </div>
                 <div className='col-sm-8'>
                   <label htmlFor='session'>Session ID : </label>
+                  
                   <select value={sessionID} onChange={(e) => setSessionID(e.target.value)}>
                     <option>Select Session</option>
-                    {sessionList.map((sessionList) => (
+                    {Array.isArray(sessionList) && sessionList.length > 0 ? (
+                    sessionList.map((sessionList) => (
                         <option onClick={() => setSessionID(sessionList.sessionID)}>{sessionList.sessionID} - {sessionList.sessionLocation} </option>
-                    ))}
+                    ))) : <></> }
                   </select>
               </div>
               <div className='col-sm-2'>

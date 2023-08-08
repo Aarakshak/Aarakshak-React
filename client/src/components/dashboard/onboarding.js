@@ -67,8 +67,8 @@ const Onboarding = () => {
       .then((response) => {
         console.log('Data sent successfully:', response.data);
         Swal.fire({
-          icon: 'success',
-          title: 'User Onboarded Successfuly!',
+          icon: (response.data.error) ? 'error' : 'success',
+          title: (response.data.error) ? response.data.error : response.data.message,
           showConfirmButton: false,
           timer:1500,
         }
@@ -91,7 +91,7 @@ const Onboarding = () => {
               <div className='row'>
               <div className='col-sm-6'>
                   <label htmlFor='badgeID'>
-                    Badge ID :{' '}
+                    Police ID :{' '}
                   </label>
                   <span>
                     <img alt='' className='updater' src={id}></img>
@@ -99,7 +99,7 @@ const Onboarding = () => {
                   <input
                     type='number'
                     name='badgeID'
-                    placeholder= 'Enter Badge ID'
+                    placeholder= 'Enter Police ID'
                     value={badgeID}
                     onChange={(e) => setBadgeID(e.target.value)}
                   />

@@ -6,6 +6,7 @@ import SOSCard from "./SOS-card";
 import AdminIdContext from "../context/adminContext";
 
 const SOS = () => {
+  var count=0;
   const { adminId } = useContext(AdminIdContext);
   const [sosData, setSOSData] = useState([]);
   const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/sos/${adminId}`;
@@ -28,9 +29,9 @@ const SOS = () => {
       </div>
       <center><h1 className="sos-heading">SOS Received</h1></center>
       <div className="cards">
-        { Array.isArray(!sosData) && sosData.length < 0 ? <div></div> :
+        {
         (sosData.map((sosItem, index) => (
-          (sosItem.issue.resolved ? <></> :
+          (sosItem.issue.resolved == true ? (<div style={{display:'none'}}>{count=count+1}</div>) : (
           <SOSCard
             key={index}
             name={sosItem.issue.name}
@@ -46,8 +47,9 @@ const SOS = () => {
             description={sosItem.issue.issueText} 
             profilePic={sosItem.issue.profilePic}
             respond={sosItem.issue.resolved} 
-          />)
+          />))
         )))}
+        { count? <></> :<p className='prompter-prompt'>No SOS data available. All SOS's are resolved.</p>}
       </div>
     </div>
   )

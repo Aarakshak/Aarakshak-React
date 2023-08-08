@@ -27,11 +27,11 @@ const SupervisionCard = (props) => {
     <div className="card">
       <div className="card-body">
         <div className="card-header">
-          <div className="sos-card-head">
+          <div className="sos-card-head-2">
             <h2 className="police-name">{policeName}</h2>
             <h6>POLICE ID - {badgeId}</h6>
           </div>
-          <img src={profilePic} alt="Police Profile" className='' />
+          <img src={profilePic} alt="Police Profile" className='img-surv2' />
         </div>
 
         <div className="ul">

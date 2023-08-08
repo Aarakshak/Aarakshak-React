@@ -12,6 +12,7 @@ import WorkNotifs from './components/dashboard/work-notif.js';
 import Supervision from './components/dashboard/supervision.js';
 import './App.css';
 import AdminNameContext from './components/context/AdminNameContext';
+import MapView from './components/dashboard/map';
 
 function App() {
   const [adminId, setAdminId] = useState(localStorage.getItem('adminID') || null);
@@ -53,6 +54,7 @@ function PrivateRoutes() {
       <Route path="onboarding" element={<Onboarding />} />
       <Route path="post-work-notifications" element={<WorkNotifs />} />
       <Route path="supervision" element={<Supervision />} />
+      <Route path="map" element={<MapView />} />
     </Routes>
   );
 }
