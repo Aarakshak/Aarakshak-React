@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import image1 from "../../assets/images/uncle1.jfif";
+import image1 from "../../assets/images/policee.jpg";
 import image2 from "../../assets/images/uncle2.jfif";
 import image3 from "../../assets/images/9.jpg";
 import image4 from "../../assets/images/maam.jpg";
