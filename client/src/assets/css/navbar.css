@@ -7,6 +7,15 @@ font-family: ananda;
 src: url("../fonts/ananda.ttf");
 } 
 
+@font-face {
+  font-family: evo;
+  src: url("../fonts/Evogria.otf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Raleway:wght@600&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Yellowtail&display=swap');
@@ -52,6 +61,27 @@ html body {
   color: #fff;
   float: left;
   padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-header > .nav-title-inner2 {
+  font-size: 30px;
+  color: #fff;
+  float: left;
+  padding: 10px 10px 10px 10px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav > .nav-header > .nav-title-inner2 p {
+  
+  color: #fff;
+  float: left;
+  position: relative;
+  top: 25px;
+  left: -157px;
+  padding: 10px 10px 10px 10px;
+  text-transform: uppercase;
 }
 
 .nav > .nav-btn {
@@ -158,7 +188,7 @@ html body {
 }
 
   .nav-inside{
-    background-color: #9a69c2;
+    background:linear-gradient(90deg, #242333 10%, #10b0d3 90%);
     padding: 10px !important;
     padding-top: 15px !important;
     z-index: 99999;
@@ -175,8 +205,8 @@ html body {
   .nav-inside > .nav-btn-22 {
     display: inline-block;
     position: absolute;
-    top: 42%;
-    left: 5%;
+    top: 48%;
+    left: 4%;
     transform: translate(-50%, -50%);
   }
 
@@ -206,6 +236,11 @@ html body {
     left: 125px;
     line-height: 1.2;
   }
+  .nav-title-inner2{
+    position: relative;
+    left: 15.5%;
+    top:-2px;
+  }
 
   .nav-inside .nav-title span{
     letter-spacing: 1px;
@@ -216,7 +251,7 @@ html body {
   .welcomerr{
     float: left;
     position: relative;
-    left: 20px;
+    left: 15px;
   }
 
   .nav-inside > .nav-links > a {

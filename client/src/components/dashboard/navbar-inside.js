@@ -15,7 +15,7 @@ const NavbarInside = () => {
     <>
       <nav className='nav nav-inside'>
         <div className='nav-header'>
-          <div className='nav-title'>
+          <div className='nav-title-inner2'>
             <div className='row'>
               <div className='col-sm-2'>
                 <img src={userAvatar} className='navbar-inside-logo'></img>

@@ -33,8 +33,7 @@ min-height: 100vh;
 }
 
 .wrapper {
-    background: #9a69c2;  
-    background: linear-gradient(to right, #b783e1, #9a69c2);
+    background: #127389;
     position: absolute;
     color: white !important;
     top:33%;
@@ -44,6 +43,10 @@ min-height: 100vh;
     transform: translate(-50%, -50%);
     border-radius: 50px;
     width: 100%;
+  }
+  .wrapper .btn-sbmt{
+    background: #242333cd !important;
+    color: white;
   }
 
   .wrapper22 {
@@ -306,7 +309,7 @@ min-height: 100vh;
   }
 
   .home-box-heading{
-    background-color: #9a69c2;
+    background:linear-gradient(90deg, #4d4970 10%, #10b0d3 90%);
     padding: 10px 0;
     border-radius: 20px 20px 5px 5px;
     position: relative;
