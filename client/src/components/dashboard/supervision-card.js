@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-
+import Map, {Marker} from 'react-map-gl';
+import marker from "../../assets/logos/loc-check.png"
 import axios from 'axios';
 import "../../assets/css/sos.css";
 
@@ -8,9 +9,6 @@ const SupervisionCard = (props) => {
   const [mapDataSUP, setMapDataSUP] = useState([]);
 
   const url = `http://api.positionstack.com/v1/reverse?access_key=d190b912df2409194e8d4fad59e1637f&query=${latitude}%2C${longitude}`;
-
-
-
 
   useEffect(() => {
     axios.get(url)
@@ -72,7 +70,24 @@ const SupervisionCard = (props) => {
 
       </div>
       <div className="col-md-4"></div>
+      <div className='map-outer'>
+        
+        {latitude && longitude ? <Map
+        mapboxAccessToken="pk.eyJ1IjoiYXN1ciIsImEiOiJja3Q2ZXhkYW4waHJwMm5xbHVrZnE2YjZ2In0.pQ-92peoEdKmKFJAi6DoSg"
+        initialViewState={{
+          longitude: longitude,
+          latitude: latitude,
+          zoom: 14.5
+        }}
+        style={{width:400, height:400}}
+        mapStyle="mapbox://styles/mapbox/streets-v11"
+      >
+      <Marker longitude={longitude} latitude={latitude} anchor="bottom" >
+        <img src= {marker} />
+      </Marker>
 
+      </Map>: ""}
+      </div>
     </div>
   );
 };
