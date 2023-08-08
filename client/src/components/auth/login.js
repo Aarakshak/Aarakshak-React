@@ -52,6 +52,8 @@ const Login = () => {
       console.log(data.adminID);
       setAdminId(data.adminID);
       setAdminName(data.firstName);
+      localStorage.setItem('adminID', data.adminID);
+      localStorage.setItem('firstName', data.firstName);
       history('/dashboard/home'); 
     } catch (error) {
       setError('An error occurred during login. Please try again later.');

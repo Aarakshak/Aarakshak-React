@@ -1,5 +1,5 @@
-import React from 'react';
+import { createContext } from 'react';
 
-const AdminIdContext = React.createContext();
+const AdminIdContext = createContext(false);
 
 export default AdminIdContext;
