@@ -4,10 +4,10 @@ import axios from 'axios';
 import "../../assets/css/sos.css";
 
 const SupervisionCard = (props) => {
-  const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended, profilePic, userlatitude, userlongitude} = props;
+  const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended, profilePic, latitude, longitude} = props;
   const [mapDataSUP, setMapDataSUP] = useState([]);
 
-  const url = `http://api.positionstack.com/v1/reverse?access_key=d190b912df2409194e8d4fad59e1637f&query=${userlatitude}%2C${userlongitude}`;
+  const url = `http://api.positionstack.com/v1/reverse?access_key=d190b912df2409194e8d4fad59e1637f&query=${latitude}%2C${longitude}`;
 
 
 

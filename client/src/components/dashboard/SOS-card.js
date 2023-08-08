@@ -68,10 +68,6 @@ const SupervisionCard = (props) => {
         </p>
         <button
           className="btn-sos"
-          style={{
-            backgroundColor: isResponded ? '#9a69c2' : '#9a69c2',
-            color: isResponded ? 'white' : 'white',
-          }}
           onClick={handleMarkResponded}
         >
           {isResponded ? 'Responded' : 'Mark as Responded'}

@@ -96,7 +96,7 @@ min-height: 100vh;
   form select, form input{
  outline: 0;
  border: none;
- background-color: f5f5f5;
+ background-color: #f5f5f5;
  width: 100%;
  border-radius: 20px;
  padding: 10px 15px;
@@ -109,6 +109,16 @@ min-height: 100vh;
  font-weight: 300;
  border: 1px solid rgb(199, 197, 197) !important;
  height: 45px;
+  }
+
+  .label-imger{
+    background-color: #f5f5f5;
+    border: 1px solid rgb(199, 197, 197) !important;
+    transition-duration: 0.25s;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    font-weight: 300;
+    border-radius: 20px;
   }
 
   form textarea{

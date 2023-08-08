@@ -4,6 +4,7 @@ import avatar from '../../assets/logos/shg.svg';
 import NavbarInside from './navbar-inside2';
 import '../../assets/css/home.css';
 import AdminIdContext from "../context/adminContext";
+import Swal from 'sweetalert2';
 
 const AssignDuty = () => {
   const { adminId } = useContext(AdminIdContext);
@@ -50,6 +51,13 @@ const AssignDuty = () => {
     axios.post(url_post, data)
       .then((response) => {
         console.log('Data sent successfully:', response.data);
+        Swal.fire({
+          icon: (response.data.error) ? 'error' : 'success',
+          title: (response.data.error) ? response.data.error : response.data.message,
+          showConfirmButton: false,
+          timer:1500,
+        }
+        )
       })
       .catch((error) => {
         console.error('Error sending data:', error);

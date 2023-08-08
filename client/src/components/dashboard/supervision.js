@@ -14,8 +14,8 @@ import SupervisionCard from "./supervision-card";
     useEffect(() => {
       axios.get(url_get)
         .then(response => {
-          setSupData(response.data.userInfo);
-          console.log(response.data.userInfo);
+          setSupData(response.data.ans);
+          console.log(response.data);
         })
         .catch(error => {
           console.error('Error fetching Supervision data:', error);
@@ -34,15 +34,15 @@ import SupervisionCard from "./supervision-card";
           supData.map((supItem, index) => (
             <SupervisionCard
               key={index}
-              policeName={supItem.name}
+              policeName={supItem.firstName}
               badgeId={supItem.badgeID}
               sessionDate={supItem.sessionDate}
               startTime={supItem.startTime}
               endTime={supItem.endTime}
               sessionLocation={supItem.sessionLocation}
-              profilePic={supItem.photo}
-              userlatitude={supItem.userlatitude}
-              userlongitude={supItem.userlongitude}
+              profilePic={supItem.profilePic}
+              latitude={supItem.latitude}
+              longitude={supItem.longitude}
             />
           ))
         ) : (

@@ -28,8 +28,9 @@ const SOS = () => {
       </div>
       <center><h1 className="sos-heading">SOS Received</h1></center>
       <div className="cards">
-        {sosData.map((sosItem, index) => (
-          sosItem.issue.resolved ? <></> :
+        { Array.isArray(!sosData) && sosData.length < 0 ? <div></div> :
+        (sosData.map((sosItem, index) => (
+          (sosItem.issue.resolved ? <></> :
           <SOSCard
             key={index}
             name={sosItem.issue.name}
@@ -45,8 +46,8 @@ const SOS = () => {
             description={sosItem.issue.issueText} 
             profilePic={sosItem.issue.profilePic}
             respond={sosItem.issue.resolved} 
-          />
-        ))}
+          />)
+        )))}
       </div>
     </div>
   )

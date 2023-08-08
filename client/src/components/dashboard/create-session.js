@@ -7,6 +7,7 @@ import earth from "../../assets/logos/earth-globe.png";
 import NavbarInside from "./navbar-inside2";
 import "../../assets/css/home.css";
 import AdminIdContext from "../context/adminContext";
+import Swal from 'sweetalert2';
 
 const Settings = () => {
   const { adminId } = useContext(AdminIdContext);
@@ -19,6 +20,7 @@ const Settings = () => {
   const [description, setDescription] = useState("");
   const [noOfCheckpoints, setNoOfCheckpoints] = useState("");
   const [mapDataCord, setMapDataCord] = useState([]);
+  const [emergency, setEmergency] = useState('No'); 
 
   const url_admin = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-session/${adminId}`;
 
@@ -55,12 +57,18 @@ const Settings = () => {
       endTime: new Date(endTimeStr).toISOString(),
       longitude: longitude,
       latitude: latitude,
-      noOfCheckpoints: noOfCheckpoints,
     };
     axios
       .post(url_admin, data)
       .then((response) => {
         console.log("Data sent successfully:", response.data);
+        Swal.fire({
+          icon: (response.data.error) ? 'error' : 'success',
+          title: (response.data.error) ? response.data.error : response.data.message,
+          showConfirmButton: false,
+          timer:1500,
+        }
+        )
       })
       .catch((error) => {
         console.error("Error sending data:", error);
@@ -89,11 +97,11 @@ const Settings = () => {
                   type="text"
                   name="location"
                   placeholder="Enter duty Location"
-                  value={location}
+                  value={location} required
                   onChange={(e) => {myfunc(e.target.value); setLocation(e.target.value)}}
                 />
               </div>
-              <div className=" col-sm-6">
+              <div className=" col-sm-3">
                 <label htmlFor="date">Date : </label>
                 <input
                   type="date"
@@ -103,6 +111,13 @@ const Settings = () => {
                   onChange={(e) => setDate(e.target.value)}
                 />
               </div>
+              <div className='col-sm-3'>
+                <label htmlFor='photo'> Emergency : </label>
+                  <select value={emergency} onChange={(e) => setEmergency(e.target.value)}>
+                    <option onClick={() => setEmergency('Yes')}>Yes</option>
+                    <option onClick={() => setEmergency('No')}>No</option>
+                  </select>
+                </div>
             </div>
             <div className="row">
             <div className=" col-sm-6">

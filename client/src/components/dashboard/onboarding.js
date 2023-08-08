@@ -6,6 +6,8 @@ import ranker from '../../assets/logos/rank.png';
 import photo from '../../assets/logos/photo1.png';
 import emaillogo from "../../assets/logos/emailogo.png";
 import phonelogo from "../../assets/logos/phonelogo.png";
+import Swal from 'sweetalert2';
+
 
 import NavbarInside from './navbar-inside2';
 import AdminIdContext from "../context/adminContext";
@@ -21,7 +23,9 @@ const Onboarding = () => {
   const [policeStationId, setPoliceStationId] = useState(); 
   const [phoneNo, setPhoneNo] = useState(); 
   const [email, setEmail] = useState(''); 
-  const [gender, setGender] = useState('Male'); 
+  const [gender, setGender] = useState('Male');
+  const [admin, setAdmin] = useState('No'); 
+
 
 
   function convertToBase64(e) {
@@ -62,6 +66,13 @@ const Onboarding = () => {
     axios.post(url, data, config)
       .then((response) => {
         console.log('Data sent successfully:', response.data);
+        Swal.fire({
+          icon: 'success',
+          title: 'User Onboarded Successfuly!',
+          showConfirmButton: false,
+          timer:1500,
+        }
+        )
       })
       .catch((error) => {
         console.error('Error sending data:', error);
@@ -173,7 +184,7 @@ const Onboarding = () => {
                 </div>
               </div>       
               <div className='row'>
-                <div className='col-sm-6'>
+                <div className='col-sm-3'>
                   <label htmlFor='photo'> Officer Photograph : </label>
                   <span>
                     <img alt='' className='updater' src={photo}></img>
@@ -182,12 +193,20 @@ const Onboarding = () => {
                     accept='image/*'
                     type='file'
                     name='profile-pic'
-                    onChange={convertToBase64}
+                    onChange={convertToBase64} style={{display:'none',}} id='imger'
                   />
+                  
+                  <label for="imger" className='label-imger'>Upload Passport Image</label>
                   <div className='img-preview'>
                   {profilePic=="" || profilePic==null?"":<img className='profiler' alt='' src={profilePic} />}
                   </div>
-                 
+                </div>
+                <div className='col-sm-3'>
+                <label htmlFor='admin'> Admin : </label>
+                  <select value={admin} onChange={(e) => setAdmin(e.target.value)}>
+                    <option onClick={() => setAdmin('Yes')}>Yes</option>
+                    <option onClick={() => setAdmin('No')}>No</option>
+                  </select>
                 </div>
                 <div className='col-sm-6'>
                   <label htmlFor='psID'> Police Station Unique ID : </label>

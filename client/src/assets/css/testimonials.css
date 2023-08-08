@@ -17,7 +17,7 @@
 
 .testimonial-text{
   background:linear-gradient(360deg, #4d4970 5%, #10b0d3 100%);
-  min-height: 38vh;
+  min-height: 34vh;
   color: aliceblue;
   width: 15vw;
   padding: 20px;
@@ -33,6 +33,7 @@
   margin: 5px;
 }
 
+
 .testimonial-details{
   display: flex;
   flex-direction: row;
@@ -45,8 +46,8 @@
   width: 4vw;
   border-radius: 50px;
 }
-span{
-  font-size: 0.7em;
+.testimonial-details span{
+  font-size: 0.8em;
   color: aliceblue;
   text-align: left;
 }
@@ -73,6 +74,5 @@ span{
 
 .icon-right-testimonial{
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -5px;
 }
