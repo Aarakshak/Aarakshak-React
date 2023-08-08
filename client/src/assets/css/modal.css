@@ -6,6 +6,15 @@ input[type="checkbox"]:checked ~ .modal-background {
 	display: block;
 }
 
+@font-face {
+  font-family: hollow1;
+  src: url('../fonts/hollow-1.ttf');
+}
+@font-face {
+  font-family: hollow2;
+  src: url('../fonts/hollow-2.ttf');
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -85,22 +94,26 @@ input[type="checkbox"]:checked ~ .modal-background {
   .modal-window h1 {
     font-size: 150%;
     margin-bottom: 30px;
+    font-weight: bold;
   }
   
   .modal-close {
     color: #aaa;
     line-height: 50px;
-    font-size: 80%;
+    font-size: 1.5rem;
     position: absolute;
-    right: 0;
+    right: -5px;
     text-align: center;
-    top: 0;
+    top: 5px;
     width: 70px;
-    margin-right: 10px;
+    margin-right: 0px;
     text-decoration: none;
+    font-family: hollow2;
+    font-weight: bold;
   }
   .modal-close:hover {
     color: black;
+    font-family: hollow1;
   }
   
   a {

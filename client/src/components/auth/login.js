@@ -64,7 +64,7 @@ const Login = () => {
       <div id="login" className="modal-window">
         <div>
           <a href="#" title="Close" className="modal-close">
-            Close
+            X
           </a>
           <h1>LOGIN</h1>
           <form onSubmit={handleFormSubmit}>

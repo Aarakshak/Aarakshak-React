@@ -142,7 +142,7 @@ min-height: 100vh;
          appearance: none;
     outline: 0;
     border: none;
-    background-color: #5a2e7e;
+    background:linear-gradient(90deg, #4d4970 10%, #10b0d3 90%);
     width: 250px;
     border-radius: 3px;
     padding: 10px 15px;
