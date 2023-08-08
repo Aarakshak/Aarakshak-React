@@ -2,11 +2,7 @@
 import '../../assets/css/contact.css';
 import '../../assets/css/modal.css'
 import Newsletter from './newsletter';
-const location = {
-    address: 'Dwarka, Delhi.',
-    lat: 28.5823,
-    lng: 77.0500,
-}
+import digitalIndialogo from '../../assets/logos/Digital_India_logo.png'
 
 const ContactUs = () => {
     return ( 
@@ -19,21 +15,28 @@ const ContactUs = () => {
                     <div className='logotext'>AaarHak</div>
 
                     <div className='contact-left-text contact-right-links'>
-                        <button className='contact-btns contact-btns1'>Know more!</button> &nbsp; <button className='contact-btns'>Subscribe to Newsletter</button>
+                        <button className='contact-btns contact-btns1'>Know more!</button> &nbsp; <button className='contact-btns'>Get Updates!</button>
                     </div>
 
                     
                 </div>
-                <div className='col-sm-2'>
-
-                </div>
-                <div className="contact-right col-sm-6">
-                    <div className='mapper'>
-                        <div className='contact-right-heading'>
-                            USEFUL LINKS
+                <div className='col-sm-2'></div>
+                <div className='col-sm-1'></div>
+                <div className="contact-right col-sm-5">
+                    <div className='contact-right-heading'>
+                        Powered by <img src={digitalIndialogo} className='digitalIndia'></img><br /><br />
+                    </div>
+                    <div className='row'>
+                        <div className='contact-linker-cont col-sm-6'>
+                            <a href="" className='contact-linker'><i class="fa-solid fa-1x fa-circle-chevron-right"></i> FAQs</a><br /><br />
+                            <a href="" className='contact-linker'><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Resources</a><br /><br />
+                            <a href="" className='contact-linker'><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Circulars</a><br /><br />
                         </div>
-
-
+                        <div className='contact-linker-cont col-sm-6'>
+                            <a href="" className='contact-linker'><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Need Help</a><br /><br />
+                            <a href="" className='contact-linker'><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Blog</a><br /><br />
+                            <a href="" className='contact-linker'><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Webinars</a><br /><br />
+                        </div>
                     </div>
                 </div>
                 <center>

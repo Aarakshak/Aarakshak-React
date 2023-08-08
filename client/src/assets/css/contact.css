@@ -49,17 +49,9 @@
     font-size: 1em;
 }
 .contact-right{
-    padding-left: 100px;
+    padding-left: 175px;
     margin: auto 0;
     text-align: left;
-}
-
-.contact-right-heading{
-    letter-spacing: 1px;
-    color: white;
-    font-family: Outfit;
-    font-weight: 500;
-    font-size: 3em;
 }
 
 .contact-right-links .con-link{
@@ -105,5 +97,36 @@
 
 .contact-btns1{
     background-color: #10b0d3;
+    color: white;
+}
+
+.contact-right-heading{
+    letter-spacing: 1px;
+    color: white;
+    font-family: Outfit;
+    font-weight: 500;
+    font-size: 2em;
+}
+
+.digitalIndia{
+    width: 150px;
+}
+
+.contact-linker{
+    margin: 20px 0px 20px 0px;
+    color: white;
+}
+
+.contact-linker-cont a{
+    margin-top: 50px;
+}
+.contact-linker-cont i{
+    margin-right: 5px;
+    background:linear-gradient(90deg, #4d4970 10%, #10b0d3 90%);
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.contact-linker-cont a:hover{
     color: white;
 }
