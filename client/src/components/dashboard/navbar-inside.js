@@ -39,6 +39,11 @@ const NavbarInside = () => {
         <div className='nav-btn-22 navbar-back-arrow'>
           <i className="fa-solid fa-2x fa-circle-chevron-left" onClick={handleLogout}></i>
         </div>
+        <div className='nav-analytics-link' style={{ position: 'absolute', right: '0', top: '20' }}>
+          <Link to="/dashboard/analytics">
+            <span className="analytics-link-text">Analytics</span>
+          </Link>
+        </div>
       </nav>
     </>
   );
