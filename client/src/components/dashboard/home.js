@@ -182,7 +182,7 @@ const Home = () => {
 
             <div className='home-box col-sm-4'>
                 <center>
-                <Link to='/dashboard/sos'>
+                <Link to='/dashboard/analytics'>
                 <div className='home-box-heading'>
                  Real Time Analytics
                 </div>

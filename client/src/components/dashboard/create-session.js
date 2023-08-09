@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import time from "../../assets/logos/time.png";
 import locationping from "../../assets/logos/locationping.png";
 import keypad from "../../assets/logos/keypad.png";
@@ -12,7 +13,8 @@ import Swal from 'sweetalert2';
 const Settings = () => {
   const { adminId } = useContext(AdminIdContext);
   const [location, setLocation] = useState('');
-  const [date, setDate] = useState();
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [longitude, setLongitude] = useState("");
@@ -20,7 +22,7 @@ const Settings = () => {
   const [description, setDescription] = useState("");
   const [noOfCheckpoints, setNoOfCheckpoints] = useState("");
   const [mapDataCord, setMapDataCord] = useState([]);
-  const [emergency, setEmergency] = useState('No'); 
+  const [emergency, setEmergency] = useState('false'); 
 
   const url_admin = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-session/${adminId}`;
 
@@ -43,20 +45,24 @@ const Settings = () => {
       });
   };
 
+  const history = useNavigate();
+
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const sessionDateStr = `${date}T00:00:00.530Z`;
-    const startTimeStr = `${date}T${startTime}:00.530Z`;
-    const endTimeStr = `${date}T${endTime}:00.530Z`;
+    
+
+    const startTimeStr = `${startDate}T${startTime}:00.530Z`;
+    const endTimeStr = `${endDate}T${endTime}:00.530Z`;
 
     const data = {
       sessionLocation: location,
-      sessionDate: new Date(sessionDateStr).toISOString(),
       startTime: new Date(startTimeStr).toISOString(),
       endTime: new Date(endTimeStr).toISOString(),
       longitude: longitude,
       latitude: latitude,
+      description: description,
+      emergency:emergency,
     };
     axios
       .post(url_admin, data)
@@ -64,7 +70,7 @@ const Settings = () => {
         console.log("Data sent successfully:", response.data);
         Swal.fire({
           icon: (response.data.error) ? 'error' : 'success',
-          title: (response.data.error) ? response.data.error : response.data.message,
+          title: (response.data.error) ? response.data.error : (response.data.message),
           showConfirmButton: false,
           timer:1500,
         }
@@ -102,22 +108,26 @@ const Settings = () => {
                 />
               </div>
               <div className=" col-sm-3">
-                <label htmlFor="date">Date : </label>
+                <label htmlFor="date">Start Duty Date : </label>
                 <input
                   type="date"
                   name="date"
                   placeholder="Enter duty Date"
-                  value={date} required autoComplete="off"
-                  onChange={(e) => setDate(e.target.value)}
+                  value={startDate} required autoComplete="off"
+                  onChange={(e) => setStartDate(e.target.value)}
                 />
               </div>
-              <div className='col-sm-3'>
-                <label htmlFor='photo'> Emergency : </label>
-                  <select value={emergency} onChange={(e) => setEmergency(e.target.value)}>
-                    <option onClick={() => setEmergency('Yes')}>Yes</option>
-                    <option onClick={() => setEmergency('No')}>No</option>
-                  </select>
-                </div>
+              <div className=" col-sm-3">
+                <label htmlFor="date">End Duty Date : </label>
+                <input
+                  type="date"
+                  name="date"
+                  placeholder="Enter Start duty Date"
+                  value={endDate} required autoComplete="off"
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </div>
+
             </div>
             <div className="row">
             <div className=" col-sm-6">
@@ -147,7 +157,7 @@ const Settings = () => {
 
             </div>
             <div className="row">
-            <div className=" col-sm-6">
+            <div className=" col-sm-3">
                 <label htmlFor="checkpoints"> No. of Checkpoints : </label>
                 <span>
                   <img alt='' className="updater updater-session" src={keypad}></img>
@@ -160,6 +170,13 @@ const Settings = () => {
                   onChange={(e) => setNoOfCheckpoints(e.target.value)}
                 />
               </div>
+              <div className='col-sm-3'>
+                <label htmlFor='photo'> Emergency : </label>
+                  <select value={emergency} onChange={(e) => setEmergency(e.target.value)}>
+                    <option onClick={() => setEmergency('true')}>true</option>
+                    <option onClick={() => setEmergency('false')}>false</option>
+                  </select>
+                </div>
               <div className=" col-sm-3">
                 <label htmlFor="startTime">Duty Start Time : </label>
                 <span>
