@@ -78,6 +78,7 @@ const Onboarding = () => {
       phoneNo: phoneNo,
       emailId: email,
       gender: gender,
+      loadFactor:1,
     };
     console.log(data)
     const url = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-user/${adminId}`;
@@ -175,7 +176,7 @@ const Onboarding = () => {
                   <input
                     type='string'
                     name='PhoneNo'
-                    placeholder='Enter Phone No'
+                    placeholder='Enter Phone No' minLength={10} maxLength={10}
                     value={phoneNo} required autoComplete='off'
                     onChange={(e) => setPhoneNo(e.target.value)}
                   />
