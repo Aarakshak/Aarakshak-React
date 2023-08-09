@@ -15,6 +15,7 @@ import './App.css';
 import AdminNameContext from './components/context/AdminNameContext';
 import DeleteUser from './components/dashboard/deleteUser';
 import DeleteSession from './components/dashboard/deleteSession';
+import AdminReg from './components/dashboard/admin-reg';
 
 function App() {
   const [adminId, setAdminId] = useState(localStorage.getItem('adminID') || null);
@@ -59,6 +60,7 @@ function PrivateRoutes() {
       <Route path="analytics" element={<Analytics />} />
       <Route path="delete-users" element={<DeleteUser />} />
       <Route path="delete-sessions" element={<DeleteSession />} />
+      <Route path="admin-registration" element={<AdminReg />} />
     </Routes>
   );
 }

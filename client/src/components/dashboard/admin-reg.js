@@ -14,7 +14,7 @@ import NavbarInside from './navbar-inside2';
 import AdminIdContext from "../context/adminContext";
 import '../../assets/css/home.css';
 
-const Onboarding = () => {
+const AdminReg = () => {
   const { adminId } = useContext(AdminIdContext);
   const [badgeID, setBadgeID] = useState(); 
   const [firstName, setFirstName] = useState(''); 
@@ -103,7 +103,7 @@ const Onboarding = () => {
         <NavbarInside />
       </div>
       <div className='wrapper wrapper22 wrapper76' style={{ marginTop: '200px' }}>
-        <h1 className='heading-settings'>Police Officer Onboarding</h1>
+        <h1 className='heading-settings'>Admin Registration</h1>
           <div className='settings-box'>
             <form className='form-notifs'>
               <div className='row'>
@@ -264,4 +264,4 @@ const Onboarding = () => {
   );
 };
 
-export default Onboarding;
+export default AdminReg;
