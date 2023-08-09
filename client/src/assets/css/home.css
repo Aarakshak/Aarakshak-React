@@ -292,7 +292,7 @@ min-height: 100vh;
   .main-in{
     position: absolute;
     top: 56%;
-    left: 38%;
+    left: 40%;
     transform: translate(-50%, -50%);
   }
 
@@ -307,9 +307,9 @@ min-height: 100vh;
     border-top: 1px solid rgba(225, 225, 225, 0.5);
     border-left: 1px solid rgba(225, 225, 225, 0.5);
     width: 400px;
-    height: 200px;
+    height: 160px;
     padding: 0;
-    margin: 20px 20px;
+    margin: 15px 15px;
     transition: all 0.3s ease-in-out;
   }
 
@@ -376,8 +376,8 @@ min-height: 100vh;
   }
 
   .box-inner-img{
-    width: 160px;
-    height: 115px;
+    width: 100px;
+    height: 80px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(225, 225, 225, 0.5);

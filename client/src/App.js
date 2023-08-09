@@ -41,7 +41,7 @@ function App() {
 
 // PrivateRoutes component to handle the authenticated routes
 function PrivateRoutes() {
-  const { adminId, setAdminId } = useContext(AdminIdContext);
+  const { adminId } = useContext(AdminIdContext);
 
   if (!adminId) {
     return <Navigate to="/" />;
