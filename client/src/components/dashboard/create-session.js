@@ -11,6 +11,7 @@ import AdminIdContext from "../context/adminContext";
 import Swal from 'sweetalert2';
 
 const Settings = () => {
+  const history = useNavigate();
   const { adminId } = useContext(AdminIdContext);
   const [location, setLocation] = useState('');
   const [startDate, setStartDate] = useState();
@@ -45,7 +46,6 @@ const Settings = () => {
       });
   };
 
-  const history = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -75,6 +75,7 @@ const Settings = () => {
           timer:1500,
         }
         )
+        history('/dashboard/assign-duty');
       })
       .catch((error) => {
         console.error("Error sending data:", error);
