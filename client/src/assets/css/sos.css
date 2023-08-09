@@ -126,17 +126,19 @@
 }
 
 .cards {
-  margin-left: 3vw;
-  margin-right: 3vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: left;
+  padding: 4vw;
 }
 
 .card {
   width: 20vw;
   height: 40vh;
   margin-bottom: 30px;
+  margin: 1vw;
 }
 
 .btn-sos{
