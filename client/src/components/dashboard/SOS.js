@@ -49,9 +49,9 @@ const SOS = () => {
             respond={sosItem.issue.resolved} 
           />))
         )))
-      : <></>
+      : <><p className='prompter-prompt'>No SOS data available. All SOS's are resolved.</p></>
       }
-        { count? <></> :<p className='prompter-prompt'>No SOS data available. All SOS's are resolved.</p>}
+        { count? <></> :<></>}
       </div>
     </div>
   )

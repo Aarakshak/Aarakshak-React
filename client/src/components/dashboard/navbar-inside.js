@@ -41,10 +41,9 @@ const NavbarInside = () => {
         </div>
         <div className='nav-analytics-link' style={{ position: 'absolute', right: '0', top: '20' }}>
           <Link to="/dashboard/analytics">
-            <span className="analytics-link-text">Analytics</span>
           </Link>
         </div>
-        <div onClick={handleLogout}  style={{ position: 'absolute', right: '10px', top: '40px', width:'40' }} className='logoutbtn'>
+        <div onClick={handleLogout}  style={{ position: 'absolute', right: '130px', top: '35px', width:'40', padding:'15px 8px' }} className='logoutbtn'>
             LOGOUT
           </div>
       </nav>
