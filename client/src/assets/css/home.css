@@ -17,7 +17,7 @@ background: whitesmoke;
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
-min-height: 100vh;
+min-height: 120vh;
 }
 
 .home-outer-duty{
@@ -292,24 +292,29 @@ min-height: 100vh;
   .main-in{
     position: absolute;
     top: 56%;
-    left: 38%;
+    left: 43%;
     transform: translate(-50%, -50%);
   }
 
   .home-box-outer{
-    width: 200%;
+    width: 300%;
+    margin-top: 3vh;
   }
 
   .home-box{
+    text-align: left;
+    font-weight: bold;
     background-color: white;
     border-radius: 20px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(225, 225, 225, 0.5);
     border-left: 1px solid rgba(225, 225, 225, 0.5);
-    width: 400px;
-    height: 200px;
+    width: 300px;
+    height: 130px;
     padding: 0;
-    margin: 20px 20px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
     transition: all 0.3s ease-in-out;
   }
 
@@ -334,16 +339,17 @@ min-height: 100vh;
     padding: 10px;
     position: relative;
     top: 6px;
-    left: 20px;
+    left: 30px;
   }
 
   .box-inner-right{
     font-size: 0.8em;
     width: 45%;
-    padding: 20px 10px;
     position: relative;
-    left: 60px;
-    text-align: left;
+    justify-content: center;
+    align-items: center;
+    left: 30px;
+    top: 45px;
     color: black;
     font-family: 'Poppins', sans-serif;
   }
@@ -376,12 +382,9 @@ min-height: 100vh;
   }
 
   .box-inner-img{
-    width: 160px;
-    height: 115px;
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(225, 225, 225, 0.5);
-    border-left: 1px solid rgba(225, 225, 225, 0.5);
   }
 
   .connecter-cont{
@@ -581,4 +584,31 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .temporary-marker span {
   background: #D3D3D3;
+}
+
+.analytics-base-data p {
+  width: 21vw;
+  height: 10vh;
+  text-align: center;
+  padding: 20px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: "Poppins", sans-serif !important;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  background: #9ccbf9;
+}
+
+.analytics-base-data {
+  display: flex;
+  flex-direction: row;
+  margin-left: -115px;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }

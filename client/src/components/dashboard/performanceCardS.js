@@ -13,7 +13,7 @@ function PerformanceCard2(props) {
             <div>
               {props.badge}
             </div>
-            &nbsp;<div>{props.position}</div>
+            ,&nbsp;<div>{props.position}</div>
           </div>
         </div>
         <div className='time-data col-sm-1' style={{color:'red'}}>

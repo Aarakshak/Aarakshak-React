@@ -13,11 +13,11 @@ function PerformanceCard(props) {
             <div>
               {props.badge}
             </div>
-            &nbsp;<div>{props.position}</div>
+            ,&nbsp;<div>{props.position}</div>
           </div>
         </div>
         <div className='time-data col-cm-1' style={{color:'green'}}>
-          {props.time}&nbsp;hrs
+        {!props.totalAttended ? 0 : props.totalAttended}/{!props.totalSessions ? 0 : props.totalSessions}
         </div>
       </div>
     </div>
