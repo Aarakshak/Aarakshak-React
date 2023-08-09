@@ -13,6 +13,7 @@ import Supervision from './components/dashboard/supervision.js';
 import Analytics from './components/dashboard/analytics';
 import './App.css';
 import AdminNameContext from './components/context/AdminNameContext';
+import DeleteUser from './components/dashboard/deleteUser';
 
 function App() {
   const [adminId, setAdminId] = useState(localStorage.getItem('adminID') || null);
@@ -55,6 +56,7 @@ function PrivateRoutes() {
       <Route path="post-work-notifications" element={<WorkNotifs />} />
       <Route path="supervision" element={<Supervision />} />
       <Route path="analytics" element={<Analytics />} />
+      <Route path="delete-users" element={<DeleteUser />} />
     </Routes>
   );
 }

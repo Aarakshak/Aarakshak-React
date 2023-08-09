@@ -2,7 +2,7 @@ import React from 'react';
 import userAvatar from '../../assets/images/userAvatar.png';
 import '../../assets/css/analytics.css';
 
-function PerformanceCard(props) {
+function PerformanceCard2(props) {
   return (
     <div className='performance-card'>
       <img src={userAvatar} className='col-sm-1' />
@@ -16,12 +16,12 @@ function PerformanceCard(props) {
             <div>{props.position}</div>
           </div>
         </div>
-        <div className='time-data col-cm-1'>
-          {props.time}hrs
+        <div className='time-data col-sm-1'>
+        {!props.totalAttended ? 0 : props.totalAttended}/{!props.totalSessions ? 0 : props.totalSessions}
         </div>
       </div>
     </div>
   );
 }
 
-export default PerformanceCard;
+export default PerformanceCard2;

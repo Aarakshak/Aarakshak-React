@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import id from '../../assets/logos/id.png';
 import avatar from '../../assets/logos/shg.svg';
@@ -7,6 +7,7 @@ import photo from '../../assets/logos/photo1.png';
 import emaillogo from "../../assets/logos/emailogo.png";
 import phonelogo from "../../assets/logos/phonelogo.png";
 import Swal from 'sweetalert2';
+
 
 
 import NavbarInside from './navbar-inside2';
@@ -20,11 +21,12 @@ const Onboarding = () => {
   const [surname, setSurname] = useState(''); 
   const [rank, setRank] = useState(''); 
   const [profilePic, setProfilePic] = useState(''); 
-  const [policeStationId, setPoliceStationId] = useState(); 
   const [phoneNo, setPhoneNo] = useState(); 
   const [email, setEmail] = useState(''); 
   const [gender, setGender] = useState('Male');
   const [admin, setAdmin] = useState('No'); 
+  const [policeStationId, setPoliceStationId] = useState(); 
+  const [policeStationIdList, setPoliceStationIdList] = useState([]);
 
 
 
@@ -47,6 +49,23 @@ const Onboarding = () => {
     },
   };
 
+
+  const url_get_psids = `https://violet-kitten-toga.cyclic.cloud/v1/admin/police-stations/${adminId}`;
+
+  useEffect(() => {
+    
+    axios.get(url_get_psids)
+      .then(result => {
+        setPoliceStationIdList(result.data);
+        console.log('Users Fetched');
+        console.log(result.data);
+      })
+      .catch(error => {
+        console.error('Error fetching Session List:', error);
+      });
+  }, []);
+
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -55,7 +74,7 @@ const Onboarding = () => {
       firstName: firstName,
       surname: surname,
       rank: rank,
-      policeStationId:parseInt(policeStationId),
+      policeStationId:(policeStationId.match(/(\d+)/)[0]),
       profilePic: profilePic,
       phoneNo: phoneNo,
       emailId: email,
@@ -100,7 +119,7 @@ const Onboarding = () => {
                     type='number'
                     name='badgeID'
                     placeholder= 'Enter Police ID'
-                    value={badgeID}
+                    value={badgeID} required autoComplete='off'
                     onChange={(e) => setBadgeID(e.target.value)}
                   />
                 </div>                
@@ -113,7 +132,7 @@ const Onboarding = () => {
                     type='string'
                     name='rank'
                     placeholder= 'Enter Rank of Officer'
-                    value={rank}
+                    value={rank} required autoComplete='off'
                     onChange={(e) => setRank(e.target.value)}
                   />
                 </div>
@@ -128,7 +147,7 @@ const Onboarding = () => {
                     type='string'
                     name='firstName'
                     placeholder='Enter First Name'
-                    value={firstName}
+                    value={firstName} required autoComplete='off'
                     onChange={(e) => setFirstName(e.target.value)}
                   />
                 </div>
@@ -141,7 +160,7 @@ const Onboarding = () => {
                     type='string'
                     name='endTime'
                     placeholder='Enter Last Name'
-                    value={surname}
+                    value={surname} required autoComplete='off'
                     onChange={(e) => setSurname(e.target.value)}
                   />
                 </div>
@@ -165,7 +184,7 @@ const Onboarding = () => {
                     type='string'
                     name='PhoneNo'
                     placeholder='Enter Phone No'
-                    value={phoneNo}
+                    value={phoneNo} required autoComplete='off'
                     onChange={(e) => setPhoneNo(e.target.value)}
                   />
                 </div>
@@ -178,7 +197,7 @@ const Onboarding = () => {
                     type='email'
                     name='email'
                     placeholder='Enter email'
-                    value={email}
+                    value={email} required autoComplete='off'
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
@@ -192,7 +211,7 @@ const Onboarding = () => {
                   <input
                     accept='image/*'
                     type='file'
-                    name='profile-pic'
+                    name='profile-pic' required autoComplete='off'
                     onChange={convertToBase64} style={{display:'none',}} id='imger'
                   />
                   
@@ -213,13 +232,12 @@ const Onboarding = () => {
                   <span>
                     <img alt='' className='updater' src={id}></img>
                   </span>
-                  <input
-                    type='number'
-                    name='policeStationId'
-                    placeholder='Enter Police Station ID'
-                    value={policeStationId}
-                    onChange={(e) => setPoliceStationId(e.target.value)}
-                  />
+                  <select value={policeStationId} onChange={(e) => setPoliceStationId(e.target.value)}>
+                    <option>Select Police Station</option>
+                    {policeStationIdList.map((policeStationIdList) => (
+                        <option onClick={() => setPoliceStationId(policeStationIdList.policeStationId)}>{policeStationIdList.policeStationId} - {policeStationIdList.thanaName} {policeStationIdList.state}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
               <br></br>

@@ -29,7 +29,7 @@ const SOS = () => {
       </div>
       <center><h1 className="sos-heading">SOS Received</h1></center>
       <div className="cards">
-        {
+        { (Array.isArray(sosData) && sosData.length > 0) ?
         (sosData.map((sosItem, index) => (
           (sosItem.issue.resolved == true ? (<div style={{display:'none'}}>{count=count+1}</div>) : (
           <SOSCard
@@ -48,7 +48,9 @@ const SOS = () => {
             profilePic={sosItem.issue.profilePic}
             respond={sosItem.issue.resolved} 
           />))
-        )))}
+        )))
+      : <></>
+      }
         { count? <></> :<p className='prompter-prompt'>No SOS data available. All SOS's are resolved.</p>}
       </div>
     </div>
