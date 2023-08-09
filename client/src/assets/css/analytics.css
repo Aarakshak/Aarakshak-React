@@ -12,15 +12,6 @@
   flex-direction: column;
 }
 
-.analytics-base-data {
-  margin-top: 200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
 
 .analytics-stats {
   display: flex;
@@ -36,24 +27,6 @@
   flex-direction: column;
 }
 
-.analytics-base-data p {
-  width: 25vw;
-  height: 10vh;
-  text-align: center;
-  padding: 20px;
-  margin-left: 2vw;
-  margin-right: 2vw;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  font-family: "Poppins", sans-serif !important;
-  border-radius: 50px;
-  letter-spacing: 1px;
-  background: #9ccbf9;
-}
 
 .best-performers,
 .least-performers {
