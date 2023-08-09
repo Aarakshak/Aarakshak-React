@@ -470,5 +470,12 @@ html body {
   color:#01b0d3;
 }
 
-
+.logoutbtn{
+    color: #01b0d3;
+    width: 8vw;
+    background: white;
+    border-radius: 30px !important;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
 
