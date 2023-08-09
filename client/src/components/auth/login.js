@@ -140,8 +140,7 @@ const Login = () => {
               <input
                 type="password" 
                 name="OTP"
-                autoComplete="off"
-                value={otp} minLength={6} maxLength={6}
+                value={otp} minLength={6} maxLength={6} autoComplete="off"
                 onChange={handleOTPChange}
               />
             </div>

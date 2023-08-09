@@ -37,7 +37,10 @@ const SOS = () => {
             name={sosItem.firstName}
             issueID={sosItem.issueID}
             badgeID={sosItem.issue.issue.badgeID} 
-            time={sosItem.issue.issue.raised}
+            time={new Date(sosItem.issue.issue.raised).toLocaleTimeString([], {
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
             location={sosItem.issue.issue.location} 
             latitude={sosItem.issue.issue.latitude}
             longitude={sosItem.issue.issue.longitude}

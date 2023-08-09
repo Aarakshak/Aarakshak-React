@@ -171,7 +171,7 @@ const Home = () => {
                   </center>
                 </div>
 
-            <div className='home-box col-sm-4'>
+            {/* <div className='home-box col-sm-4'>
                   <center>
                     <Link to='/dashboard/delete-users'>
                     <div className='row'>
@@ -184,7 +184,7 @@ const Home = () => {
                     </div>
                     </Link>
                   </center>
-                </div>
+                </div> */}
 
 
             <div className='home-box col-sm-4'>

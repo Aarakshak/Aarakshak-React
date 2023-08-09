@@ -68,7 +68,7 @@ const SupervisionCard = (props) => {
           </div>
 
           <div className="info-box">
-            Checkpoint{'('}s{')'} Attendance : <span>{checkPointAttended ? 'Marked' : 'Not Marked'}</span>
+            Nearest Police Officer : <span>{mapDataSUP.data?.[0].label ? (nearest.nearestUserID) - (nearest.nearestDistance) : <></>}</span>
           </div>
         </div>
 
@@ -82,8 +82,8 @@ const SupervisionCard = (props) => {
             Get Nearest Police Officer 
             
         </button>
-        {mapDataSUP.data?.[0].label ? (nearest.nearestUserID) (nearest.nearestDistance) : <></>}
-          <ShowMap latitude={latitude} longitude={longitude} />
+          {latitude && longitude ?
+          <ShowMap latitude={latitude} longitude={longitude} /> : <></>}
       </div>
       <div className="col-md-4"></div>
     </div>

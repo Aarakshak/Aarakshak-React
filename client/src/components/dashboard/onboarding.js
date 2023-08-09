@@ -78,6 +78,9 @@ const Onboarding = () => {
       phoneNo: phoneNo,
       emailId: email,
       gender: gender,
+      totalSessions: 15,
+      totalAttended: 5,
+      totalHoursOnDuty: 20,
       loadFactor:1,
     };
     console.log(data)
