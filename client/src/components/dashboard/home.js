@@ -19,7 +19,7 @@ const Home = () => {
 
         <div className='main'>
           <div className='main-in'>
-            <div className='home-box-outer'>
+            <div className='home-box-outer' style={{marginTop:'250px'}}>
               <div className='row'>
 
               <div className='home-box col-sm-4'>
@@ -128,6 +128,67 @@ const Home = () => {
                 <div className='row'>
                     <div className='box-inner-left col-sm-4'>
                       <img alt='' src={customerimg} className='box-inner-img'></img>
+                    </div>
+                    <div className='box-inner-right bxr5 col-sm-8'>
+                    It helps admins see the emergency SOS raised by Police officers from different duty locations.
+                    </div>  
+                  </div>
+                  </Link>
+                </center>
+              </div>
+
+            </div>
+            </div>
+
+            <div className='home-box-outer' style={{paddingBottom:'50px'}}>
+            <div className='row'>
+
+            <div className='home-box col-sm-4'>
+                  <center>
+                    <Link to='/dashboard/delete-sessions'>
+                    <div className='home-box-heading'>
+                    Delete Session
+                    </div>
+                    <div className='row'>
+                      <div className='box-inner-left col-sm-4'>
+                        <img alt='' src={photo1} className='box-inner-img'></img>
+                      </div>
+                      <div className='box-inner-right bxr6 col-sm-8'>
+                      This feature enables to view and delete all sessions.
+                      </div>  
+                    </div>
+                    </Link>
+                  </center>
+                </div>
+
+            <div className='home-box col-sm-4'>
+                  <center>
+                    <Link to='/dashboard/delete-users'>
+                    <div className='home-box-heading'>
+                    Delete User
+                    </div>
+                    <div className='row'>
+                      <div className='box-inner-left col-sm-4'>
+                        <img alt='' src={photo2} className='box-inner-img'></img>
+                      </div>
+                      <div className='box-inner-right bxr6 col-sm-8'>
+                      This feature enables to view and delete all users.
+                      </div>  
+                    </div>
+                    </Link>
+                  </center>
+                </div>
+
+
+            <div className='home-box col-sm-4'>
+                <center>
+                <Link to='/dashboard/sos'>
+                <div className='home-box-heading'>
+                 Real Time Analytics
+                </div>
+                <div className='row'>
+                    <div className='box-inner-left col-sm-4'>
+                      <img src={photo4} className='box-inner-img' alt=''></img>
                     </div>
                     <div className='box-inner-right bxr5 col-sm-8'>
                     It helps admins see the emergency SOS raised by Police officers from different duty locations.

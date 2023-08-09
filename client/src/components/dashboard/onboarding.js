@@ -74,7 +74,7 @@ const Onboarding = () => {
       firstName: firstName,
       surname: surname,
       rank: rank,
-      policeStationId:(policeStationId.match(/(\d+)/)[0]),
+      policeStationId:parseInt(policeStationId.match(/(\d+)/)[0]),
       profilePic: profilePic,
       phoneNo: phoneNo,
       emailId: email,
@@ -234,10 +234,12 @@ const Onboarding = () => {
                   </span>
                   <select value={policeStationId} onChange={(e) => setPoliceStationId(e.target.value)}>
                     <option>Select Police Station</option>
-                    {policeStationIdList.map((policeStationIdList) => (
+                  { Array.isArray(policeStationIdList) && policeStationIdList.length > 0 ? 
+                    (policeStationIdList.map((policeStationIdList) => (
                         <option onClick={() => setPoliceStationId(policeStationIdList.policeStationId)}>{policeStationIdList.policeStationId} - {policeStationIdList.thanaName} {policeStationIdList.state}</option>
-                    ))}
+                    ))) : <></> }
                   </select>
+
                 </div>
               </div>
               <br></br>

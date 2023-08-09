@@ -64,7 +64,7 @@ const SupervisionCard = (props) => {
             marginTop: '20px',
           }}>
           
-            Get Current Location    
+            Get Nearest Police Officer    
         </button>
           <ShowMap latitude={latitude} longitude={longitude} />
       </div>

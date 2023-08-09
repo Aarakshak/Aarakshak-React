@@ -6,19 +6,19 @@ import '../../assets/css/home.css';
 import AdminIdContext from "../context/adminContext";
 import Swal from 'sweetalert2';
 
-const DeleteUser = () => {
+const DeleteSession = () => {
   const { adminId } = useContext(AdminIdContext);
-  const [badgeID, setBadgeID] = useState('');
-  const [badgeIDList, setBadgeIDList] = useState([]);
+  const [sessionID, setSessionID] = useState('');
+  const [sessionList, setSessionList] = useState([[]]);
   
-  const url_get_badgeids = `https://violet-kitten-toga.cyclic.cloud/v1/admin/get-users/${adminId}`;
+  const url_get = `https://violet-kitten-toga.cyclic.cloud/v1/admin/${adminId}/sessions`;
 
   useEffect(() => {
     
-    axios.get(url_get_badgeids)
+    axios.get(url_get)
       .then(result => {
-        setBadgeIDList(result.data.users);
-        console.log('Users Fetched');
+        setSessionList(result.data.sessions);
+        console.log('Sessions Fetched');
       })
       .catch(error => {
         console.error('Error fetching Session List:', error);
@@ -30,16 +30,16 @@ const DeleteUser = () => {
     e.preventDefault();
 
     const data = {
-      badgeID: parseInt(badgeID.match(/(\d+)/)[0]),
+        sessionId: parseInt(sessionID.match(/(\d+)/)[0]),
     };
-    const url_post = `https://violet-kitten-toga.cyclic.cloud/v1/admin/delete-user/${adminId}/${badgeID.match(/(\d+)/)[0]}`;
+    const url_post = `https://violet-kitten-toga.cyclic.cloud/v1/admin/delete-session/${adminId}/${sessionID.match(/(\d+)/)[0]}`;
     
     axios.delete(url_post, data)
       .then((response) => {
         console.log('Data sent successfully:', response.data);
         Swal.fire({
           icon: (response.data.error) ? 'error' : 'success',
-          title: (response.data.error) ? response.data.error : 'User Successfully Deleted',
+          title: (response.data.error) ? response.data.error : 'Session Successfully Deleted',
           showConfirmButton: false,
           timer:1500,
         }
@@ -56,7 +56,7 @@ const DeleteUser = () => {
         <NavbarInside />
       </div>
       <div className='wrapper wrapper22 wrapper76 wrapper77' style={{ marginTop: '200px' }}>
-        <h1 className='heading-settings'>Delete User</h1>
+        <h1 className='heading-settings'>Delete Session</h1>
           <div className='settings-box'>
             <form className='form-notifs'> 
               <div className='row'>
@@ -64,14 +64,14 @@ const DeleteUser = () => {
                 </div>
                 <div className='col-sm-8'>
                   <label htmlFor='police-officer'>
-                    Police Officer :{' '}
+                    Sessions :{' '}
                   </label>
-                  <select value={badgeID} onChange={(e) => setBadgeID(e.target.value)}>
-                    <option>Select Police Officer</option>
-                    { Array.isArray(badgeIDList) && badgeIDList.length > 0 ? (
-                    badgeIDList.map((badgeIDList) => (
-                        <option onClick={() => setBadgeID(badgeIDList.badgeID)}>{badgeIDList.badgeID} - {badgeIDList.firstName} {badgeIDList.surname}</option>
-                    ))) : <></>}
+                  <select value={sessionID} onChange={(e) => setSessionID(e.target.value)}>
+                    <option>Select Session</option>
+                    {Array.isArray(sessionList) && sessionList.length > 0 ? (
+                    sessionList.map((sessionList) => (
+                        <option onClick={() => setSessionID(sessionList.sessionID)}>{sessionList.sessionID} - {sessionList.sessionLocation} </option>
+                    ))) : <></> }
                   </select>
                 </div> 
                 <div className='col-sm-2'>
@@ -81,7 +81,7 @@ const DeleteUser = () => {
               <center>
                 <input
                   type="submit"
-                  value="Delete User"
+                  value="Delete Session"
                   className="btn-sbmt col-sm-6"
                   style={{marginTop: '20px'}}
                   onClick={onSubmit}
@@ -108,4 +108,4 @@ const DeleteUser = () => {
   );
 };
 
-export default DeleteUser;
+export default DeleteSession;
