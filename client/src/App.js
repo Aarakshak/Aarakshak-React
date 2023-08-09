@@ -10,6 +10,7 @@ import SOS from './components/dashboard/SOS.js';
 import Onboarding from './components/dashboard/onboarding.js';
 import WorkNotifs from './components/dashboard/work-notif.js';
 import Supervision from './components/dashboard/supervision.js';
+import Analytics from './components/dashboard/analytics';
 import './App.css';
 import AdminNameContext from './components/context/AdminNameContext';
 import DeleteUser from './components/dashboard/deleteUser';
@@ -55,6 +56,7 @@ function PrivateRoutes() {
       <Route path="onboarding" element={<Onboarding />} />
       <Route path="post-work-notifications" element={<WorkNotifs />} />
       <Route path="supervision" element={<Supervision />} />
+      <Route path="analytics" element={<Analytics />} />
       <Route path="delete-users" element={<DeleteUser />} />
       <Route path="delete-sessions" element={<DeleteSession />} />
     </Routes>

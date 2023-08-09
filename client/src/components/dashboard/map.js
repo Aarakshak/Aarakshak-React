@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Map, {Marker} from 'react-map-gl';
 import marker from "../../assets/logos/loc-check.png";
-import { Height } from '@material-ui/icons';
 const ShowMap = (props) => {
 
 const {latitude, longitude} = props;
