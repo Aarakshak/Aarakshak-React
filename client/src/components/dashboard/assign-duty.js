@@ -100,9 +100,11 @@ const AssignDuty = () => {
                   </label>
                   <select value={badgeID} onChange={(e) => setBadgeID(e.target.value)}>
                     <option>Select Police Officer</option>
-                    {badgeIDList.map((badgeIDList) => (
+                    {Array.isArray(sessionList) && sessionList.length > 0 ? (
+                    badgeIDList.map((badgeIDList) => (
                         <option onClick={() => setBadgeID(badgeIDList.badgeID)}>{badgeIDList.badgeID} - {badgeIDList.firstName} {badgeIDList.surname}</option>
-                    ))}
+                    ))) : <></>
+                  }
                   </select>
                 </div> 
                 <div className='col-sm-2'>

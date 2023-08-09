@@ -24,6 +24,9 @@ const Settings = () => {
   const [noOfCheckpoints, setNoOfCheckpoints] = useState("");
   const [mapDataCord, setMapDataCord] = useState([]);
   const [emergency, setEmergency] = useState('false'); 
+  
+  const currDate = new Date().toLocaleDateString;
+  const currTime = new Date().toLocaleTimeString;
 
   const url_admin = `https://violet-kitten-toga.cyclic.cloud/v1/admin/add-session/${adminId}`;
 
@@ -54,8 +57,8 @@ const Settings = () => {
 
     const startTimeStr = `${startDate}T${startTime}:00.530Z`;
     const endTimeStr = `${endDate}T${endTime}:00.530Z`;
-
-    const data = {
+  
+      const data = {
       sessionLocation: location,
       startTime: new Date(startTimeStr).toISOString(),
       endTime: new Date(endTimeStr).toISOString(),
@@ -63,7 +66,7 @@ const Settings = () => {
       latitude: latitude,
       description: description,
       emergency:emergency,
-    };
+       } 
     axios
       .post(url_admin, data)
       .then((response) => {

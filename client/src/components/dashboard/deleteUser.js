@@ -56,7 +56,7 @@ const DeleteUser = () => {
         <NavbarInside />
       </div>
       <div className='wrapper wrapper22 wrapper76 wrapper77' style={{ marginTop: '200px' }}>
-        <h1 className='heading-settings'>Delete User</h1>
+        <h1 className='heading-settings'>Wipe User Data</h1>
           <div className='settings-box'>
             <form className='form-notifs'> 
               <div className='row'>

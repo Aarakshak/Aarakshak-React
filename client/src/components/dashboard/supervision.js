@@ -49,7 +49,10 @@ import Map, {Marker} from 'react-map-gl';
                 hour: '2-digit',
                 minute: '2-digit',
               })} 
-              endTime={new Date(supItem.endTime).toISOString()} 
+              endTime={new Date(supItem.endTime).toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+              })} 
               sessionLocation={supItem.sessionLocation}
               profilePic={supItem.profilePic}
               latitude={supItem.latitude}

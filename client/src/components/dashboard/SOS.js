@@ -34,19 +34,16 @@ const SOS = () => {
           (sosItem.issue.resolved == true ? (<div style={{display:'none'}}>{count=count+1}</div>) : (
           <SOSCard
             key={index}
-            name={sosItem.issue.name}
-            issueID={sosItem.issue.issueID}
-            badgeID={sosItem.issue.badgeID} 
-            time={new Date(sosItem.issue.raised).toLocaleTimeString([], {
-              hour: '2-digit',
-              minute: '2-digit',
-            })} 
-            location={sosItem.issue.location} 
-            latitude={sosItem.issue.latitude}
-            longitude={sosItem.issue.longitude}
-            description={sosItem.issue.issueText} 
-            profilePic={sosItem.issue.profilePic}
-            respond={sosItem.issue.resolved} 
+            name={sosItem.firstName}
+            issueID={sosItem.issueID}
+            badgeID={sosItem.issue.issue.badgeID} 
+            time={sosItem.issue.issue.raised}
+            location={sosItem.issue.issue.location} 
+            latitude={sosItem.issue.issue.latitude}
+            longitude={sosItem.issue.issue.longitude}
+            description={sosItem.issue.issue.issueText} 
+            profilePic={sosItem.profilePic}
+            respond={sosItem.issue.issue.resolved} 
           />))
         )))
       : <><p className='prompter-prompt'>No SOS data available. All SOS's are resolved.</p></>

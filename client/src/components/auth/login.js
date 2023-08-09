@@ -89,12 +89,12 @@ const Login = () => {
       console.log('Data sent successfully:', response.data);
       Swal.fire({
         icon: (response.data.error) ? 'error' : 'success',
-        title: (response.data.error) ? response.data.error : response.data.message,
+        title: (response.data.error) ? 'Incorrect OTP' : response.data.message,
         showConfirmButton: false,
         timer:1500,
       }
       )
-      history('dashboard/home');
+      {(response.data.error) ? <></> : history('dashboard/home')}
     } 
     )
     .catch((error) => {
@@ -141,7 +141,7 @@ const Login = () => {
                 type="password" 
                 name="OTP"
                 autoComplete="off"
-                value={otp}
+                value={otp} minLength={6} maxLength={6}
                 onChange={handleOTPChange}
               />
             </div>

@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import "../../assets/css/sos.css";
 import ShowMap from './map';
+import AdminIdContext from "../context/adminContext";
 
 const SupervisionCard = (props) => {
+  const { adminId } = useContext(AdminIdContext);
   const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended, profilePic, latitude, longitude} = props;
   const [mapDataSUP, setMapDataSUP] = useState([]);
+  const [nearest, setNearest] = useState([]);
 
   const url = `http://api.positionstack.com/v1/reverse?access_key=d190b912df2409194e8d4fad59e1637f&query=${latitude}%2C${longitude}`;
 
@@ -17,6 +20,18 @@ const SupervisionCard = (props) => {
       })
       .catch(error => {
         console.error('Error fetching SOS data:', error);
+      });
+  }, []);
+
+  const url_get = `https://violet-kitten-toga.cyclic.cloud/v1/admin/get-nearest-user/${adminId}/${badgeId}`;
+  useEffect(() => {
+    axios.get(url_get)
+      .then(res => {
+        setNearest(res.data);
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.error('Error fetching Session List:', error);
       });
   }, []);
 
@@ -64,8 +79,10 @@ const SupervisionCard = (props) => {
             marginTop: '20px',
           }}>
           
-            Get Nearest Police Officer    
+            Get Nearest Police Officer 
+            
         </button>
+        {mapDataSUP.data?.[0].label ? (nearest.nearestUserID) (nearest.nearestDistance) : <></>}
           <ShowMap latitude={latitude} longitude={longitude} />
       </div>
       <div className="col-md-4"></div>
