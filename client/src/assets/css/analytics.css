@@ -4,6 +4,7 @@
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
+  
   margin-bottom: 5px;
 }
 
@@ -12,13 +13,13 @@
   flex-direction: column;
 }
 
-
 .analytics-stats {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 5vh;
+  margin-top: 30vh;
+  margin-bottom: 20vh;
 }
 
 .best-performers,

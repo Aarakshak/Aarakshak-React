@@ -29,7 +29,7 @@ function Analytics() {
         const loadArray = response.data.load;
         const loadLabels = loadArray
           .slice(0, 18)
-          .map((entry, index) => `${index + 1}`); // Modify labels to start from 1
+          .map((entry, index) => `${index + 1}`); 
         const loadValues = loadArray
           .slice(0, 18)
           .map((entry) => entry.loadFactor);
@@ -43,6 +43,7 @@ function Analytics() {
   
 
   return (
+    <div>
     <div className="analytics-outer">
       <NavbarInside />
       <div className="analytics">
@@ -85,6 +86,7 @@ function Analytics() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
