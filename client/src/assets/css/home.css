@@ -292,22 +292,24 @@ min-height: 100vh;
   .main-in{
     position: absolute;
     top: 56%;
-    left: 40%;
+    left: 43%;
     transform: translate(-50%, -50%);
   }
 
   .home-box-outer{
-    width: 200%;
+    width: 300%;
   }
 
   .home-box{
+    text-align: left;
+    font-weight: bold;
     background-color: white;
     border-radius: 20px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(225, 225, 225, 0.5);
     border-left: 1px solid rgba(225, 225, 225, 0.5);
-    width: 400px;
-    height: 160px;
+    width: 300px;
+    height: 130px;
     padding: 0;
     margin: 15px 15px;
     transition: all 0.3s ease-in-out;
@@ -334,16 +336,17 @@ min-height: 100vh;
     padding: 10px;
     position: relative;
     top: 6px;
-    left: 20px;
+    left: 30px;
   }
 
   .box-inner-right{
     font-size: 0.8em;
     width: 45%;
-    padding: 20px 10px;
     position: relative;
-    left: 60px;
-    text-align: left;
+    justify-content: center;
+    align-items: center;
+    left: 30px;
+    top: 45px;
     color: black;
     font-family: 'Poppins', sans-serif;
   }
@@ -376,12 +379,9 @@ min-height: 100vh;
   }
 
   .box-inner-img{
-    width: 100px;
+    width: 80px;
     height: 80px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(225, 225, 225, 0.5);
-    border-left: 1px solid rgba(225, 225, 225, 0.5);
   }
 
   .connecter-cont{

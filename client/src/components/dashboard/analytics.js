@@ -75,7 +75,7 @@ function Analytics() {
               <div></div>
             </div>
             <div className="least-performers col-sm-6">
-              <h3>Poor Performance</h3>
+              <h3>Need Improvement</h3>
               {leastPerformers.map((user) => (
                 <PerformanceCard2
                   key={user.badgeID}

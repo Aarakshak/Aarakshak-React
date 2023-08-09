@@ -31,15 +31,12 @@ const Home = () => {
               <div className='home-box col-sm-4'>
                   <center>
                     <Link to='/dashboard/onboarding'>
-                    <div className='home-box-heading'>
-                      Police Officer Onboarding
-                    </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
                         <img alt='' src={photo1} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      It ensures an efficient integration process, aiding in successful onboarding of police officer into Aarakshak App. 
+                      Police Officer Onboarding
                       </div>  
                     </div>
                     </Link>
@@ -50,15 +47,12 @@ const Home = () => {
                 <div className='home-box col-sm-4'>
                 <center>
                   <Link to='/dashboard/create-session'>
-                  <div className='home-box-heading'>
-                   Create Session
-                  </div>
                   <div className='row'>
                     <div className='box-inner-left col-sm-4'>
                       <img alt='' src={photo2} className='box-inner-img'></img>
                     </div>
                     <div className='box-inner-right bxr6 col-sm-8'>
-                    It allows the admin to create duty sessions where police officers are assigned duties later.
+                    Create Session
                     </div>  
                   </div>
                   </Link>
@@ -68,15 +62,12 @@ const Home = () => {
               <div className='home-box col-sm-4'>
                   <center>
                     <Link to='/dashboard/assign-duty'>
-                    <div className='home-box-heading'>
-                     Assign Duty
-                    </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
                         <img src={photo3} className='box-inner-img' alt=''></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      This feature allows the admin to assign specific sessions to policemen stationed at various locations.
+                      Assign Duty
                       </div>  
                     </div>
                     </Link>
@@ -91,15 +82,12 @@ const Home = () => {
             <div className='home-box col-sm-4'>
                   <center>
                     <Link to='/dashboard/supervision'>
-                    <div className='home-box-heading'>
-                     Police Officer Supervision
-                    </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
                         <img alt='' src={photo4} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      This feature enables admin to closely monitor police officers, ensuring their presense at duty locations and adherence to protocols.
+                       Police Officer Supervision
                       </div>  
                     </div>
                     </Link>
@@ -109,15 +97,12 @@ const Home = () => {
             <div className='home-box col-sm-4'>
                   <center>
                     <Link to='/dashboard/post-work-notifications'>
-                    <div className='home-box-heading'>
-                     Post Work Notifications
-                    </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
                         <img alt='' src={photo5} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      It allows admin to post notifications about upcoming meetings, events and other work related notifications.
+                      Post Work Notifications
                       </div>  
                     </div>
                     </Link>
@@ -128,21 +113,17 @@ const Home = () => {
             <div className='home-box col-sm-4'>
                 <center>
                 <Link to='/dashboard/sos'>
-                <div className='home-box-heading'>
-                 SOS
-                </div>
                 <div className='row'>
                     <div className='box-inner-left col-sm-4'>
                       <img alt='' src={photo6} className='box-inner-img'></img>
                     </div>
-                    <div className='box-inner-right bxr5 col-sm-8'>
-                    It helps admins see the emergency SOS raised by Police officers from different duty locations.
+                    <div className='box-inner-right bxr6 col-sm-8'>
+                     SOS
                     </div>  
                   </div>
                   </Link>
                 </center>
               </div>
-
             </div>
             </div>
 
@@ -152,15 +133,12 @@ const Home = () => {
             <div className='home-box col-sm-4'>
                   <center>
                     <Link to='/dashboard/delete-sessions'>
-                    <div className='home-box-heading'>
-                    Delete Session
-                    </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
                         <img alt='' src={photo7} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      This feature enables to view and delete all sessions.
+                       Delete Session
                       </div>  
                     </div>
                     </Link>
@@ -170,15 +148,12 @@ const Home = () => {
             <div className='home-box col-sm-4'>
                   <center>
                     <Link to='/dashboard/delete-users'>
-                    <div className='home-box-heading'>
-                    Delete User
-                    </div>
                     <div className='row'>
                       <div className='box-inner-left col-sm-4'>
                         <img alt='' src={photo8} className='box-inner-img'></img>
                       </div>
                       <div className='box-inner-right bxr6 col-sm-8'>
-                      This feature enables to view and delete all users.
+                      Delete User
                       </div>  
                     </div>
                     </Link>
@@ -189,15 +164,12 @@ const Home = () => {
             <div className='home-box col-sm-4'>
                 <center>
                 <Link to='/dashboard/analytics'>
-                <div className='home-box-heading'>
-                 Real Time Analytics
-                </div>
                 <div className='row'>
                     <div className='box-inner-left col-sm-4'>
                       <img src={photo9} className='box-inner-img' alt=''></img>
                     </div>
-                    <div className='box-inner-right bxr5 col-sm-8'>
-                    It helps admins see the emergency SOS raised by Police officers from different duty locations.
+                    <div className='box-inner-right bxr6 col-sm-8'>
+                    Real Time Analytics
                     </div>  
                   </div>
                   </Link>
