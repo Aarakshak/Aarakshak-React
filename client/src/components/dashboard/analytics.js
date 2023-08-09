@@ -12,6 +12,8 @@ function Analytics() {
     const [sessions, setSessions] = useState(0);
     const [bestPerformers, setBestPerformers] = useState([]);
     const [leastPerformers, setLeastPerformers] = useState([]);
+    const [labels, setLabels] = useState([]);
+    const [values, setValues] = useState([]);
     const url_get = `https://violet-kitten-toga.cyclic.cloud/v1/admin/statistics/${adminId}`;
     useEffect(() => {
         axios.get(url_get)
@@ -72,6 +74,9 @@ function Analytics() {
               <div></div>
             </div>
           </div>
+        </div>
+        <div>
+
         </div>
       </div>
     </div>
