@@ -16,7 +16,7 @@ function PerformanceCard2(props) {
             &nbsp;<div>{props.position}</div>
           </div>
         </div>
-        <div className='time-data col-sm-1'>
+        <div className='time-data col-sm-1' style={{color:'red'}}>
         {!props.totalAttended ? 0 : props.totalAttended}/{!props.totalSessions ? 0 : props.totalSessions}
         </div>
       </div>

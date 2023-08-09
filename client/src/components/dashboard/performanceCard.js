@@ -16,7 +16,7 @@ function PerformanceCard(props) {
             &nbsp;<div>{props.position}</div>
           </div>
         </div>
-        <div className='time-data col-cm-1'>
+        <div className='time-data col-cm-1' style={{color:'green'}}>
           {props.time}&nbsp;hrs
         </div>
       </div>
