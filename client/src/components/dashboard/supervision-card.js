@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
-import Map, {Marker} from 'react-map-gl';
-import marker from "../../assets/logos/loc-check.png"
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../../assets/css/sos.css";
+import ShowMap from './map';
 
 const SupervisionCard = (props) => {
   const { policeName, badgeId, sessionDate, startTime, endTime, sessionLocation, checkIn, checkPointAttended, profilePic, latitude, longitude} = props;
@@ -64,30 +63,12 @@ const SupervisionCard = (props) => {
             color: 'white',
             marginTop: '20px',
           }}>
-          Get Current Location
+          
+            Get Current Location    
         </button>
-
-
+          <ShowMap latitude={latitude} longitude={longitude} />
       </div>
       <div className="col-md-4"></div>
-      <div className='map-outer'>
-        
-        {latitude && longitude ? <Map
-        mapboxAccessToken="pk.eyJ1IjoiYXN1ciIsImEiOiJja3Q2ZXhkYW4waHJwMm5xbHVrZnE2YjZ2In0.pQ-92peoEdKmKFJAi6DoSg"
-        initialViewState={{
-          longitude: longitude,
-          latitude: latitude,
-          zoom: 14.5
-        }}
-        style={{width:400, height:400}}
-        mapStyle="mapbox://styles/mapbox/streets-v11"
-      >
-      <Marker longitude={longitude} latitude={latitude} anchor="bottom" >
-        <img src= {marker} />
-      </Marker>
-
-      </Map>: ""}
-      </div>
     </div>
   );
 };

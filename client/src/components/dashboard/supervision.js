@@ -10,8 +10,6 @@ import Map, {Marker} from 'react-map-gl';
   const Supervision = () => {
     const { adminId } = useContext(AdminIdContext);
     const [supData, setSupData] = useState([]);
-    const[lat,setLat] = useState();
-    const[long,setLong] = useState();
 
     const config = {
       headers: {

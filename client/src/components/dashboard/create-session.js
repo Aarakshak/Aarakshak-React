@@ -97,7 +97,7 @@ const Settings = () => {
                   type="text"
                   name="location"
                   placeholder="Enter duty Location"
-                  value={location} required
+                  value={location} required autoComplete="off"
                   onChange={(e) => {myfunc(e.target.value); setLocation(e.target.value)}}
                 />
               </div>
@@ -107,7 +107,7 @@ const Settings = () => {
                   type="date"
                   name="date"
                   placeholder="Enter duty Date"
-                  value={date}
+                  value={date} required autoComplete="off"
                   onChange={(e) => setDate(e.target.value)}
                 />
               </div>
@@ -129,7 +129,7 @@ const Settings = () => {
                   type="number"
                   name="latitude"
                   placeholder="Enter latitude"
-                  value={latitude}
+                  value={latitude} required autoComplete="off"
                 />
               </div>
               <div className=" col-sm-6">
@@ -141,7 +141,7 @@ const Settings = () => {
                   type="number"
                   name="longitude"
                   placeholder="Enter longitude"
-                  value={longitude}
+                  value={longitude} required autoComplete="off"
                 />
               </div>
 
@@ -156,7 +156,7 @@ const Settings = () => {
                   type="number"
                   name="noOfCheckpoints"
                   placeholder="Enter No. of Checkpoints"
-                  value={noOfCheckpoints}
+                  value={noOfCheckpoints} required autoComplete="off"
                   onChange={(e) => setNoOfCheckpoints(e.target.value)}
                 />
               </div>
@@ -169,7 +169,7 @@ const Settings = () => {
                   type="time"
                   name="startTime"
                   placeholder="Enter duty start time"
-                  value={startTime}
+                  value={startTime} required autoComplete="off"
                   onChange={(e) => setStartTime(e.target.value)}
                 />
               </div>
@@ -182,7 +182,7 @@ const Settings = () => {
                   type="time"
                   name="endTime"
                   placeholder="Enter duty end time"
-                  value={endTime}
+                  value={endTime} required autoComplete="off"
                   onChange={(e) => setEndTime(e.target.value)}
                 />
               </div>
@@ -191,7 +191,7 @@ const Settings = () => {
               <div className="col-sm-12">
                 <label htmlFor="time"> Description : </label>
                 <textarea
-                  value={description}
+                  value={description} autoComplete="off"
                   onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </div>
